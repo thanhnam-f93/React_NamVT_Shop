@@ -123,17 +123,17 @@
   ],
   "cart": [
     {
-      "id": "3",
-      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152124145823.jpg",
-      "name": "Chó ngao Anh",
-      "price": 28,
+      "id": "16",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152127258813.jpg",
+      "name": "Golden",
+      "price": 78,
       "total": 0
     },
     {
-      "id": "2",
-      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152123598466.jpg",
-      "name": "Alaska Malamute",
-      "price": 87,
+      "id": "8",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152125105127.jpg",
+      "name": "Bloodhound",
+      "price": 22,
       "total": 0
     }
   ]

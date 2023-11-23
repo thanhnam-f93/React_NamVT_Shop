@@ -1,65 +1,79 @@
-import React, { useEffect, useState } from "react";
-
-const PaymentItem = ({
-  item,
-  setProduct,
-  totalRecord,
-  setTotalRecord,
-  money,
-  setMoney,
-}) => {
-  const apiUrl = `http://localhost:3000/cart/`;
+import React, { useEffect, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { CartContext, ProductContext } from "./../../data/Context";
+import { CONSTANTS } from "../../utils/constant";
+import callAPI from "../../service/api";
+import Swal from "sweetalert2";
+const PaymentItem = ({ item, cart, setCart, money, setMoney }) => {
+  const navigate = useNavigate();
+  const { totalCart, setTotalCart } = useContext(CartContext);
   const [total, setTotal] = useState(0);
-  let updateMoney: number = Number(localStorage.getItem("money"));
+
   const updateItem = (action: string) => {
     let updateTotal: number;
-
+    let updateMoney: number;
     if (action == "cong") {
       updateTotal = total + 1;
+      updateMoney = money + item.price;
     } else {
       if (total == 0) return;
       updateTotal = total - 1;
+      updateMoney = money - item.price;
     }
-    setTotal(updateTotal);
-    updateMoney += calculatorMoney(updateTotal);
     setMoney(updateMoney);
+    setTotal(updateTotal);
+
     localStorage.setItem("money", JSON.stringify(money));
   };
-
-  // useEffect(() => {
-  //   () => {
-
-  //     localStorage.setItem("money", money);
-  //   };
-  // }, [total]);
-
-  //
-  const removeItem = (id: any) => {
-    const confirm = window.confirm("Are you sure delete product from cart ?");
-    if (confirm) {
-      fetch(apiUrl + id, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: null,
+  const getDataCart = () => {
+    callAPI(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
+      .then((response: { ok: any; status: any; json: () => any }) => {
+        if (!response.ok || response.status == CONSTANTS.STATUS[404]) {
+          navigate(CONSTANTS.PAGE[404]);
+        }
+        return response.json();
       })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-          alert("Delete OK");
-        })
-        .then((data) => {
-          // Handle the response data
-          let coutRecord = totalRecord - 1;
-          setTotalRecord(coutRecord);
-        })
-        .catch((err) => {
-          console.error("Error: ", err);
-          alert("Delete Failure, check Serve now");
+      .then((data: string | any[]) => {
+        setCart(data);
+        setTotalCart(data.length);
+      })
+      .catch((error: string) => {
+        navigate(CONSTANTS.PAGE[500]);
+      });
+  };
+  const removeItem = (id: any) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your Product in Cart has been deleted.",
+          icon: "success",
         });
-    }
+        callAPI(CONSTANTS.URL.CART + id, CONSTANTS.METHOD.DELETE, null)
+          .then((response: { ok: any; status: any; json: () => any }) => {
+            if (!response.ok || response.status == CONSTANTS.STATUS[404]) {
+              navigate(CONSTANTS.PAGE[404]);
+            }
+          })
+          .then((data) => {
+            getDataCart();
+            let updateMoney: number;
+            updateMoney = Number(money) - item.price * total;
+            setMoney(updateMoney);
+          })
+          .catch((err) => {
+            navigate(CONSTANTS.PAGE[500]);
+          });
+      }
+    });
   };
   //
   const calculatorMoney = (num: number) => {

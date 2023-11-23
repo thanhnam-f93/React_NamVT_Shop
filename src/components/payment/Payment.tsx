@@ -1,37 +1,25 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PaymentItem from "./PaymentItem";
-import { CartContext } from "../../data/Context";
+import callAPI from "../../service/api";
+import { CONSTANTS } from "./../../utils/constant";
 const Payment = () => {
   const [money, setMoney] = useState(Number(localStorage.getItem("money")));
-  const [products, setProduct] = useState([]);
-  const [totalRecord, setTotalRecord] = useState(0);
+  const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
   const getDataCart = () => {
-    const apiUrl = "http://localhost:3000/cart";
-    // Make the POST request
-    fetch(apiUrl, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: null,
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+    callAPI(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
+      .then((response: { ok: any; status: any; json: () => any }) => {
+        if (!response.ok || response.status == CONSTANTS.STATUS[404]) {
+          navigate(CONSTANTS.PAGE[404]);
         }
         return response.json();
       })
-      .then((data) => {
-        // Handle the response data
-        setTotalRecord(data.length);
-        setProduct(data);
+      .then((data: string | any[]) => {
+        setCart(data);
       })
       .catch((error: string) => {
-        // Handle errors during the request
-        alert(
-          "Have error while call data from Json server, Please reCheck it Or restart JSon serve" +
-            error
-        );
+        navigate(CONSTANTS.PAGE[500]);
       });
   };
   useEffect(() => {
@@ -40,24 +28,21 @@ const Payment = () => {
   //
   useEffect(() => {
     return () => {
-      localStorage.removeItem("money");
+      localStorage.setItem("money", "0");
     };
   }, []);
 
-  const renderTodo = products.map((item: any, index: any) => {
+  const renderTodo = cart.map((item: any, index: any) => {
     return (
-      <>
-        <div key={index}>
-          <PaymentItem
-            item={item}
-            setProduct={setProduct}
-            totalRecord={totalRecord}
-            setTotalRecord={setTotalRecord}
-            money={money}
-            setMoney={setMoney}
-          ></PaymentItem>
-        </div>
-      </>
+      <div key={index}>
+        <PaymentItem
+          item={item}
+          cart={cart}
+          setCart={setCart}
+          money={money}
+          setMoney={setMoney}
+        ></PaymentItem>
+      </div>
     );
   });
 

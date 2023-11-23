@@ -1,12 +1,17 @@
 import React, { useEffect, useState, useContext } from "react";
-import { CartContext } from "./../../data/Context";
+import { useNavigate } from "react-router-dom";
+import { CartContext, ProductContext } from "./../../data/Context";
 import "./../../css/card.css";
 import { NavLink } from "react-router-dom";
-import { error } from "console";
+import callAPI from "../../service/api";
+import { CONSTANTS } from "../../utils/constant";
+import Swal from "sweetalert2";
+
 function ProductItem(product) {
-  const apiUrl = "http://localhost:3000/cart";
-  const addProduct = () => {
-    console.log("product", product);
+  const { setTotalCart } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  const addCart = () => {
     let cartData = {
       id: product.id,
       image: product.image,
@@ -14,25 +19,46 @@ function ProductItem(product) {
       price: product.price,
       total: 0,
     };
-    fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        // You can add other headers if needed
-      },
-      body: JSON.stringify(cartData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+    callAPI(CONSTANTS.URL.CART, CONSTANTS.METHOD.POST, JSON.stringify(cartData))
+      .then((response: { ok: any; status: any; json: () => any }) => {
+        if (!response.ok && response.status == CONSTANTS.STATUS[404]) {
+          navigate(CONSTANTS.PAGE[404]);
+        } else if (response.status == CONSTANTS.STATUS[500]) {
+          throw new Error(`Product added to cart`);
         }
       })
       .then((data) => {
-        alert("Add product Success");
+        getTotalCart();
+        Swal.fire({
+          title: "Good job!",
+          text: "Add product Success",
+          icon: "success",
+        });
       })
       .catch((err) => {
-        console.error("Error: ", err);
-        alert("This Product was add Previous m- Duplicate Product");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err,
+          // footer: '<a href="#">Why do I have this issue?</a>',
+        });
+      });
+  };
+  const getTotalCart = () => {
+    callAPI(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
+      .then((response: { ok: any; status: any; json: () => any }) => {
+        if (!response.ok && response.status == CONSTANTS.STATUS[404]) {
+          navigate(CONSTANTS.PAGE[404]);
+        } else if (response.status == CONSTANTS.STATUS[500]) {
+          throw new Error("Conection Error");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setTotalCart(data.length);
+      })
+      .catch((err) => {
+        alert(err);
       });
   };
   return (
@@ -44,7 +70,7 @@ function ProductItem(product) {
       <p className="price">{`Price: $${product.price}`}</p>
       <p className="text-justify px-3 py-2">{product.description}</p>
       {/* <p>Total: {product.total}</p> */}
-      <button className=" bottom-0 mr-0 py-0" onClick={addProduct}>
+      <button className=" bottom-0 mr-0 py-0" onClick={addCart}>
         Add to Cart
       </button>
     </div>

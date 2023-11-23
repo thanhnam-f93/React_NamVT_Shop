@@ -21,7 +21,7 @@ import Payment from './components/payment/payment';
 import Sale from './components/sale/Sale';
 import data from "./../db.json";
 import Home from './pages/home/Home';
-function App() {
+function App({children}) {
   const location = useLocation();
 
   useEffect(() => {
