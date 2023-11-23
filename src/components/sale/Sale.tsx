@@ -13,7 +13,7 @@ const Sale = () => {
   const getDataCart = () => {
     callAPI(CONSTANTS.URL.DOG, CONSTANTS.METHOD.GET, null)
       .then((response: { ok: any; status: any; json: () => any }) => {
-        if (!response.ok || response.status == CONSTANTS.STATUS[404]) {
+        if (!response.ok && response.status == CONSTANTS.STATUS[404]) {
           navigate(CONSTANTS.PAGE[404]);
         }
         return response.json();
@@ -32,7 +32,14 @@ const Sale = () => {
 
   return (
     <>
-      <div className="grid grid-cols-5 gap-9"> {renderTodo}</div>
+      {product.length > 0 ? (
+        <div className="grid grid-cols-5 gap-9"> {renderTodo}</div>
+      ) : (
+        <div className="grid grid-cols-5 gap-9">
+          {" "}
+          <h2>Network Error</h2>
+        </div>
+      )}
     </>
   );
 };

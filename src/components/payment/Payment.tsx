@@ -10,7 +10,7 @@ const Payment = () => {
   const getDataCart = () => {
     callAPI(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
       .then((response: { ok: any; status: any; json: () => any }) => {
-        if (!response.ok || response.status == CONSTANTS.STATUS[404]) {
+        if (!response.ok && response.status == CONSTANTS.STATUS[404]) {
           navigate(CONSTANTS.PAGE[404]);
         }
         return response.json();
@@ -45,7 +45,7 @@ const Payment = () => {
       </div>
     );
   });
-
+  const renderFaild = <h1 className="bg-red-600 font-bold">Network Error </h1>;
   return (
     <>
       <div className="container mx-auto px-4 py-8">
@@ -59,7 +59,7 @@ const Payment = () => {
         {/*  */}
         <div className="mt-8">
           {/*  */}
-          {renderTodo}
+          {cart.length > 0 ? renderTodo : renderFaild}
         </div>
         {/*  */}
         <div className="flex justify-end items-center mt-8">
