@@ -1,5 +1,6 @@
 # Class Component Lifecycle trong React:
 
+Về Component trong react tham khảo [Component](https://react.dev/reference/react/Component)
 ```
 import React, { Component } from 'react';
 
