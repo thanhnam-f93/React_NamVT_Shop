@@ -26,7 +26,8 @@ Dưới đây là một số tình huống khi bạn có thể cần sử dụng
    Trong ví dụ trên, `modal-root` là một phần tử trong DOM, nhưng `Modal` component được render bởi `createPortal` nằm ngoài cây DOM chính.
 
 2. **Tooltip:**
-   Khi bạn muốn render một tooltip ở một vị trí xác định trên trang và không muốn nó ảnh hưởng đến việc xác định vị trí của các phần tử khác.
+   Khi bạn muốn render một tooltip ở một vị trí xác định 
+   .
 
    ```jsx
    const Tooltip = ({ text, position, children }) => {

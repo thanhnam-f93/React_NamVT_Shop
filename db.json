@@ -119,22 +119,74 @@
       "description": "Golden là một giống chó Scotland phổ biến nhất của Mỹ. Chúng là những chú chó làm công việc săn bắn, thực địa. Goldens có vẻ ngoài mạnh mẽ, trí thông minh cao và cái đuôi khá đẹp.",
       "total": 99,
       "id": "16"
+    },
+    {
+      "price": 87121,
+      "name": "Alaska Malamute Test",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152123598466.jpg",
+      "description": "Chó Alaska được biết đến như một giống chó lai chuyên kéo xe ở Alaska. Chúng sở hữu khung xương chắc chắn,chó lai chuyên kéo xe ở Alaska bộ lông mềm mượt cùng tính nhanh nhẹn, hoạt bát.",
+      "total": 297,
+      "id": "Jn1Sd9F"
     }
   ],
   "cart": [
     {
-      "id": "3",
+      "id": "333",
+      "productId": "3",
+      "userId": "1",
       "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152124145823.jpg",
       "name": "Chó ngao Anh",
       "price": 28,
       "total": 0
     },
     {
-      "id": "2",
+      "id": "222",
+      "productId": "2",
+      "userId": "1",
       "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152123598466.jpg",
       "name": "Alaska Malamute",
       "price": 87,
       "total": 0
+    },
+    {
+      "id": "555",
+      "productId": "5",
+      "userId": "1",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152124270120.jpg",
+      "name": "Dogo Argentino",
+      "price": 97,
+      "total": 0
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "username": "supperMan",
+      "password": "password_spm",
+      "image": "https://upload.wikimedia.org/wikipedia/en/d/d6/Superman_Man_of_Steel.jpg",
+      "name": "Super Man",
+      "age": 28,
+      "addres": "Ha Noi",
+      "gender": "Male"
+    },
+    {
+      "id": "2",
+      "username": "supperGirl",
+      "password": "password_spg",
+      "image": "https://cdn2.vectorstock.com/i/1000x1000/78/86/super-hero-woman-vector-3627886.jpg",
+      "name": "Super Girl",
+      "age": 17,
+      "addres": "Hai Phong",
+      "gender": "Female"
+    }
+  ],
+  "payment": [
+    {
+      "id": "12345",
+      "userId": "1",
+      "totalMoney": "6789",
+      "timeOrder": "20231111",
+      "status": ""
     }
   ]
 }

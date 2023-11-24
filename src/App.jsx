@@ -21,6 +21,8 @@ import Payment from './components/payment/payment';
 import Sale from './components/sale/Sale';
 import data from "./../db.json";
 import Home from './pages/home/Home';
+import ModalSearch from './components/ModalSearch';
+import { SortableTable } from './pages/home/Test';
 function App({children}) {
   const location = useLocation();
 
@@ -34,7 +36,7 @@ function App({children}) {
     <>
       <Routes>
       <Route path="/" element={<Layout />}>
-      <Route path="" element={<Home />}/>
+      <Route path="" element={<SortableTable />}/>
         <Route path="payment" element={<Payment />}/>
         <Route path="product/list" element={<ProductList />}/>
         <Route path="product/new" element={<ProductNew />}/>

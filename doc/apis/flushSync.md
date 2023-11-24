@@ -28,6 +28,7 @@ Dưới đây là một số tình huống khi bạn có thể cần sử dụng
    ```jsx
    import { flushSync } from 'react-dom';
 
+
    const handleScroll = () => {
      flushSync(() => {
        // Cập nhật trạng thái của React

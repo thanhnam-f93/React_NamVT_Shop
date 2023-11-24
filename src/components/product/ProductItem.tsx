@@ -13,7 +13,7 @@ function ProductItem(product) {
 
   const addCart = () => {
     let cartData = {
-      id: product.id,
+      productId: product.id,
       image: product.image,
       name: product.name,
       price: product.price,

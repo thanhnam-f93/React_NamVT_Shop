@@ -1,4 +1,4 @@
-# Khi nào sử dụng useCallback
+ # Khi nào sử dụng useCallback
 `useCallback` là một hook trong React được sử dụng để memoize (lưu trữ) một hàm callback và trả về hàm callback được memoized đó khi dependencies thay đổi. Việc sử dụng `useCallback` giúp tránh tình trạng tạo ra một hàm mới mỗi lần render, đặc biệt là khi hàm đó được truyền vào các thành phần con, có thể dẫn đến việc render lại không cần thiết của các thành phần con.
 
 Dưới đây là một số tình huống khi bạn có thể cần sử dụng `useCallback`:

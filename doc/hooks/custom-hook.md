@@ -23,7 +23,9 @@ import { useState, useEffect } from 'react';
 function useCustomHook(initialValue) {
   const [value, setValue] = useState(initialValue);
 
-  useEffect(() => {
+  useEffect(() => { 
+
+    
     // Logic side effect (nếu cần)
     console.log('Custom Hook side effect');
   }, [value]); // Dependency array
