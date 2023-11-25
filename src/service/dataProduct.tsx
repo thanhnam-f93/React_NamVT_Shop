@@ -1,8 +1,8 @@
 import { CONSTANTS } from "../utils/constant";
-import callAPI from "./api";
+import { callAPIFetch } from "./api";
 
 const getDataProduct = () => {
-  callAPI(CONSTANTS.URL.DOG, CONSTANTS.METHOD.GET, null)
+  callAPIFetch(CONSTANTS.URL.DOG, CONSTANTS.METHOD.GET, null)
     .then((response: { ok: any; status: any; json: () => any }) => {
       if (!response.ok) {
         throw new Error(response.status);

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import ProductItem from "../product/ProductItem";
 import { CONSTANTS } from "../../utils/constant";
-import callAPI from "../../service/api";
+import { callAPIFetch } from "../../service/api";
 const Sale = () => {
   const [product, setProdcut] = useState([]);
   const navigate = useNavigate();
@@ -11,9 +11,9 @@ const Sale = () => {
   }, []);
 
   const getDataCart = () => {
-    callAPI(CONSTANTS.URL.DOG, CONSTANTS.METHOD.GET, null)
+    callAPIFetch(CONSTANTS.URL.DOG, CONSTANTS.METHOD.GET, null)
       .then((response: { ok: any; status: any; json: () => any }) => {
-        if (!response.ok && response.status == CONSTANTS.STATUS[404]) {
+        if (!response.ok && response.status == CONSTANTS.STATUS.NOT_FOUND) {
           navigate(CONSTANTS.PAGE[404]);
         }
         return response.json();

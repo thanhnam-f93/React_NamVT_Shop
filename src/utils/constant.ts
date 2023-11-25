@@ -9,7 +9,7 @@ export const CONSTANTS = {
     PAGE: {
         SALE: '/sale',
         500: '/500',
-        404: '/404'
+        404: '/404',
     },
     URL: {
         CART: 'http://localhost:3000/cart/',
@@ -18,8 +18,10 @@ export const CONSTANTS = {
         PAYMENT: 'http://localhost:3000/payment'
     },
     STATUS: {
-        500: '500',
-        404: '404'
+        ERR_SERVER: 500,
+        NOT_FOUND: 404,
+        CREATE: 201,
+        OK: 200
     },
     METHOD: {
         POST: 'POST',

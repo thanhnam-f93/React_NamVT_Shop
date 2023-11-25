@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext, ProductContext } from "./../../data/Context";
 import { CONSTANTS } from "../../utils/constant";
-import callAPI from "../../service/api";
+import { callAPIFetch } from "../../service/api";
 import Swal from "sweetalert2";
 const PaymentItem = ({ item, cart, setCart, money, setMoney }) => {
   const navigate = useNavigate();
@@ -26,9 +26,9 @@ const PaymentItem = ({ item, cart, setCart, money, setMoney }) => {
     localStorage.setItem("money", JSON.stringify(money));
   };
   const getDataCart = () => {
-    callAPI(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
+    callAPIFetch(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
       .then((response: { ok: any; status: any; json: () => any }) => {
-        if (!response.ok || response.status == CONSTANTS.STATUS[404]) {
+        if (!response.ok || response.status == CONSTANTS.STATUS.NOT_FOUND) {
           navigate(CONSTANTS.PAGE[404]);
         }
         return response.json();
@@ -57,9 +57,9 @@ const PaymentItem = ({ item, cart, setCart, money, setMoney }) => {
           text: "Your Product in Cart has been deleted.",
           icon: "success",
         });
-        callAPI(CONSTANTS.URL.CART + id, CONSTANTS.METHOD.DELETE, null)
+        callAPIFetch(CONSTANTS.URL.CART + id, CONSTANTS.METHOD.DELETE, null)
           .then((response: { ok: any; status: any; json: () => any }) => {
-            if (!response.ok || response.status == CONSTANTS.STATUS[404]) {
+            if (!response.ok || response.status == CONSTANTS.STATUS.NOT_FOUND) {
               navigate(CONSTANTS.PAGE[404]);
             }
           })

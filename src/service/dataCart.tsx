@@ -1,8 +1,8 @@
 import { CONSTANTS } from "../utils/constant";
-import callAPI from "./api";
+import { callAPIFetch } from "./api";
 
 function getDataCart(): any {
-  callAPI(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
+  callAPIFetch(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
     .then((response: { ok: any; status: any; json: () => any }) => {
       if (!response.ok) {
         throw new Error(response.status);

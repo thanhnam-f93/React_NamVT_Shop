@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CartContext, ProductContext } from "./../../data/Context";
 import "./../../css/card.css";
 import { NavLink } from "react-router-dom";
-import callAPI from "../../service/api";
+import { callAPIFetch } from "../../service/api";
 import { CONSTANTS } from "../../utils/constant";
 import Swal from "sweetalert2";
 
@@ -19,11 +19,15 @@ function ProductItem(product) {
       price: product.price,
       total: 0,
     };
-    callAPI(CONSTANTS.URL.CART, CONSTANTS.METHOD.POST, JSON.stringify(cartData))
+    callAPIFetch(
+      CONSTANTS.URL.CART,
+      CONSTANTS.METHOD.POST,
+      JSON.stringify(cartData)
+    )
       .then((response: { ok: any; status: any; json: () => any }) => {
-        if (!response.ok && response.status == CONSTANTS.STATUS[404]) {
+        if (!response.ok && response.status == CONSTANTS.STATUS.NOT_FOUND) {
           navigate(CONSTANTS.PAGE[404]);
-        } else if (response.status == CONSTANTS.STATUS[500]) {
+        } else if (response.status == CONSTANTS.STATUS.ERR_SERVER) {
           throw new Error(`Product added to cart`);
         }
       })
@@ -45,11 +49,11 @@ function ProductItem(product) {
       });
   };
   const getTotalCart = () => {
-    callAPI(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
+    callAPIFetch(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
       .then((response: { ok: any; status: any; json: () => any }) => {
-        if (!response.ok && response.status == CONSTANTS.STATUS[404]) {
+        if (!response.ok && response.status == CONSTANTS.STATUS.NOT_FOUND) {
           navigate(CONSTANTS.PAGE[404]);
-        } else if (response.status == CONSTANTS.STATUS[500]) {
+        } else if (response.status == CONSTANTS.STATUS.ERR_SERVER) {
           throw new Error("Conection Error");
         }
         return response.json();
@@ -58,7 +62,12 @@ function ProductItem(product) {
         setTotalCart(data.length);
       })
       .catch((err) => {
-        alert(err);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err,
+          // footer: '<a href="#">Why do I have this issue?</a>',
+        });
       });
   };
   return (

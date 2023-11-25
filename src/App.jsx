@@ -24,13 +24,20 @@ import Home from './pages/home/Home';
 import ModalSearch from './components/ModalSearch';
 import { SortableTable } from './pages/home/Test';
 function App({children}) {
-  const location = useLocation();
-
+  const location = useLocation()
+  const username = localStorage.getItem("username");
+  const role = localStorage.getItem("role");
   useEffect(() => {
     document.querySelector('html').style.scrollBehavior = 'auto'
     window.scroll({ top: 0 })
     document.querySelector('html').style.scrollBehavior = ''
   }, [location.pathname]); // triggered on route change
+useEffect(() => {
+  return () => {
+    console.log("Cleanup");
+    localStorage.clear();
+  }
+}, [])
 
   return (
     <>

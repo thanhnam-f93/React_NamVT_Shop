@@ -6,25 +6,46 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { CONSTANTS } from "../../utils/constant";
-import callAPI from "../../service/api";
+import { callAPIUser } from "../../service/dataUser";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-// import "./styles.css";
-type Inputs = {
-  name: string;
-  username: string;
-  password: string;
-};
+import { User } from "../../model/User";
+import { AxiosError, AxiosResponse } from "axios";
+
 export default function SignUp() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     watch,
-    formState: { errors: any },
-  } = useForm<Inputs>();
+    formState: { errors },
+  } = useForm<User>();
 
-  const submitData: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
+  const submitData: SubmitHandler<User> = (data) => {
+    callAPIUser
+      .signup(data)
+      .then((response: AxiosResponse) => {
+        if (
+          [CONSTANTS.STATUS.CREATE, CONSTANTS.STATUS.OK].includes(
+            response.status
+          )
+        ) {
+          localStorage.setItem("userId", response.data.id);
+          navigate(CONSTANTS.PAGE.SALE);
+        }
+        throw new AxiosError("Signup Failure, Contact Admin to detail");
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error,
+          // footer: '<a href="#">Why do I have this issue?</a>',
+        });
+      })
+      .finally(() => {
+        console.log("Finnaly");
+      });
   };
 
   return (
@@ -38,11 +59,7 @@ export default function SignUp() {
 
           {/* Form */}
           <div className="max-w-sm mx-auto">
-            <form
-              onSubmit={handleSubmit((data) => {
-                console.log("DATA", data);
-              })}
-            >
+            <form onSubmit={handleSubmit((data) => submitData(data))}>
               <div className="flex flex-wrap -mx-3 mb-4">
                 <div className="w-full px-3">
                   <label
@@ -56,6 +73,7 @@ export default function SignUp() {
                       required: true,
                       minLength: 3,
                       maxLength: 20,
+                      pattern: /^[A-Za-z ]+$/i,
                     })}
                     id="name"
                     type="text"
@@ -65,38 +83,67 @@ export default function SignUp() {
                     placeholder="Enter your name"
                     required
                   />
-                  {/* {
-                    (errors.name?.type = "require" && (
-                      <span>This field is required</span>
-                    ))
-                  } */}
-                  {/* {errors?.name && <span>This field is required</span>}
-                  {errors?.name && <span>This field is required</span>} */}
+                  {errors?.name?.type === "required" && (
+                    <span className="text-red-600">Name is required</span>
+                  )}
+                  {errors?.name?.type === "minLength" && (
+                    <span className="text-red-600">
+                      Name must have at least 3 character{" "}
+                    </span>
+                  )}
+                  {errors?.name?.type === "maxLength" && (
+                    <span className="text-red-600">
+                      Name can't exceed 20 character{" "}
+                    </span>
+                  )}
+                  {errors?.name?.type === "pattern" && (
+                    <span className="text-red-600">
+                      Name must Alphabetical character only
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-4">
                 <div className="w-full px-3">
                   <label
                     className="block text-gray-800 text-sm font-medium mb-1"
-                    htmlFor="email"
+                    htmlFor="username"
                   >
                     Email or User name<span className="text-red-600">*</span>
                   </label>
                   <input
-                    {...register("username", { required: true })}
-                    id="email"
+                    {...register("username", {
+                      required: true,
+                      minLength: 3,
+                      maxLength: 20,
+                      pattern: /^[A-Za-z0-9]+$/i,
+                    })}
+                    id="username"
                     type="text"
                     name="username"
                     defaultValue={""}
                     className="form-input w-full text-gray-800"
-                    placeholder="Enter your email address"
+                    placeholder="Enter your username or email address"
                     required
                   />
-                  {/* {
-                    (errors.username.type = "required" && (
-                      <span>This field is required</span>
-                    ))
-                  } */}
+                  {errors?.username?.type === "required" && (
+                    <span className="text-red-600">Username is required</span>
+                  )}
+                  {errors?.username?.type === "minLength" && (
+                    <span className="text-red-600">
+                      Username must have at least 3 character{" "}
+                    </span>
+                  )}
+                  {errors?.username?.type === "maxLength" && (
+                    <span className="text-red-600">
+                      Username can't exceed 20 character{" "}
+                    </span>
+                  )}
+                  {errors?.username?.type === "pattern" && (
+                    <span className="text-red-600">
+                      Username must have only number and character
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-4">
@@ -109,6 +156,7 @@ export default function SignUp() {
                   </label>
                   <input
                     {...register("password", {
+                      required: true,
                       pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/,
                     })}
                     id="password"
@@ -119,21 +167,21 @@ export default function SignUp() {
                     placeholder="Enter your password"
                     required
                   />
-                  {/* {errors.password?.type === "pattern" && (
-                    <p>
-                      Password Validate: Must have 6 to 20 character and
-                      containt lower, Upper, number and least one special
-                      character
-                    </p>
-                  )} */}
+                  {errors?.password?.type === "required" && (
+                    <span className="text-red-600">Password is required</span>
+                  )}
+                  {errors?.password?.type === "pattern" && (
+                    <span className="text-red-600">
+                      Password must have Alphabetical character or Number and
+                      least one special character
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mt-6">
                 <div className="w-full px-3">
                   <button
-                    onClick={handleSubmit((data) => {
-                      console.log("DATA", data);
-                    })}
+                    type="submit"
                     className="btn text-white bg-blue-600 hover:bg-blue-700 w-full"
                   >
                     Sign up
@@ -151,7 +199,6 @@ export default function SignUp() {
                 </a>
                 .
               </div>
-              <input type="submit" />
             </form>
             {/*  */}
             <div className="flex items-center my-6">

@@ -1,16 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PaymentItem from "./PaymentItem";
-import callAPI from "../../service/api";
+import { callAPIFetch } from "../../service/api";
 import { CONSTANTS } from "./../../utils/constant";
 const Payment = () => {
   const [money, setMoney] = useState(Number(localStorage.getItem("money")));
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
   const getDataCart = () => {
-    callAPI(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
+    callAPIFetch(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)
       .then((response: { ok: any; status: any; json: () => any }) => {
-        if (!response.ok && response.status == CONSTANTS.STATUS[404]) {
+        if (!response.ok && response.status == CONSTANTS.STATUS.NOT_FOUND) {
           navigate(CONSTANTS.PAGE[404]);
         }
         return response.json();

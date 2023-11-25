@@ -7,7 +7,7 @@ import React, { startTransition, useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CONSTANTS } from "../../utils/constant";
-import callAPI from "../../service/api";
+import { callAPIFetch } from "../../service/api";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 // import "./styles.css";
@@ -62,16 +62,16 @@ export default function SignIn() {
   const callApiLogin = () => {
     console.log("HHHHHHHH");
 
-    callAPI(
+    callAPIFetch(
       CONSTANTS.URL.USER +
         `?username=${formData.username}&password=${formData.password}`,
       CONSTANTS.METHOD.GET,
       CONSTANTS.NULL
     )
       .then((response: { ok: any; status: any; json: () => any }) => {
-        if (!response.ok && response.status == CONSTANTS.STATUS[404]) {
+        if (!response.ok && response.status == CONSTANTS.STATUS.NOT_FOUND) {
           navigate(CONSTANTS.PAGE[404]);
-        } else if (response.status == CONSTANTS.STATUS[500]) {
+        } else if (response.status == CONSTANTS.STATUS.ERR_SERVER) {
           throw new Error(`Net work error`);
         }
         return response.json();

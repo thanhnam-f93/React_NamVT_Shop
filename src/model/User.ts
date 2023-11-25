@@ -7,4 +7,5 @@ export interface User {
     age: any,
     addres: any,
     gender: any,
+    role: any
 }

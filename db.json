@@ -167,7 +167,8 @@
       "name": "Super Man",
       "age": 28,
       "addres": "Ha Noi",
-      "gender": "Male"
+      "gender": "Male",
+      "role": true
     },
     {
       "id": "2",
@@ -177,7 +178,20 @@
       "name": "Super Girl",
       "age": 17,
       "addres": "Hai Phong",
-      "gender": "Female"
+      "gender": "Female",
+      "role": true
+    },
+    {
+      "name": "Vu Thanh Nam",
+      "username": "ewewewew",
+      "password": "ssssss12!A",
+      "id": "5DGM9pU"
+    },
+    {
+      "name": "Vu Thanh Nam",
+      "username": "rererere111122dsd",
+      "password": "dddddddddd12#dDD",
+      "id": "jb4BXBa"
     }
   ],
   "payment": [
