@@ -36,7 +36,6 @@ export default function SignIn() {
   };
   const validationData = () => {
     const { username, password } = formData;
-    console.log("username", username);
 
     let message = "";
     let regularExpression =
@@ -50,18 +49,10 @@ export default function SignIn() {
         "Password must has at least one number and least one special character";
     }
     // if (message) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Oops...",
-    //     text: message,
-    //   });
-    //   return false;
-    // }
+
     return true;
   };
   const callApiLogin = () => {
-    console.log("HHHHHHHH");
-
     callAPIFetch(
       CONSTANTS.URL.USER +
         `?username=${formData.username}&password=${formData.password}`,
@@ -117,7 +108,7 @@ export default function SignIn() {
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
           {/* Page header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h1 className="h1">Welcome back...</h1>
+            <h1 className="h1">{`Well come..`}</h1>
           </div>
 
           {/* Form */}
@@ -190,7 +181,10 @@ export default function SignIn() {
               </div>
               <div className="flex flex-wrap -mx-3 mt-6">
                 <div className="w-full px-3">
-                  <button className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">
+                  <button
+                    type="submit"
+                    className="btn text-white bg-blue-600 hover:bg-blue-700 w-full"
+                  >
                     Sign in
                   </button>
                 </div>
