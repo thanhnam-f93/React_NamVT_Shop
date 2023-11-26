@@ -108,20 +108,18 @@ export function SortableTable() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <Tabs value="all" className="w-full md:w-max">
-            <TabsHeader>
-              {TABS.map(({ label, value }) => (
-                <Tab key={value} value={value}>
-                  &nbsp;&nbsp;{label}&nbsp;&nbsp;
-                </Tab>
-              ))}
-            </TabsHeader>
-          </Tabs>
+          <div className="w-full md:w-max"></div>
           <div className="w-full md:w-72">
-            <Input
-              label="Search"
-              icon={<MagnifyingGlassIcon className="h-5 w-5" />}
-            />
+            <div className="search-box">
+              <input
+                type="text"
+                placeholder="Search anything"
+                className="search-input"
+              />
+              <a href="#" className="search-btn">
+                <i className="fas fa-search" />
+              </a>
+            </div>
           </div>
         </div>
       </CardHeader>

@@ -15,7 +15,8 @@ export const CONSTANTS = {
         CART: 'http://localhost:3000/cart/',
         DOG: 'http://localhost:3000/dog/',
         USER: 'http://localhost:3000/user/',
-        PAYMENT: 'http://localhost:3000/payment'
+        PAYMENT: 'http://localhost:3000/payment',
+        COUNTRY: 'https://restcountries.com/v3.1/'
     },
     STATUS: {
         ERR_SERVER: 500,
@@ -28,5 +29,13 @@ export const CONSTANTS = {
         PUT: 'PUT',
         GET: 'GET',
         DELETE: 'DELETE'
-    }
+    },
+
+    NAME: "name",
+    CODE: "alpha",
+    FULL_NAME: "fullname",
+    REGION: "region",
+    SUBREGION: "subregion",
+    LANGUAGE: "lang",
+
 };

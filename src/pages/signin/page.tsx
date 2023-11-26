@@ -21,18 +21,16 @@ export default function SignIn() {
   const [checked, setChecked] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData({ ...formData, [name]: value });
-    console.log("formData", formData);
   };
   const login = (e) => {
     e.preventDefault();
     // Validation data
-    // startTransition(() => {
-    if (validationData()) {
-      callApiLogin();
-    }
-    // });
+    startTransition(() => {
+      if (validationData()) {
+        callApiLogin();
+      }
+    });
   };
   const validationData = () => {
     const { username, password } = formData;
@@ -82,7 +80,7 @@ export default function SignIn() {
           Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Data input wrong, Please input again",
+            text: "Username or Password wrong, Please input again",
             footer: '<a href="#">Check problem?</a>',
           });
         }

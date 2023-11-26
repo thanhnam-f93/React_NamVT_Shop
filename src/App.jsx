@@ -21,8 +21,8 @@ import Payment from './components/payment/payment';
 import Sale from './components/sale/Sale';
 import data from "./../db.json";
 import Home from './pages/home/Home';
-import ModalSearch from './components/ModalSearch';
 import { SortableTable } from './pages/home/Test';
+import Test2 from './pages/home/Test2';
 function App({children}) {
   const location = useLocation()
   const username = localStorage.getItem("username");
@@ -43,7 +43,7 @@ useEffect(() => {
     <>
       <Routes>
       <Route path="/" element={<Layout />}>
-      <Route path="" element={<SortableTable />}/>
+      <Route path="" element={<Test2 />}/>
         <Route path="payment" element={<Payment />}/>
         <Route path="product/list" element={<ProductList />}/>
         <Route path="product/new" element={<ProductNew />}/>

@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import SearchModal from "../components/ModalSearch";
-import Notifications from "../components/DropdownNotifications";
-import Help from "../components/DropdownHelp";
-import UserMenu from "../components/DropdownProfile";
-import ThemeToggle from "../components/ThemeToggle";
+import SearchModal from "../components/reuse/ModalSearch";
+import Notifications from "../components/reuse/DropdownNotifications";
+import Help from "../components/reuse/DropdownHelp";
+import UserMenu from "../components/reuse/DropdownProfile";
+import ThemeToggle from "../components/reuse/ThemeToggle";
 import { CartContext } from "../data/Context";
 
 function Header({ sidebarOpen, setSidebarOpen }) {

@@ -31,9 +31,10 @@ function Layout() {
         alert("Error Json serve" + err);
       });
   };
-  if (!username?.length) {
-    return <Navigate to="/signin" />;
-  }
+
+  // if (!username?.length) {
+  //   return <Navigate to="/signin" />;
+  // }
 
   return (
     <CartContext.Provider
