@@ -1,31 +1,15 @@
 {
   "dog": [
     {
-      "price": 87,
+      "price": "123",
       "name": "Alaska Malamute",
       "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152123598466.jpg",
-      "description": "Chó Alaska được biết đến như một giống chó lai chuyên kéo xe ở Alaska. Chúng sở hữu khung xương chắc chắn,chó lai chuyên kéo xe ở Alaska bộ lông mềm mượt cùng tính nhanh nhẹn, hoạt bát.",
-      "total": 29,
+      "description": "Chó Alaska được biết đến như một giống chó lai chuyên kéo xe ở Alaska. Chúng sở hữu khung xương chắc chắn, bộ lông mềm mượt cùng tính nhanh nhẹn, hoạt bát. Hiện giống chó này có giá từ 10-25 triệu/ con.",
+      "total": "11",
       "id": "2"
     },
     {
-      "price": 28,
-      "name": "Chó ngao Anh",
-      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152124145823.jpg",
-      "description": "Chó ngao Anh hay đôi khi gọi là chó ngao là một giống chó ngao có nguồn gốc từ nước Anh. Đây là giống chó lớn nhất thế giới về cân nặng, và đứng hàng thứ ba về chiều cao chỉ sau giống chó săn Ái Nhĩ Lan và Great Dane.",
-      "total": 59,
-      "id": "3"
-    },
-    {
-      "price": 97,
-      "name": "Dogo Argentino",
-      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152124270120.jpg",
-      "description": "Chó Dogo Argentino có nguồn gốc từ Argentina, là giống chó săn có thân hình đồ sộ được lai từ nhiều giống khác nhau. Chúng sở hữu cơ bắp cuồn cuộn, đôi tai khá ngắn, đuôi thẳng nhọn và màu lông trắng tuyền",
-      "total": 59,
-      "id": "5"
-    },
-    {
-      "price": 99,
+      "price": "12345",
       "name": "Chó săn Afghanistan",
       "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152124402452.jpg",
       "description": "Chó săn Afghanistan là giống chó này bắt nguồn từ Afghanistan, được xem là giống chó của sự thanh lịch và quý phái.Đây là loài chó rất thích vận động Loài này có bộ lông vừa dài vừa mượt cùng phần đầu và mõm khá dài.",
@@ -33,7 +17,7 @@
       "id": "6"
     },
     {
-      "price": 94,
+      "price": "941",
       "name": "Chó núi Bernese",
       "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152124564863.jpg",
       "description": "Chó núi Bernese có nguồn gốc từ dãy Alps của Thuỵ Điển. Đây là loài chó rất thích vận động và có một bộ lông khá dày để hợp thích vận động với thời tiết nơi chúng sống.",
@@ -105,12 +89,63 @@
       "id": "16"
     },
     {
-      "price": 87121,
-      "name": "Alaska Malamute Test",
-      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152123598466.jpg",
-      "description": "Chó Alaska được biết đến như một giống chó lai chuyên kéo xe ở Alaska. Chúng sở hữu khung xương chắc chắn,chó lai chuyên kéo xe ở Alaska bộ lông mềm mượt cùng tính nhanh nhẹn, hoạt bát.",
-      "total": 297,
-      "id": "Jn1Sd9F"
+      "price": "99999",
+      "name": "Pug",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152131445820.jpg",
+      "description": "Chó Pug có nguồn gốc từ Trung Quốc. Đây là chú chó có vóc dáng nhỏ, đôi tai cụp cùng khuôn mặt khá xệ. Chúng rất thân thiện, hòa đồng và thông minh. ",
+      "total": "3333",
+      "productTotal": "444",
+      "id": "Oxs_kjt"
+    },
+    {
+      "price": "99999",
+      "name": "Welsh Corgi",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152131278665.jpg",
+      "description": "Welsh Corgi là giống chó nhỏ có nguồn gốc từ xứ Wales. Chúng có khuôn mặt hình tam giác, những chiếc chân ngắn siêu đáng yêu cùng bộ lông hai lớp. ",
+      "total": "222222",
+      "productTotal": "1111",
+      "id": "o0nzNBm"
+    },
+    {
+      "price": 72,
+      "name": "Chó Boerboel",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152126233987.jpg",
+      "description": "Chó Boerboel là một giống chó săn có nguồn gốc từ Nam Phi. Loài chó này sở hữu trí thông minh cao, khuôn mặt có vài nếp nhăn và thân hình khá cân đối cùng khứu giác nhạy bén.",
+      "total": 50,
+      "id": "13bn"
+    },
+    {
+      "price": 15,
+      "name": "Greyhound",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152127013612.jpg",
+      "description": "Greyhound là giống chó cổ xưa được tìm thấy ở hầu hết các quốc gia trên mọi lục địa. Chúng có ngoại hình cao ráo, sở hữu tốc độ chạy khá nhanh, bộ lông ngắn ôm sát cơ thể. ",
+      "total": 92,
+      "id": "1v4"
+    },
+    {
+      "price": 25,
+      "name": "Doberman",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152127128962.jpg",
+      "description": "Doberman là giống chó này được nhân giống ở Đức. Chúng mang vẻ ngoài thanh lịch, nghiêm khắc, thu hút người nuôi bởi đôi tai dựng đứng, thân hình vuông vức, mạnh mẽ.",
+      "total": 27,
+      "id": "15f"
+    },
+    {
+      "price": 78,
+      "name": "Golden",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152127258813.jpg",
+      "description": "Golden là một giống chó Scotland phổ biến nhất của Mỹ. Chúng là những chú chó làm công việc săn bắn, thực địa. Goldens có vẻ ngoài mạnh mẽ, trí thông minh cao và cái đuôi khá đẹp.",
+      "total": 99,
+      "id": "16w"
+    },
+    {
+      "price": "99999",
+      "name": "Pug",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152131445820.jpg",
+      "description": "Chó Pug có nguồn gốc từ Trung Quốc. Đây là chú chó có vóc dáng nhỏ, đôi tai cụp cùng khuôn mặt khá xệ. Chúng rất thân thiện, hòa đồng và thông minh. ",
+      "total": "444444444",
+      "productTotal": "444",
+      "id": "Oxs_kjtq"
     }
   ],
   "cart": [
@@ -164,18 +199,6 @@
       "addres": "Hai Phong",
       "gender": "Female",
       "role": true
-    },
-    {
-      "name": "Vu Thanh Nam",
-      "username": "ewewewew",
-      "password": "ssssss12!A",
-      "id": "5DGM9pU"
-    },
-    {
-      "name": "Vu Thanh Nam",
-      "username": "rererere111122dsd",
-      "password": "dddddddddd12#dDD",
-      "id": "jb4BXBa"
     }
   ],
   "payment": [

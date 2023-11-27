@@ -7,6 +7,7 @@ import Header from "../../partials/Header";
 import WelcomeBanner from "../../partials/dashboard/WelcomeBanner";
 import { CONSTANTS } from "../../utils/constant";
 import { callAPIFetch } from "../../service/api";
+import Swal from "sweetalert2";
 function Layout() {
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -32,9 +33,14 @@ function Layout() {
       });
   };
 
-  // if (!username?.length) {
-  //   return <Navigate to="/signin" />;
-  // }
+  if (!username?.length) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: `You aren't Login`,
+    });
+    return <Navigate to="/signin" />;
+  }
 
   return (
     <CartContext.Provider

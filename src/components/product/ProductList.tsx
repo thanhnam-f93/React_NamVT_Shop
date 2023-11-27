@@ -39,7 +39,7 @@ const ProductList = () => {
   // upate data when input data search or next page
   useEffect(() => {
     callAPI(searchInput);
-  }, [state.currentPage]);
+  }, [state.currentPage, totalRecord]);
 
   // call API throught axios
   const callAPI = (searchInput: string) => {
@@ -63,7 +63,7 @@ const ProductList = () => {
         let newOffset = state.currentPage * CONSTANTS.RECORD_ON_PAGE;
         let dataDisplay = data.slice(oldOffset, newOffset);
         setDataProduct(dataDisplay);
-        setTotalPage(Math.ceil(dataProduct.length / 10));
+        setTotalPage(Math.ceil(data.length / 10));
       })
       .catch((err) => {
         Swal.fire({
@@ -78,6 +78,7 @@ const ProductList = () => {
     state.currentPage = 1;
     callAPI(searchInput);
   };
+
   // List Product on page - default 10 record:
   const renderProduct = dataProduct.map((item: Product, index: number) => {
     return (
@@ -108,7 +109,7 @@ const ProductList = () => {
                   name="hs-table-with-pagination-search"
                   id="hs-table-with-pagination-search"
                   className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                  placeholder="Search items"
+                  placeholder="Search by name "
                   onChange={handleChange}
                 />
                 <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-3">
@@ -242,7 +243,7 @@ const ProductList = () => {
                   {dataProduct.length ? (
                     renderProduct
                   ) : (
-                    <tr className="text-center">
+                    <tr className="text-center font-semibold text-red-600">
                       <td>Have No Product Search</td>
                     </tr>
                   )}
@@ -262,7 +263,20 @@ const ProductList = () => {
                       dispatch({ type: "prev" });
                     }}
                   >
-                    « Previous
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953l7.108-4.062A1.125 1.125 0 0121 8.688v8.123zM11.25 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953L9.567 7.71a1.125 1.125 0 011.683.977v8.123z"
+                      />
+                    </svg>
                   </span>
                   <span className="sr-only">Previous</span>
                 </button>
@@ -314,14 +328,42 @@ const ProductList = () => {
                   type="button"
                   className="p-2.5 inline-flex items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 >
-                  <span className="sr-only">Next</span>
+                  <span className="sr-only">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062A1.125 1.125 0 013 16.81V8.688zM12.75 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062a1.125 1.125 0 01-1.683-.977V8.688z"
+                      />
+                    </svg>
+                  </span>
                   <span
                     onClick={() => {
                       dispatch({ type: "next" });
                     }}
                     aria-hidden="true"
                   >
-                    Next »
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062A1.125 1.125 0 013 16.81V8.688zM12.75 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062a1.125 1.125 0 01-1.683-.977V8.688z"
+                      />
+                    </svg>
                   </span>
                 </button>
                 <div className="py-1 px-4 text-red-600 end-0 font-semibold">

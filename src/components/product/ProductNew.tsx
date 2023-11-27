@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { CONSTANTS } from "../../utils/constant";
 import { useNavigate } from "react-router-dom";
 import { callAPIFetch } from "../../service/api";
@@ -13,41 +13,58 @@ export default function ProductNew() {
     total: CONSTANTS.EMPTY,
   };
   const [formData, setFormData] = useState(initProduct);
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+    const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-  };
-  function createProduct(e) {
-    console.log(formData);
-
-    e.preventDefault();
-    callAPIFetch(
-      CONSTANTS.URL.DOG,
-      CONSTANTS.METHOD.POST,
-      JSON.stringify(formData)
-    )
-      .then((response: { ok: any; status: any; json: () => any }) => {
-        if (!response.ok && response.status == CONSTANTS.STATUS.NOT_FOUND) {
-          navigate(CONSTANTS.PAGE[404]);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        Swal.fire({
-          title: "Good job!",
-          text: "Update product Success",
-          icon: "success",
-        });
-      })
-      .catch((err) => {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: `Have not data..${err}`,
-        });
-      });
   }
-
+  function createProduct(e) {
+    e.preventDefault();
+    if (validation()) {
+      callAPIFetch(
+        CONSTANTS.URL.DOG,
+        CONSTANTS.METHOD.POST,
+        JSON.stringify(formData)
+      )
+        .then((response: { ok: any; status: any; json: () => any }) => {
+          if (!response.ok && response.status == CONSTANTS.STATUS.NOT_FOUND) {
+            navigate(CONSTANTS.PAGE[404]);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          Swal.fire({
+            title: "Good job!",
+            text: "Update product Success",
+            icon: "success",
+          });
+          resetForm();
+        })
+        .catch((err) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: `Have not data..${err}`,
+          });
+        });
+    }
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: `Data input required All field`,
+    });
+  }
+  //Reset data input
+  function resetForm() {
+    const inputs = document.getElementsByTagName("input");
+    for (const input of inputs) {
+      input.value = "";
+    }
+    document.getElementsByTagName("textarea")[0].value = "";
+  }
+  // Validate simple
+  function validation() {
+    return !Object.values(formData).includes(CONSTANTS.EMPTY);
+  }
   return (
     <>
       {/* <!-- Main modal --> */}

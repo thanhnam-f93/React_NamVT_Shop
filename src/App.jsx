@@ -41,14 +41,14 @@ useEffect(() => {
     <>
       <Routes>
       <Route path="/" element={<Layout />}>
-      <Route path="" element={<ListCountry />}/>
+      <Route path="country" element={<ListCountry />}/>
+      <Route path="country/:id" element={<CountryInfo />}/>
         <Route path="payment" element={<Payment />}/>
         <Route path="product/list" element={<ProductList />}/>
         <Route path="product/new" element={<ProductNew />}/>
         <Route path="product/:id" element={<ProductDetail />}/>
         <Route path="dashboard/statistic" element={<Dashboard />}/>
         <Route path="sale" element={<Sale />}/>
-        <Route path="country" element={<CountryInfo />}/>
       </Route>
       {/* Authentication Page  */}
         <Route exact path="/signin" element={<Signin />} />

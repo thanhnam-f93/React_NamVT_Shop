@@ -8,6 +8,7 @@ export const CONSTANTS = {
     BASE_URL: `http://localhost:3000/`,
     PAGE: {
         PRODUCT: '/product',
+        PRODUCT_LIST: '/product/list',
         PRODUCT_NEW: "product/new",
         SALE: '/sale',
         COUNTRY: '/country',

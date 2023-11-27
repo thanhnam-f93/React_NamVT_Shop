@@ -49,7 +49,7 @@ function Header({ sidebarOpen, setSidebarOpen }) {
                 }`}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setSearchModalOpen(true);
+                  // setSearchModalOpen(true);
                 }}
                 aria-controls="search-modal"
               >

@@ -12,6 +12,10 @@ npm run dev
 ```
 json-server --watch db.json
 ```
+
+#### Login with default username: namvt11 and password: namvt11
+```
+
 #### Compiles and minifies for production
 ```
 npm run build
