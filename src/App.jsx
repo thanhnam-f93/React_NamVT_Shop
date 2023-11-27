@@ -19,11 +19,9 @@ import Error_500 from './pages/erorr-page/Error_500'
 import Dashboard from './pages/dashboard/dashboard';
 import Payment from './components/payment/payment';
 import Sale from './components/sale/Sale';
-import data from "./../db.json";
-import Home from './pages/home/Home';
-import { SortableTable } from './pages/home/Test';
-import Test2 from './pages/home/Test2';
-function App({children}) {
+import CountryInfo from './components/country/CountryInfo';
+import ListCountry from './components/country/ListCountry';
+function App() {
   const location = useLocation()
   const username = localStorage.getItem("username");
   const role = localStorage.getItem("role");
@@ -43,13 +41,14 @@ useEffect(() => {
     <>
       <Routes>
       <Route path="/" element={<Layout />}>
-      <Route path="" element={<Test2 />}/>
+      <Route path="" element={<ListCountry />}/>
         <Route path="payment" element={<Payment />}/>
         <Route path="product/list" element={<ProductList />}/>
         <Route path="product/new" element={<ProductNew />}/>
         <Route path="product/:id" element={<ProductDetail />}/>
         <Route path="dashboard/statistic" element={<Dashboard />}/>
         <Route path="sale" element={<Sale />}/>
+        <Route path="country" element={<CountryInfo />}/>
       </Route>
       {/* Authentication Page  */}
         <Route exact path="/signin" element={<Signin />} />

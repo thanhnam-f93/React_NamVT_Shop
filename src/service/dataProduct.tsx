@@ -1,8 +1,13 @@
 import { CONSTANTS } from "../utils/constant";
 import { callAPIFetch } from "./api";
 
-const getDataProduct = () => {
-  callAPIFetch(CONSTANTS.URL.DOG, CONSTANTS.METHOD.GET, null)
+const getDataProduct = (name: string = "") => {
+  const endpoint = CONSTANTS.URL.DOG + `?name=${name}`;
+  callAPIFetch(
+    name.length != 0 ? endpoint : CONSTANTS.URL.DOG,
+    CONSTANTS.METHOD.GET,
+    null
+  )
     .then((response: { ok: any; status: any; json: () => any }) => {
       if (!response.ok) {
         throw new Error(response.status);
@@ -10,10 +15,10 @@ const getDataProduct = () => {
       return response.json();
     })
     .then((data: string | any[]) => {
-      return { data: data };
+      return data;
     })
     .catch((error: string) => {
-      return { error: error };
+      return error;
     });
 };
 export { getDataProduct };

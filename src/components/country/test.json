@@ -1,200 +1,211 @@
 [
     {
         "name": {
-            "common": "Aruba",
-            "official": "Aruba",
+            "common": "Colombia",
+            "official": "Republic of Colombia",
             "nativeName": {
-                "nld": {
-                    "official": "Aruba",
-                    "common": "Aruba"
-                },
-                "pap": {
-                    "official": "Aruba",
-                    "common": "Aruba"
+                "spa": {
+                    "official": "República de Colombia",
+                    "common": "Colombia"
                 }
             }
         },
         "tld": [
-            ".aw"
+            ".co"
         ],
-        "cca2": "AW",
-        "ccn3": "533",
-        "cca3": "ABW",
-        "cioc": "ARU",
-        "independent": false,
+        "cca2": "CO",
+        "ccn3": "170",
+        "cca3": "COL",
+        "cioc": "COL",
+        "independent": true,
         "status": "officially-assigned",
-        "unMember": false,
+        "unMember": true,
         "currencies": {
-            "AWG": {
-                "name": "Aruban florin",
-                "symbol": "ƒ"
+            "COP": {
+                "name": "Colombian peso",
+                "symbol": "$"
             }
         },
         "idd": {
-            "root": "+2",
+            "root": "+5",
             "suffixes": [
-                "97"
+                "7"
             ]
         },
         "capital": [
-            "Oranjestad"
+            "Bogotá"
         ],
         "altSpellings": [
-            "AW"
+            "CO",
+            "Republic of Colombia",
+            "República de Colombia"
         ],
         "region": "Americas",
-        "subregion": "Caribbean",
+        "subregion": "South America",
         "languages": {
-            "nld": "Dutch",
-            "pap": "Papiamento"
+            "spa": "Spanish"
         },
         "translations": {
             "ara": {
-                "official": "أروبا",
-                "common": "أروبا"
+                "official": "جمهورية كولومبيا",
+                "common": "كولومبيا"
             },
             "bre": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Republik Kolombia",
+                "common": "Kolombia"
             },
             "ces": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Kolumbijská republika",
+                "common": "Kolumbie"
             },
             "cym": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Gweriniaeth Colombia",
+                "common": "Colombia"
             },
             "deu": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Republik Kolumbien",
+                "common": "Kolumbien"
             },
             "est": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Colombia Vabariik",
+                "common": "Colombia"
             },
             "fin": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Kolumbian tasavalta",
+                "common": "Kolumbia"
             },
             "fra": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "République de Colombie",
+                "common": "Colombie"
             },
             "hrv": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Republika Kolumbija",
+                "common": "Kolumbija"
             },
             "hun": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Kolumbiai Köztársaság",
+                "common": "Kolumbia"
             },
             "ita": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Repubblica di Colombia",
+                "common": "Colombia"
             },
             "jpn": {
-                "official": "アルバ",
-                "common": "アルバ"
+                "official": "コロンビア共和国",
+                "common": "コロンビア"
             },
             "kor": {
-                "official": "아루바",
-                "common": "아루바"
+                "official": "콜롬비아 공화국",
+                "common": "콜롬비아"
             },
             "nld": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Republiek Colombia",
+                "common": "Colombia"
             },
             "per": {
-                "official": "آروبا",
-                "common": "آروبا"
+                "official": "جمهوری کلمبیا",
+                "common": "کلمبیا"
             },
             "pol": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Republika Kolumbii",
+                "common": "Kolumbia"
             },
             "por": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "República da Colômbia",
+                "common": "Colômbia"
             },
             "rus": {
-                "official": "Аруба",
-                "common": "Аруба"
+                "official": "Республика Колумбия",
+                "common": "Колумбия"
             },
             "slk": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Kolumbijská republika",
+                "common": "Kolumbia"
             },
             "spa": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "República de Colombia",
+                "common": "Colombia"
             },
             "srp": {
-                "official": "Аруба",
-                "common": "Аруба"
+                "official": "Република Колумбија",
+                "common": "Колумбија"
             },
             "swe": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Republiken Colombia",
+                "common": "Colombia"
             },
             "tur": {
-                "official": "Aruba",
-                "common": "Aruba"
+                "official": "Kolombiya Cumhuriyeti",
+                "common": "Kolombiya"
             },
             "urd": {
-                "official": "اروبا",
-                "common": "اروبا"
+                "official": "جمہوریہ کولمبیا",
+                "common": "کولمبیا"
             },
             "zho": {
-                "official": "阿鲁巴",
-                "common": "阿鲁巴"
+                "official": "哥伦比亚共和国",
+                "common": "哥伦比亚"
             }
         },
         "latlng": [
-            12.5,
-            -69.96666666
+            4.0,
+            -72.0
         ],
         "landlocked": false,
-        "area": 180.0,
+        "borders": [
+            "BRA",
+            "ECU",
+            "PAN",
+            "PER",
+            "VEN"
+        ],
+        "area": 1141748.0,
         "demonyms": {
             "eng": {
-                "f": "Aruban",
-                "m": "Aruban"
+                "f": "Colombian",
+                "m": "Colombian"
             },
             "fra": {
-                "f": "Arubaise",
-                "m": "Arubais"
+                "f": "Colombienne",
+                "m": "Colombien"
             }
         },
-        "flag": "🇦🇼",
+        "flag": "🇨🇴",
         "maps": {
-            "googleMaps": "https://goo.gl/maps/8hopbQqifHAgyZyg8",
-            "openStreetMaps": "https://www.openstreetmap.org/relation/1231749"
+            "googleMaps": "https://goo.gl/maps/zix9qNFX69E9yZ2M6",
+            "openStreetMaps": "https://www.openstreetmap.org/relation/120027"
         },
-        "population": 106766,
-        "fifa": "ARU",
+        "population": 50882884,
+        "gini": {
+            "2019": 51.3
+        },
+        "fifa": "COL",
         "car": {
+            "signs": [
+                "CO"
+            ],
             "side": "right"
         },
         "timezones": [
-            "UTC-04:00"
+            "UTC-05:00"
         ],
         "continents": [
-            "North America"
+            "South America"
         ],
         "flags": {
-            "png": "https://flagcdn.com/w320/aw.png",
-            "svg": "https://flagcdn.com/aw.svg"
+            "png": "https://flagcdn.com/w320/co.png",
+            "svg": "https://flagcdn.com/co.svg",
+            "alt": "The flag of Colombia is composed of three horizontal bands of yellow, blue and red, with the yellow band twice the height of the other two bands."
         },
         "coatOfArms": {
-            "png": "https://mainfacts.com/media/images/coats_of_arms/aw.png",
-            "svg": "https://mainfacts.com/media/images/coats_of_arms/aw.svg"
+            "png": "https://mainfacts.com/media/images/coats_of_arms/co.png",
+            "svg": "https://mainfacts.com/media/images/coats_of_arms/co.svg"
         },
         "startOfWeek": "monday",
         "capitalInfo": {
             "latlng": [
-                12.52,
-                -70.03
+                4.71,
+                -74.07
             ]
         }
     }

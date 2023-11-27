@@ -1,79 +1,161 @@
-import {
-  Card,
-  Input,
-  Checkbox,
-  Button,
-  Typography,
-} from "@material-tailwind/react";
-import React from "react";
+import React, { useState } from "react";
+import { CONSTANTS } from "../../utils/constant";
+import { useNavigate } from "react-router-dom";
+import { callAPIFetch } from "../../service/api";
+import Swal from "sweetalert2";
 export default function ProductNew() {
+  const navigate = useNavigate();
+  const initProduct = {
+    price: CONSTANTS.EMPTY,
+    name: CONSTANTS.EMPTY,
+    image: CONSTANTS.EMPTY,
+    description: CONSTANTS.EMPTY,
+    total: CONSTANTS.EMPTY,
+  };
+  const [formData, setFormData] = useState(initProduct);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  function createProduct(e) {
+    console.log(formData);
+
+    e.preventDefault();
+    callAPIFetch(
+      CONSTANTS.URL.DOG,
+      CONSTANTS.METHOD.POST,
+      JSON.stringify(formData)
+    )
+      .then((response: { ok: any; status: any; json: () => any }) => {
+        if (!response.ok && response.status == CONSTANTS.STATUS.NOT_FOUND) {
+          navigate(CONSTANTS.PAGE[404]);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        Swal.fire({
+          title: "Good job!",
+          text: "Update product Success",
+          icon: "success",
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `Have not data..${err}`,
+        });
+      });
+  }
+
   return (
-    <Card color="transparent" shadow={false}>
-      <Typography variant="h4" color="blue-gray">
-        Sign Up
-      </Typography>
-      <Typography color="gray" className="mt-1 font-normal">
-        Nice to meet you! Enter your details to register.
-      </Typography>
-      <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
-        <div className="mb-1 flex flex-col gap-6">
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
-            Your Name
-          </Typography>
-          <Input
-            size="lg"
-            placeholder="name@mail.com"
-            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-            labelProps={{
-              className: "before:content-none after:content-none",
-            }} crossOrigin={undefined}          />
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
-            Your Email
-          </Typography>
-          <Input
-            size="lg"
-            placeholder="name@mail.com"
-            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-            labelProps={{
-              className: "before:content-none after:content-none",
-            }} crossOrigin={undefined}          />
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
-            Password
-          </Typography>
-          <Input
-            type="password"
-            size="lg"
-            placeholder="********"
-            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-            labelProps={{
-              className: "before:content-none after:content-none",
-            }} crossOrigin={undefined}          />
-        </div>
-        <Checkbox
-          label={<Typography
-            variant="small"
-            color="gray"
-            className="flex items-center font-normal"
-          >
-            I agree the
-            <a
-              href="#"
-              className="font-medium transition-colors hover:text-gray-900"
+    <>
+      {/* <!-- Main modal --> */}
+      <div className="max-w-md mx-auto bg-white p-8 rounded-md shadow-md">
+        <h1 className="text-2xl font-bold mb-6">Create New Product</h1>
+
+        {/* <!-- Product Form --> */}
+        <form>
+          {/* <!-- Product Name --> */}
+          <div className="mb-4">
+            <label
+              htmlFor="productName"
+              className="block text-sm font-medium text-gray-600"
             >
-              &nbsp;Terms and Conditions
-            </a>
-          </Typography>}
-          containerProps={{ className: "-ml-2.5" }} crossOrigin={undefined}        />
-        <Button className="mt-6" fullWidth>
-          sign up
-        </Button>
-        <Typography color="gray" className="mt-4 text-center font-normal">
-          Already have an account?{" "}
-          <a href="#" className="font-medium text-gray-900">
-            Sign In
-          </a>
-        </Typography>
-      </form>
-    </Card>
+              Product Name:
+            </label>
+            <input
+              type="text"
+              id="productName"
+              name="name"
+              className="mt-1 p-2 w-full border rounded-md"
+              defaultValue={formData.name}
+              onChange={handleChange}
+            />
+          </div>
+          {/* <!-- Product Image URL --> */}
+          <div className="mb-4">
+            <label
+              htmlFor="image"
+              className="block text-sm font-medium text-gray-600"
+            >
+              Product Image URL:
+            </label>
+            <input
+              type="text"
+              id="productImage"
+              name="image"
+              className="mt-1 p-2 w-full border rounded-md"
+              defaultValue={formData.image}
+              onChange={handleChange}
+            />
+          </div>
+          {/* <!-- Product Description --> */}
+          <div className="mb-4">
+            <label
+              htmlFor="productDescription"
+              className="block text-sm font-medium text-gray-600"
+            >
+              Product Description:
+            </label>
+            <textarea
+              id="productDescription"
+              name="description"
+              rows={3}
+              className="mt-1 p-2 w-full border rounded-md"
+              defaultValue={formData.description}
+              onChange={handleChange}
+            ></textarea>
+          </div>
+
+          {/* <!-- Product Total --> */}
+          <div className="mb-4">
+            <label
+              htmlFor="productTotal"
+              className="block text-sm font-medium text-gray-600"
+            >
+              Product Total:
+            </label>
+            <input
+              type="number"
+              id="productTotal"
+              name="productTotal"
+              className="mt-1 p-2 w-full border rounded-md"
+              defaultValue={formData.total}
+              onChange={handleChange}
+            />
+          </div>
+
+          {/* <!-- Product Price --> */}
+          <div className="mb-6">
+            <label
+              htmlFor="productPrice"
+              className="block text-sm font-medium text-gray-600"
+            >
+              Product Price:
+            </label>
+            <input
+              type="number"
+              id="productPrice"
+              name="price"
+              className="mt-1 p-2 w-full border rounded-md"
+              defaultValue={formData.price}
+              onChange={handleChange}
+            />
+          </div>
+
+          {/* <!-- Submit Button --> */}
+          <div className="flex justify-end">
+            <button
+              onClick={createProduct}
+              type="submit"
+              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+            >
+              Create Product
+            </button>
+          </div>
+        </form>
+      </div>
+    </>
   );
 }

@@ -76,9 +76,7 @@ const PaymentItem = ({ item, cart, setCart, money, setMoney }) => {
     });
   };
   //
-  const calculatorMoney = (num: number) => {
-    return num * Number(item.price);
-  };
+
   return (
     <>
       <div className="flex flex-col md:flex-row border-b border-gray-400 py-4">

@@ -1,14 +1,6 @@
 {
   "dog": [
     {
-      "price": 84,
-      "name": "Belarus",
-      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202201201336088449.jpg",
-      "description": "Belarus là một giống chó chăn cừu Trung Á, đã tồn tại 2000 năm trước Công Nguyên. Do điều kiện sống khắc nghiệt nên những chú chó này có sức chịu đựng tuyệt vời và một trí thông minh đáng kinh ngạc",
-      "total": 42,
-      "id": "1"
-    },
-    {
       "price": 87,
       "name": "Alaska Malamute",
       "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152123598466.jpg",
@@ -71,14 +63,6 @@
       "description": "Beauceron là giống chó chăn cừu có nguồn gốc từ Pháp. Vì vậy, được gọi là khá giống chó chăn cừu Pháp. Giống chó này có móng đôi đặc biệt ở hai chân sau, một bộ lông ngắn và đuôi khá dài. ",
       "total": 7,
       "id": "10"
-    },
-    {
-      "price": 86,
-      "name": "Briard",
-      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152125528569.jpg",
-      "description": "Briard là giống chó chăn cừu có nguồn gốc từ Pháp. Loài này có bộ lông khá dài, thân hình khỏe mạnh, rất năng động nhưng cũng hiền lành và thân thiện với con người.",
-      "total": 60,
-      "id": "11"
     },
     {
       "price": 37,

@@ -7,7 +7,10 @@ export const CONSTANTS = {
     UNDEFINE: undefined,
     BASE_URL: `http://localhost:3000/`,
     PAGE: {
+        PRODUCT: '/product',
+        PRODUCT_NEW: "product/new",
         SALE: '/sale',
+        COUNTRY: '/country',
         500: '/500',
         404: '/404',
     },

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Transition from "../../utils/Transition";
 
-// import UserAvatar from "../images/user-avatar-32.png";
+import UserAvatar from "../images/user-avatar-32.png";
 
 function DropdownProfile({ align }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -47,14 +47,14 @@ function DropdownProfile({ align }) {
       >
         <img
           className="w-8 h-8 rounded-full"
-          // src={UserAvatar}
+          src="https://lh3.googleusercontent.com/a/ACg8ocKs0QGRwrsLSjNJUfzJjGi5qN6hjokTzGP8PiJqdRr1HYSt=s288-c-no"
           width="32"
           height="32"
           alt="User"
         />
         <div className="flex items-center truncate">
           <span className="truncate ml-2 text-sm font-medium dark:text-slate-300 group-hover:text-slate-800 dark:group-hover:text-slate-200">
-            Acme Inc.
+            NamVT11
           </span>
           <svg
             className="w-3 h-3 shrink-0 ml-1 fill-current text-slate-400"
@@ -85,7 +85,7 @@ function DropdownProfile({ align }) {
         >
           <div className="pt-0.5 pb-2 px-3 mb-1 border-b border-slate-200 dark:border-slate-700">
             <div className="font-medium text-slate-800 dark:text-slate-100">
-              Acme Inc.
+              NamVT11
             </div>
             <div className="text-xs text-slate-500 dark:text-slate-400 italic">
               Administrator
