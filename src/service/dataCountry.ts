@@ -1,36 +1,36 @@
 import { User } from "../model/User";
 import { CONSTANTS } from "../utils/constant";
 import axios from "axios";
-let endpoint = CONSTANTS.URL.COUNTRY;
+const endpoint = CONSTANTS.URL.COUNTRY;
 // COUNTRY: 'https://restcountries.com/v3.1/'
 const callAPICountry = {
     async get_all() {
-        endpoint += 'all';
-        return axios.get(endpoint);
+        const url = endpoint + "all";
+        return axios.get(url);
     },
     async getByName(input: string) {
-        endpoint += `name/${input}`
-        return axios.get(endpoint);
+        const url = endpoint + `name/${input}`
+        return axios.get(url);
     },
     async getByFullname(input: string) {
-        endpoint += `name/${input}?fullText=true`
-        return axios.get(endpoint);
+        const url = endpoint + `name/${input}?fullText=true`
+        return axios.get(url);
     },
     async getByCode(input: string) {
-        endpoint += `alpha/${input}`
-        return axios.get(endpoint);
+        const url = endpoint + `alpha/${input}`
+        return axios.get(url);
     },
     async getByRegion(input: string) {
-        endpoint += `region/${input}`
-        return axios.get(endpoint);
+        const url = endpoint + `region/${input}`
+        return axios.get(url);
     },
     async getBySubregion(input: string) {
-        endpoint += `subregion/${input}`
-        return axios.get(endpoint);
+        const url = endpoint + `subregion/${input}`
+        return axios.get(url);
     },
     async getByLanguage(input: string) {
-        endpoint += `lang/${input}`
-        return axios.get(endpoint);
+        const url = endpoint + `lang/${input}`
+        return axios.get(url);
     },
 
     async add(data: any) {

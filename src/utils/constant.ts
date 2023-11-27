@@ -30,12 +30,13 @@ export const CONSTANTS = {
         GET: 'GET',
         DELETE: 'DELETE'
     },
-
-    NAME: "name",
-    CODE: "alpha",
-    FULL_NAME: "fullname",
-    REGION: "region",
-    SUBREGION: "subregion",
-    LANGUAGE: "lang",
+    RECORD_ON_PAGE: 10,
+    ALL: "Search All",
+    NAME: "Name",
+    CODE: "Code",
+    FULL_NAME: "Full Name",
+    REGION: "Region",
+    SUBREGION: "Subregion",
+    LANGUAGE: "Language",
 
 };
