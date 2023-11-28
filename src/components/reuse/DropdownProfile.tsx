@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Transition from "../../utils/Transition";
-
+import { CONSTANTS } from "../../utils/constant";
 import UserAvatar from "../images/user-avatar-32.png";
 
 function DropdownProfile({ align }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
+  const navigate = useNavigate();
   const trigger = useRef(null);
   const dropdown = useRef(null);
 
@@ -95,8 +95,10 @@ function DropdownProfile({ align }) {
             <li>
               <Link
                 className="font-medium text-sm text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3"
-                to="/settings"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
+                to={CONSTANTS.PAGE.PROFILE}
+                onClick={() => {
+                  setDropdownOpen(!dropdownOpen);
+                }}
               >
                 Settings
               </Link>

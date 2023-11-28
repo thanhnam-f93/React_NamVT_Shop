@@ -15,6 +15,7 @@ export const CONSTANTS = {
         COUNTRY_INFO: '/country/info',
         500: '/500',
         404: '/404',
+        PROFILE: '/profile'
     },
     URL: {
         CART: 'http://localhost:3000/cart/',

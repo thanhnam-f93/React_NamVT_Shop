@@ -21,6 +21,8 @@ import Payment from './components/payment/payment';
 import Sale from './components/sale/Sale';
 import CountryInfo from './components/country/CountryInfo';
 import ListCountry from './components/country/ListCountry';
+import TodoApp from './pages/todo/TodoApp';
+import Profile from './pages/user/Profile'
 function App() {
   const location = useLocation()
   const username = localStorage.getItem("username");
@@ -40,21 +42,29 @@ useEffect(() => {
   return (
     <>
       <Routes>
-      <Route path="/" element={<Layout />}>
-      <Route path="country" element={<ListCountry />}/>
-      <Route path="country/info" element={<CountryInfo />}/>
-        <Route path="payment" element={<Payment />}/>
-        <Route path="product/list" element={<ProductList />}/>
-        <Route path="product/new" element={<ProductNew />}/>
-        <Route path="product/:id" element={<ProductDetail />}/>
-        <Route path="dashboard/statistic" element={<Dashboard />}/>
-        <Route path="sale" element={<Sale />}/>
+        <Route path="/" element={<Layout />}>
+              {/* Authentication Page  */}
+          <Route path="country" element={<ListCountry />}/>
+          <Route path="country/info" element={<CountryInfo />}/>
+              {/* Payment and Sale Page  */}
+          <Route path="sale" element={<Sale />}/>
+          <Route path="payment" element={<Payment />}/>
+              {/* Product Page  */}
+          <Route path="product/list" element={<ProductList />}/>
+          <Route path="product/new" element={<ProductNew />}/>
+          <Route path="product/:id" element={<ProductDetail />}/>
+              {/* Todo Page  */}
+          <Route path="todo" element={<TodoApp />}/>
+              {/* Statistic and Introduct Page  */}
+          <Route path="dashboard/statistic" element={<Dashboard />}/>
       </Route>
-      {/* Authentication Page  */}
+              {/* Authentication Page  */}
         <Route exact path="/signin" element={<Signin />} />
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/reset-password" element={<ResetPass />} />
-        {/* Error Page */}
+                    {/* Setting Page */}
+        <Route exact path="/profile" element={<Profile />} />
+              {/* Error Page */}
         <Route exact path="/404" element={<Error_404 />} />
         <Route exact path="/500" element={<Error_500 />} />
       </Routes>
