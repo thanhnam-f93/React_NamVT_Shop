@@ -80,6 +80,7 @@ const ListCountry = () => {
          Please Input data or Search All`,
         icon: "question",
       });
+
       inputRef.current?.focus();
       inputRef.current.style.backgroundColor = "pink";
       return;
