@@ -209,5 +209,21 @@
       "timeOrder": "20231111",
       "status": ""
     }
+  ],
+  "todo": [
+    {
+      "id": "1",
+      "name": "Redux-Saga",
+      "dateTime": "30/11/2023",
+      "description": "Redux Saga cho phép bạn xử lý logic không đồng bộ một cách có tổ chức trong ứng dụng Redux của bạn.",
+      "status": "completed"
+    },
+    {
+      "id": "2",
+      "name": "Redux-Thunk",
+      "dateTime": "30/01/2023",
+      "description": "Redux Thunk cho phép bạn dispatch các actions không đồng bộ (async actions).",
+      "status": "improgress"
+    }
   ]
 }

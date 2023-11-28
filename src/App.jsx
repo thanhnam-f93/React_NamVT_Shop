@@ -23,15 +23,18 @@ import CountryInfo from './components/country/CountryInfo';
 import ListCountry from './components/country/ListCountry';
 import TodoApp from './pages/todo/TodoApp';
 import Profile from './pages/user/Profile'
+import TestRedux from './pages/todo/TestRedux';
+import { Provider } from 'react-redux';
+import store from './store';
 function App() {
-  const location = useLocation()
-  const username = localStorage.getItem("username");
-  const role = localStorage.getItem("role");
+  const location = useLocation();
+// triggered on route change
   useEffect(() => {
     document.querySelector('html').style.scrollBehavior = 'auto'
     window.scroll({ top: 0 })
     document.querySelector('html').style.scrollBehavior = ''
-  }, [location.pathname]); // triggered on route change
+  }, [location.pathname]); 
+  // Clear data while crash App
 useEffect(() => {
   return () => {
     console.log("Cleanup");
@@ -40,7 +43,7 @@ useEffect(() => {
 }, [])
 
   return (
-    <>
+    < Provider store={store}>
       <Routes>
         <Route path="/" element={<Layout />}>
               {/* Authentication Page  */}
@@ -67,8 +70,10 @@ useEffect(() => {
               {/* Error Page */}
         <Route exact path="/404" element={<Error_404 />} />
         <Route exact path="/500" element={<Error_500 />} />
+        {/*  */}
+        <Route exact path="/test" element={<TestRedux />} />
       </Routes>
-    </>
+    </Provider>
   );
 }
 

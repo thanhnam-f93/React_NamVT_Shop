@@ -33,14 +33,14 @@ function Layout() {
       });
   };
 
-  if (!username?.length) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: `You aren't Login`,
-    });
-    return <Navigate to="/signin" />;
-  }
+  // if (!username?.length) {
+  //   Swal.fire({
+  //     icon: "error",
+  //     title: "Oops...",
+  //     text: `You aren't Login`,
+  //   });
+  //   return <Navigate to="/signin" />;
+  // }
 
   return (
     <CartContext.Provider

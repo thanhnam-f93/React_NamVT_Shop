@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, MutableRefObject } from "react";
 import { Routes, Route, NavLink, useLocation } from "react-router-dom";
 import SidebarLinkGroup from "./SidebarLinkGroup";
 
@@ -6,8 +6,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();
   const { pathname } = location;
 
-  const trigger = useRef(null);
-  const sidebar = useRef(null);
+  const trigger: any = useRef(null);
+  const sidebar: any = useRef(null);
 
   const storedSidebarExpanded = localStorage.getItem("sidebar-expanded");
   const [sidebarExpanded, setSidebarExpanded] = useState(
@@ -41,7 +41,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
   });
 
   useEffect(() => {
-    localStorage.setItem("sidebar-expanded", sidebarExpanded);
+    localStorage.setItem("sidebar-expanded", JSON.stringify(sidebarExpanded));
     if (sidebarExpanded) {
       document.querySelector("body")?.classList.add("sidebar-expanded");
     } else {
@@ -149,7 +149,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 activecondition={
                   pathname === "/" || pathname.includes("dashboard")
                 }
-                children={undefined}
+                // // children={undefined}
               >
                 {(handleClick, open) => {
                   return (
@@ -264,7 +264,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 activecondition={
                   pathname === "/" || pathname.includes("country")
                 }
-                children={undefined}
+                // children={undefined}
               >
                 {(handleClick, open) => {
                   return (
@@ -345,7 +345,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               {/* E-Commerce */}
               <SidebarLinkGroup
                 activecondition={pathname.includes("sale")}
-                children={undefined}
+                // children={undefined}
               >
                 {(handleClick, open) => {
                   return (
@@ -445,7 +445,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               {/* Product */}
               <SidebarLinkGroup
                 activecondition={pathname.includes("product")}
-                children={undefined}
+                // children={undefined}
               >
                 {(handleClick, open) => {
                   return (
@@ -541,7 +541,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               {/* Todo App */}
               <SidebarLinkGroup
                 activecondition={pathname.includes("to")}
-                children={undefined}
+                // children={undefined}
               >
                 {(handleClick, open) => {
                   return (
@@ -612,6 +612,22 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               </span>
                             </NavLink>
                           </li>
+                          <li className="mb-1 last:mb-0">
+                            <NavLink
+                              end
+                              to="/test"
+                              className={({ isActive }) =>
+                                "block transition duration-150 truncate " +
+                                (isActive
+                                  ? "text-indigo-500"
+                                  : "text-slate-400 hover:text-slate-200")
+                              }
+                            >
+                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                Test Redux
+                              </span>
+                            </NavLink>
+                          </li>
                         </ul>
                       </div>
                     </React.Fragment>
@@ -636,7 +652,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             <ul className="mt-3">
               {/* Authentication */}
               <SidebarLinkGroup
-                children={undefined}
+                // children={undefined}
                 activecondition={undefined}
               >
                 {(handleClick, open) => {

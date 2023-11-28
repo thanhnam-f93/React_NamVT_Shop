@@ -15,14 +15,16 @@ export const CONSTANTS = {
         COUNTRY_INFO: '/country/info',
         500: '/500',
         404: '/404',
-        PROFILE: '/profile'
+        PROFILE: '/profile',
+        TODO: "/todo",
     },
     URL: {
         CART: 'http://localhost:3000/cart/',
         DOG: 'http://localhost:3000/dog/',
         USER: 'http://localhost:3000/user/',
         PAYMENT: 'http://localhost:3000/payment',
-        COUNTRY: 'https://restcountries.com/v3.1/'
+        COUNTRY: 'https://restcountries.com/v3.1/',
+        TODO: 'http://localhost:3000/todo'
     },
     STATUS: {
         ERR_SERVER: 500,
