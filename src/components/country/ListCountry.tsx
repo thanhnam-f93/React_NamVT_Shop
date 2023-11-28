@@ -18,9 +18,12 @@ const ListCountry = () => {
   const [searchInput, setSearchInput] = useState("");
   const [dataCountry, setDataCountry] = useState([]);
   const [totalPage, setTotalPage] = useState(1);
-  const inputRef = useRef();
+  const inputRef: any = useRef(null);
   const initialState = { currentPage: 1 };
-  const reducer = (state: { currentPage: number }, action: { type: any }) => {
+  const reducer = (
+    state: { currentPage: number },
+    action: { type: string }
+  ) => {
     switch (action.type) {
       case "next":
         return { currentPage: state.currentPage + 1 };
@@ -77,10 +80,11 @@ const ListCountry = () => {
          Please Input data or Search All`,
         icon: "question",
       });
-      document.getElementById("quantity-input")?.focus();
-
+      inputRef.current?.focus();
+      inputRef.current.style.backgroundColor = "pink";
       return;
     }
+
     getDataConutryOptional(searchBy, searchInput)
       .then((response) => {
         if (
@@ -153,11 +157,16 @@ const ListCountry = () => {
               <div className="relative max-w-xs ">
                 <label className="sr-only">Search</label>
                 <input
+                  ref={inputRef}
                   type="text"
                   name="hs-table-with-pagination-search"
                   id="hs-table-with-pagination-search"
                   className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                   placeholder="Search items"
+                  onClick={() => {
+                    inputRef.current?.focus();
+                    inputRef.current.style.backgroundColor = "white";
+                  }}
                   onChange={handleChange}
                 />
                 <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-3">
@@ -329,7 +338,7 @@ const ListCountry = () => {
                   value={state.currentPage}
                   data-input-counter
                   aria-describedby="helper-text-explanation"
-                  className="relative flex items-center max-w-[3rem] bg-gray-50 border-0 h-11 text-center"
+                  className="relative flex items-center max-w-[3rem] bg-gray-50 border-0 h-11 text-center rounded-full"
                   placeholder="Input page"
                   onChange={(e) => {
                     e.preventDefault();
@@ -388,7 +397,7 @@ const ListCountry = () => {
                     </svg>
                   </span>
                 </button>
-                <div className="py-1 px-4 text-red-600 end-0 font-semibold">
+                <div className="py-1 px-4 text-red-600 end-0 font-semibold ">
                   <span>&nbsp; Record: &nbsp;</span>&nbsp;
                   {(state.currentPage - 1) * 10 + 1} &nbsp;<span>to </span>
                   &nbsp; {state.currentPage * 10}
