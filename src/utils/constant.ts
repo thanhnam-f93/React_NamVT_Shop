@@ -12,6 +12,7 @@ export const CONSTANTS = {
         PRODUCT_NEW: "product/new",
         SALE: '/sale',
         COUNTRY: '/country',
+        COUNTRY_INFO: '/country/info',
         500: '/500',
         404: '/404',
     },

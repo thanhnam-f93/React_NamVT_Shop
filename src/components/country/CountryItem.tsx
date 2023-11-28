@@ -50,7 +50,7 @@ const CountryItem = ({
         <button
           type="button"
           onClick={() => {
-            navigate(CONSTANTS.PAGE.COUNTRY, { state: { name: name } });
+            navigate(CONSTANTS.PAGE.COUNTRY_INFO, { state: { name: name } });
           }}
           className="inline-flex items-center gap-x-2 text-base font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
         >

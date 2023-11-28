@@ -41,7 +41,7 @@ const CountryInfo = () => {
       });
   }, []);
   return (
-    <div className="container mx-auto p-8">
+    <div className="container mx-auto">
       {/* <!-- Country Information Card --> */}
       <div className="bg-white p-6 rounded-md shadow-md">
         <h1 className="text-3xl font-bold mb-4">{data.name}</h1>

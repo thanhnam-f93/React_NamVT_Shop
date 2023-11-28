@@ -42,7 +42,7 @@ useEffect(() => {
       <Routes>
       <Route path="/" element={<Layout />}>
       <Route path="country" element={<ListCountry />}/>
-      <Route path="country/:id" element={<CountryInfo />}/>
+      <Route path="country/info" element={<CountryInfo />}/>
         <Route path="payment" element={<Payment />}/>
         <Route path="product/list" element={<ProductList />}/>
         <Route path="product/new" element={<ProductNew />}/>
