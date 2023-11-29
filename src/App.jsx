@@ -25,7 +25,7 @@ import TodoApp from './pages/todo/TodoApp';
 import Profile from './pages/user/Profile'
 import TestRedux from './pages/todo/TestRedux';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './redux/store';
 function App() {
   const location = useLocation();
 // triggered on route change
@@ -71,7 +71,7 @@ useEffect(() => {
         <Route exact path="/404" element={<Error_404 />} />
         <Route exact path="/500" element={<Error_500 />} />
         {/*  */}
-        <Route exact path="/test" element={<TestRedux />} />
+        <Route exact path="/todo" element={<TodoApp />} />
       </Routes>
     </Provider>
   );

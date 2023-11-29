@@ -6,10 +6,11 @@ import {
   CREATE_DATA,
   DELETE_DATA,
   SAVE_DATA,
-} from "../../utils/actionConstanst";
+} from "../constant/todo";
 
 const initialState = [];
-function dataReducers(state = initialState, payload) {
+function todoReducers(state = initialState, payload) {
+  console.log("Start Reducer");
   switch (payload.type) {
     case SAVE_DATA:
       return {
@@ -17,6 +18,7 @@ function dataReducers(state = initialState, payload) {
         data: payload.data,
       };
     case DATA_REQUEST:
+      console.log("Reducer-DATA_REQUEST");
       return {
         ...state,
         requesting: true,
@@ -37,8 +39,10 @@ function dataReducers(state = initialState, payload) {
         data: payload.data,
       };
     case DATA_SUCCESS:
+      console.log("Reducer-DATA_SUCCESS", payload);
       return {
         ...state,
+        listTodo: payload.data,
         requesting: false,
         success: true,
       };
@@ -53,4 +57,4 @@ function dataReducers(state = initialState, payload) {
       return state;
   }
 }
-export default dataReducers;
+export default todoReducers;

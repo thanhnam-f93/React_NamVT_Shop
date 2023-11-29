@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CartContext, ProductContext } from "./../../data/Context";
+import { CartContext } from "../../context/Context";
 // import ErrorBoundary from "react-error-boundary";
 import { Outlet, useNavigate, Navigate } from "react-router-dom";
 import Sidebar from "../../partials/Sidebar";

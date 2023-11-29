@@ -46,5 +46,8 @@ export const CONSTANTS = {
     REGION: "Region",
     SUBREGION: "Subregion",
     LANGUAGE: "Language",
+    // Define status todo list
+    COMPLETED: "Completed",
+    IMPROGRESS: "Improgress",
 
 };

@@ -5,14 +5,16 @@ const TestRedux = () => {
   //   const store: any = useStore();
   //   console.log("store", store);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const counter = useSelector((state: any) => {
     console.log("state", state);
     return state;
   });
 
   const increment = () => {
-    dispatch({ type: "INCREMENT" });
+    console.log("Actions");
+
+    // dispatch({ type: "INCREMENT" });
   };
 
   return (

@@ -6,24 +6,27 @@ import {
     CREATE_DATA,
     DELETE_DATA,
     SAVE_DATA
-} from '../../utils/actionConstanst'
+} from '../constant/todo'
 
-export const loadData = () => {
-    return {
-        type: DATA_REQUEST
-    }
-}
+export const loadData = () => ({
+    type: DATA_REQUEST,
+});
+
 export const fetchDataSuccess = (data: any) => {
+    console.log("Call Action fetchDataSuccess", data);
+
     return {
         type: DATA_SUCCESS,
-        data: data
-
+        data: data,
+        test: "AHAHAH"
     }
 }
 export const fetchDataFailed = (error: any) => {
+    console.log("Action: fetchDataFailed");
+
     return {
         type: DATA_FAILED,
-        data: {
+        error: {
             error
         }
     }

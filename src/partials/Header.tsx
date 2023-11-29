@@ -5,7 +5,7 @@ import Notifications from "../components/reuse/DropdownNotifications";
 import Help from "../components/reuse/DropdownHelp";
 import UserMenu from "../components/reuse/DropdownProfile";
 import ThemeToggle from "../components/reuse/ThemeToggle";
-import { CartContext } from "../data/Context";
+import { CartContext } from "../context/Context";
 
 function Header({ sidebarOpen, setSidebarOpen }) {
   const [searchModalOpen, setSearchModalOpen] = useState(false);

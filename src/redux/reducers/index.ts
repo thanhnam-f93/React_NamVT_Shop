@@ -1,10 +1,7 @@
 import { combineReducers } from 'redux'
-import dataReducers from './dataReducer'
-
-
+import todoReducers from './todo'
 const reducers = combineReducers({
-    data: dataReducers
-
+    todo: todoReducers
 })
 
 export default (state: any, action: any) => reducers(state, action)

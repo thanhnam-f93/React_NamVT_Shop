@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartContext, ProductContext } from "./../../data/Context";
+import { CartContext, ProductContext } from "../../context/Context";
 import { CONSTANTS } from "../../utils/constant";
 import { callAPIFetch } from "../../service/api";
 import Swal from "sweetalert2";
