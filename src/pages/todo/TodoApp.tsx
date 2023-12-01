@@ -1,32 +1,35 @@
 import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadData } from "../../redux/actions/todo";
+import { fetchCreateData, loadData } from "../../redux/actions/todo";
 import TodoItem from "./TodoItem";
 import { CONSTANTS } from "../../utils/constant";
 import ListboxStatus from "./ListboxStatus";
+import Modal from "../../components/reuse/Modal";
+
 const TodoApp = () => {
   const [searchBy, setSearchBy] = useState(CONSTANTS.ALL);
   // get all data when start page - No search, default page = 1
-  useEffect(() => {
-    // get data Init
-  }, []);
   const dispatch = useDispatch();
   const dataTodo = useSelector((state: any) => {
-    return state.todo;
+    // console.log("Begine state ", state.todo);
+
+    return state.todo.listTodo;
   });
+
   useEffect(() => {
-    console.log("Dispatch Action from view");
     dispatch(loadData());
   }, []);
-  // console.log("State: ", state);
-  const renderTodo = dataTodo.map((item: any, index: number) => {
+
+  const renderTodo = dataTodo?.map((item: any, index: number) => {
     return (
       <TodoItem
         key={index}
-        // index={index}
-        status={item.flags}
+        index={index}
+        id={item.id}
+        status={item.status}
         name={item.name}
-        des={item.des}
+        description={item.description}
+        dateTime={item.dateTime}
       />
     );
   });
@@ -40,8 +43,10 @@ const TodoApp = () => {
               <div className="pl-2">
                 <ListboxStatus setSearchBy={setSearchBy} />
               </div>
+              <div className="pl-2">
+                <button onClick={() => {}}></button>
+              </div>
             </div>
-
             <div className="overflow-hidden">
               <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                 <thead className="bg-gray-50 dark:bg-gray-700">
@@ -57,8 +62,13 @@ const TodoApp = () => {
                           htmlFor="hs-table-pagination-checkbox-all"
                           className="sr-only"
                         ></label>
-                        <p>Status</p>
                       </div>
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-start text-xs font-bold text-gray-500 uppercase"
+                    >
+                      Index
                     </th>
                     <th
                       scope="col"
@@ -71,6 +81,12 @@ const TodoApp = () => {
                       className="px-6 py-3 text-start text-xs font-bold text-gray-500 uppercase"
                     >
                       Time
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-start text-xs font-bold text-gray-500 uppercase"
+                    >
+                      Status
                     </th>
                     <th
                       scope="col"
@@ -89,7 +105,7 @@ const TodoApp = () => {
                 </thead>
 
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                  {dataTodo.length ? (
+                  {dataTodo?.length > 0 ? (
                     renderTodo
                   ) : (
                     <tr className="text-center">
@@ -102,6 +118,7 @@ const TodoApp = () => {
           </div>
         </div>
       </div>
+      <Modal />
     </div>
   );
 };

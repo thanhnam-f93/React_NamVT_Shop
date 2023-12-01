@@ -17,6 +17,7 @@ export const CONSTANTS = {
         404: '/404',
         PROFILE: '/profile',
         TODO: "/todo",
+        MOVIE: "/movie"
     },
     URL: {
         CART: 'http://localhost:3000/cart/',
@@ -24,10 +25,11 @@ export const CONSTANTS = {
         USER: 'http://localhost:3000/user/',
         PAYMENT: 'http://localhost:3000/payment',
         COUNTRY: 'https://restcountries.com/v3.1/',
-        TODO: 'http://localhost:3000/todo'
+        TODO: 'http://localhost:3000/todo/',
+        MOVIE: 'http://localhost:3000/movie/'
     },
     STATUS: {
-        ERR_SERVER: 500,
+        ERR_SERVER: "500",
         NOT_FOUND: 404,
         CREATE: 201,
         OK: 200

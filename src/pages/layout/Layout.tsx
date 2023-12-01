@@ -7,8 +7,10 @@ import Header from "../../partials/Header";
 import WelcomeBanner from "../../partials/dashboard/WelcomeBanner";
 import { CONSTANTS } from "../../utils/constant";
 import { callAPIFetch } from "../../service/api";
-import Swal from "sweetalert2";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCreateData, loadData } from "../../redux/actions/movie";
 function Layout() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [totalCart, setTotalCart] = useState(0);
@@ -16,6 +18,7 @@ function Layout() {
   const role = localStorage.getItem("role");
   useEffect(() => {
     getTotalProduct();
+    dispatch(loadData());
   }, []);
   const getTotalProduct = () => {
     callAPIFetch(CONSTANTS.URL.CART, CONSTANTS.METHOD.GET, null)

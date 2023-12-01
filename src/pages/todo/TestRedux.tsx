@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector, useStore } from "react-redux";
-
+import Modal from "react-modal";
 const TestRedux = () => {
   //   const store: any = useStore();
   //   console.log("store", store);
@@ -11,17 +11,16 @@ const TestRedux = () => {
     return state;
   });
 
-  const increment = () => {
+  const closeModal = () => {
     console.log("Actions");
 
     // dispatch({ type: "INCREMENT" });
   };
 
   return (
-    <div>
-      <p>Counter: {counter}</p>
-      <button onClick={increment}>Increment</button>
-    </div>
+    <>
+      <h1>REUDX-SAGA</h1>
+    </>
   );
 };
 

@@ -24,13 +24,6 @@ const ListBox2 = ({ setSearchBy }) => {
         {opstions.map((option, index) => {
           return <option key={index}>{option}</option>;
         })}
-        {/* <option>Search All</option>
-        <option>Name</option>
-        <option>Code</option>
-        <option>Full Name</option>
-        <option>Region</option>
-        <option>Subregion</option>
-        <option>Language</option> */}
       </select>
     </>
   );

@@ -1,8 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import SearchModal from "../components/reuse/ModalSearch";
-import Notifications from "../components/reuse/DropdownNotifications";
-import Help from "../components/reuse/DropdownHelp";
 import UserMenu from "../components/reuse/DropdownProfile";
 import ThemeToggle from "../components/reuse/ThemeToggle";
 import { CartContext } from "../context/Context";

@@ -20,20 +20,24 @@ export type UpdateTodoAction = {
     data: Todo
 };
 function* loadAllDataTodo() {
-    console.log("Saga - loadAllDataTodo");
+    // console.log("Saga - loadAllDataTodo");
     try {
-        // yield put(loadData());
-        const response = yield callAPITodo.get_all();
-        console.log("from saga", response.data);
+        const response = yield call(callAPITodo.get_all);
         yield put(fetchDataSuccess(response.data));
     } catch (error) {
         yield put(fetchDataFailed(error));
     }
 }
-function* loadDataTodoByStatus({ payload }: { type: string; payload: DeleteTodoAction }) {
+function* loadDataTodoByStatus({ data, type }) {
     try {
         // yield put(loadData());
-        const response = yield callAPITodo.getByStatus(payload.param);
+        let response;
+        if (data == CONSTANTS.ALL) {
+            response = yield call(callAPITodo.get_all);
+        } else {
+            response = yield callAPITodo.getByStatus(data);
+        }
+
         console.log(response.data);
         yield put(fetchDataSuccess(response.data));
     } catch (error) {
@@ -50,29 +54,29 @@ function* createData({ payload }: { type: string; payload: Todo }) {
         yield put(fetchDataFailed(error));
     }
 }
-function* updateData({ payload }: { type: string; payload: UpdateTodoAction }) {
+function* updateData({ data, type }) {
     try {
-        yield put(loadData());
-        const response = yield callAPITodo.update(payload.id, payload.data);
+        const response = yield callAPITodo.update(data.obj, data.id);
         console.log(response.data);
         yield put(fetchDataSuccess(response.data));
     } catch (error) {
         yield put(fetchDataFailed(error));
     }
 }
-function* deleteData({ payload }: { type: string; payload: DeleteTodoAction }) {
+function* deleteData({ data, type }) {
     try {
-        yield put(loadData());
-        const response = yield callAPITodo.delete(payload.param);
-        console.log(response.data);
-        yield put(fetchDataSuccess(response.data));
+        const response = yield call(callAPITodo.delete, data)
+        yield put({ type: taskTypesData.DATA_REQUEST })
+
     } catch (error) {
+        console.log("error deleteData", error);
+
         yield put(fetchDataFailed(error));
     }
 }
 
 function* menuSaga() {
-    console.log("Call menuSaga");
+
 
     yield takeEvery(taskTypesData.DATA_REQUEST, loadAllDataTodo);
     yield takeEvery(taskTypesData.DATA_REQUEST_BY, loadDataTodoByStatus);

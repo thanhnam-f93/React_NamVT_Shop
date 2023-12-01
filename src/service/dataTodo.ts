@@ -15,10 +15,11 @@ const callAPITodo = {
         return await axios.post(endpoint, data);
     },
     async update(id: string, data: any) {
-        return await axios.put(`${endpoint}/${id}`, data);
+        return await axios.put(`${endpoint}${id}`, data);
     },
     async delete(id: string) {
-        return await axios.delete(`${endpoint}/${id}`);
+        console.log("Call Delete ", id);
+        return await axios.delete(`${endpoint}${id}`);
     },
 };
 export { callAPITodo }

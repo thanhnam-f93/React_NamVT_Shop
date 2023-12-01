@@ -26,6 +26,9 @@ import Profile from './pages/user/Profile'
 import TestRedux from './pages/todo/TestRedux';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import ListMovie from './components/movie/ListMovie';
+import NewMovie from './components/movie/NewMovie';
+import Movie from './components/movie/Movie';
 function App() {
   const location = useLocation();
 // triggered on route change
@@ -46,7 +49,11 @@ useEffect(() => {
     < Provider store={store}>
       <Routes>
         <Route path="/" element={<Layout />}>
-              {/* Authentication Page  */}
+                  {/* Movie Page  */}
+          <Route path="movie/list" element={<ListMovie />}/>
+          <Route path="movie/new" element={<NewMovie />}/>
+          <Route path="movie/:id" element={<Movie />}/>
+              {/* Country Page  */}
           <Route path="country" element={<ListCountry />}/>
           <Route path="country/info" element={<CountryInfo />}/>
               {/* Payment and Sale Page  */}
@@ -58,6 +65,7 @@ useEffect(() => {
           <Route path="product/:id" element={<ProductDetail />}/>
               {/* Todo Page  */}
           <Route path="todo" element={<TodoApp />}/>
+          <Route exact path="/test" element={<Movie />} />
               {/* Statistic and Introduct Page  */}
           <Route path="dashboard/statistic" element={<Dashboard />}/>
       </Route>
@@ -71,7 +79,8 @@ useEffect(() => {
         <Route exact path="/404" element={<Error_404 />} />
         <Route exact path="/500" element={<Error_500 />} />
         {/*  */}
-        <Route exact path="/todo" element={<TodoApp />} />
+
+ 
       </Routes>
     </Provider>
   );
