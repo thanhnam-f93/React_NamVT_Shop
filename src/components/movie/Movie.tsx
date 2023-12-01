@@ -1,27 +1,28 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Movie = ({ imdbRating, runtime, quality, year, title, poster }) => {
+const Movie = (movie) => {
+  const scrollTop = () => {
+    const top = document.getElementById("top");
+    top?.scrollIntoView();
+  };
   return (
     <>
       <li>
         <div className="movie-card">
-          <NavLink to="play">
+          <NavLink to="detail" state={movie}>
             <figure className="card-banner">
-              <img src={poster} alt={title} />
+              <img src={movie.poster} alt={movie.title} />
             </figure>
           </NavLink>
 
           <div className="title-wrapper">
-            <NavLink to="detail">
-              <h3 className="card-title">{title}</h3>
-            </NavLink>
-
-            <time dateTime="2022">{year}</time>
+            <h3 className="card-title">{movie.title}</h3>
+            <time dateTime="2022">{movie.year}</time>
           </div>
 
           <div className="card-meta">
-            <div className="badge badge-outline">{quality}</div>
+            <div className="badge badge-outline">{movie.quality}</div>
 
             <div className="duration">
               <svg
@@ -39,7 +40,7 @@ const Movie = ({ imdbRating, runtime, quality, year, title, poster }) => {
                 />
               </svg>
 
-              <time dateTime="PT104M">{runtime}</time>
+              <time dateTime="PT104M">{movie.runtime}</time>
             </div>
 
             <div className="rating">
@@ -55,7 +56,7 @@ const Movie = ({ imdbRating, runtime, quality, year, title, poster }) => {
                 />
               </svg>
 
-              <data>{imdbRating}</data>
+              <data>{movie.imdbRating}</data>
             </div>
           </div>
         </div>

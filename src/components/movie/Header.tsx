@@ -1,7 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <>
       <header className="header" data-header>
@@ -17,7 +18,12 @@ const Header = () => {
           </a>
 
           <div className="header-actions">
-            <button className="search-btn ">
+            <button
+              className="search-btn "
+              onClick={() => {
+                navigate("/");
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -33,9 +39,14 @@ const Header = () => {
                 />
               </svg>
             </button>
-            <span className="font-bold text-white">Management</span>
+            <NavLink to="/">
+              <span className="font-bold text-white">Management</span>
+            </NavLink>
+
             {/*  */}
-            <button className="btn btn-primary">Sign in</button>
+            <NavLink to="/signin">
+              <button className="btn btn-primary">Sign in</button>
+            </NavLink>
           </div>
 
           <button className="menu-open-btn" data-menu-open-btn>
@@ -79,18 +90,15 @@ const Header = () => {
 
             <ul className="navbar-list">
               <li>
-                <NavLink to="/" className="navbar-link">
+                <NavLink to="/movie-play/slide" className="navbar-link">
                   <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                     Home
                   </span>
                 </NavLink>
-                {/* <a href="./index.html" className="navbar-link">
-                  Home
-                </a> */}
               </li>
 
               <li>
-                <NavLink to="/" className="navbar-link">
+                <NavLink to="/movie-play/slide" className="navbar-link">
                   <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                     Movie
                   </span>
@@ -98,23 +106,23 @@ const Header = () => {
               </li>
 
               <li>
-                <NavLink to="/" className="navbar-link">
+                <NavLink to="/movie" className="navbar-link">
                   <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                    Tv Show
+                    Manage
                   </span>
                 </NavLink>
               </li>
 
               <li>
-                <NavLink to="/" className="navbar-link">
+                <NavLink to="/dashboard/statistic" className="navbar-link">
                   <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                    Web Series
+                    Statistic
                   </span>
                 </NavLink>
               </li>
 
               <li>
-                <NavLink to="/" className="navbar-link">
+                <NavLink to="/pricing" className="navbar-link">
                   <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                     Pricing
                   </span>

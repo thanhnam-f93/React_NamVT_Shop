@@ -10,17 +10,7 @@ const ListMovie = () => {
   }, []);
 
   const renderMovie = allMovie?.map((movie, index) => {
-    return (
-      <Movie
-        key={index}
-        imdbRating={movie.imdbRating}
-        runtime={movie.runtime}
-        quality={movie.quality}
-        year={movie.year}
-        title={movie.title}
-        poster={movie.poster}
-      />
-    );
+    return <Movie key={index} {...movie} />;
   });
   const renderMovieField = (
     <h1 className="bg-red-600 font-bold">Network Error </h1>

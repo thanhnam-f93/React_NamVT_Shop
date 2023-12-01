@@ -28,6 +28,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import ListMoviePlay from './components/movie/ListMoviePlay';
 import Home from './components/movie/Home'; 
+import PriceMovie from './components/movie/PriceMovie'; 
 import NewMovie from './components/movie/NewMovie';
 import MovieManagement from './components/movie/MovieManagement';
 import Movie from './components/movie/Movie';
@@ -40,6 +41,8 @@ function App() {
     document.querySelector('html').style.scrollBehavior = 'auto'
     window.scroll({ top: 0 })
     document.querySelector('html').style.scrollBehavior = ''
+    const s = document.getElementById("top");
+    s.scrollIntoView()
   }, [location.pathname]); 
   // Clear data while crash App
 useEffect(() => {
@@ -56,6 +59,7 @@ useEffect(() => {
                   {/* Movie Page  */}
           <Route path="movie" element={<MovieManagement />}/>
           <Route path="movie/new" element={<NewMovie />}/>
+          <Route path="movie/price" element={<PriceMovie />}/>
           <Route path="movie/:id" element={<Movie />}/>
               {/* Country Page  */}
           <Route path="country" element={<ListCountry />}/>
@@ -74,7 +78,7 @@ useEffect(() => {
           <Route path="dashboard/statistic" element={<Dashboard />}/>
       </Route>
       <Route path="movie-play" element={<Home />}>
-          <Route path="silde" element={<Silde />}/>
+          <Route path="slide" element={<Silde />}/>
           <Route path="detail" element={<DetailMovie />}/>
       </Route>
               {/* Authentication Page  */}

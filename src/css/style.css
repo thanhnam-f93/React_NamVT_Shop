@@ -988,8 +988,8 @@ body.active { overflow: hidden; }
 
 .detail-subtitle {
   font-size: var(--fs-5);
-  color: var(--citrine);
-  font-weight: var(--fw-700);
+  color: var(--white);
+  font-weight: var(--fw-600);
   margin-bottom: 10px;
 }
 
