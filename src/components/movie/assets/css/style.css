@@ -221,7 +221,7 @@ body.active { overflow: hidden; }
 }
 
 .date-time ion-icon {
-  --ionicon-stroke-width: 50px;
+  --ionicon-strokeWidth: 50px;
   color: var(--citrine);
 }
 
@@ -340,7 +340,7 @@ body.active { overflow: hidden; }
 
 .movie-card :is(.duration, .rating) ion-icon {
   font-size: 13px;
-  --ionicon-stroke-width: 50px;
+  --ionicon-strokeWidth: 50px;
   color: var(--citrine);
 }
 
@@ -441,7 +441,7 @@ body.active { overflow: hidden; }
   padding: 5px;
 }
 
-.menu-close-btn ion-icon { --ionicon-stroke-width: 80px; }
+.menu-close-btn ion-icon { --ionicon-strokeWidth: 80px; }
 
 .navbar-list {
   border-top: 1px solid hsla(0, 0%, 100%, 0.1);
@@ -1208,7 +1208,7 @@ body.active { overflow: hidden; }
     color: var(--white);
   }
 
-  .search-btn ion-icon { --ionicon-stroke-width: 80px; }
+  .search-btn ion-icon { --ionicon-strokeWidth: 80px; }
 
   .search-btn::after {
     content: "";

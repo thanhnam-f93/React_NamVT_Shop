@@ -1,20 +1,21 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Movie = ({ imdbRating, runtime, quality, year, title, poster }) => {
   return (
     <>
       <li>
         <div className="movie-card">
-          <a href="./movie-details.html">
+          <NavLink to="play">
             <figure className="card-banner">
               <img src={poster} alt={title} />
             </figure>
-          </a>
+          </NavLink>
 
           <div className="title-wrapper">
-            <a href="./movie-details.html">
+            <NavLink to="detail">
               <h3 className="card-title">{title}</h3>
-            </a>
+            </NavLink>
 
             <time dateTime="2022">{year}</time>
           </div>
@@ -25,24 +26,16 @@ const Movie = ({ imdbRating, runtime, quality, year, title, poster }) => {
             <div className="duration">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="512"
-                height="512"
-                viewBox="0 0 512 512"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
               >
                 <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-miterlimit="10"
-                  stroke-width="32"
-                  d="M256 64C150 64 64 150 64 256s86 192 192 192s192-86 192-192S362 64 256 64Z"
-                />
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                  d="M256 128v144h96"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
 

@@ -26,9 +26,13 @@ import Profile from './pages/user/Profile'
 import TestRedux from './pages/todo/TestRedux';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import ListMovie from './components/movie/ListMovie';
+import ListMoviePlay from './components/movie/ListMoviePlay';
+import Home from './components/movie/Home'; 
 import NewMovie from './components/movie/NewMovie';
+import MovieManagement from './components/movie/MovieManagement';
 import Movie from './components/movie/Movie';
+import Silde from './components/movie/Silde';
+import DetailMovie from './components/movie/DetailMovie';
 function App() {
   const location = useLocation();
 // triggered on route change
@@ -50,7 +54,7 @@ useEffect(() => {
       <Routes>
         <Route path="/" element={<Layout />}>
                   {/* Movie Page  */}
-          <Route path="movie/list" element={<ListMovie />}/>
+          <Route path="movie" element={<MovieManagement />}/>
           <Route path="movie/new" element={<NewMovie />}/>
           <Route path="movie/:id" element={<Movie />}/>
               {/* Country Page  */}
@@ -60,14 +64,18 @@ useEffect(() => {
           <Route path="sale" element={<Sale />}/>
           <Route path="payment" element={<Payment />}/>
               {/* Product Page  */}
-          <Route path="product/list" element={<ProductList />}/>
+          <Route path="product" element={<ProductList />}/>
           <Route path="product/new" element={<ProductNew />}/>
           <Route path="product/:id" element={<ProductDetail />}/>
               {/* Todo Page  */}
           <Route path="todo" element={<TodoApp />}/>
-          <Route exact path="/test" element={<Movie />} />
+          <Route exact path="/test" element={<TestRedux />} />
               {/* Statistic and Introduct Page  */}
           <Route path="dashboard/statistic" element={<Dashboard />}/>
+      </Route>
+      <Route path="movie-play" element={<Home />}>
+          <Route path="silde" element={<Silde />}/>
+          <Route path="detail" element={<DetailMovie />}/>
       </Route>
               {/* Authentication Page  */}
         <Route exact path="/signin" element={<Signin />} />
@@ -78,6 +86,7 @@ useEffect(() => {
               {/* Error Page */}
         <Route exact path="/404" element={<Error_404 />} />
         <Route exact path="/500" element={<Error_500 />} />
+       
         {/*  */}
 
  
