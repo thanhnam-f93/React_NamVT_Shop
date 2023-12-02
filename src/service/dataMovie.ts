@@ -57,6 +57,10 @@ const callAPIMovie = {
         const url = endpoint + `imdbVotes/${input}`
         return axios.get(url);
     },
+    async getLasted(input: string) {
+        const url = endpoint + `?_sort=year&_order=desc&_limit=${input}`
+        return axios.get(url);
+    },
     async add(data: any) {
         return await axios.post(endpoint, data);
     },

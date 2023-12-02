@@ -90,7 +90,7 @@ const Header = () => {
 
             <ul className="navbar-list">
               <li>
-                <NavLink to="/movie-play/slide" className="navbar-link">
+                <NavLink to="/movie-play" className="navbar-link">
                   <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                     Home
                   </span>
@@ -98,7 +98,7 @@ const Header = () => {
               </li>
 
               <li>
-                <NavLink to="/movie-play/slide" className="navbar-link">
+                <NavLink to="/movie-play" className="navbar-link">
                   <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                     Movie
                   </span>

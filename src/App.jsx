@@ -34,15 +34,20 @@ import MovieManagement from './components/movie/MovieManagement';
 import Movie from './components/movie/Movie';
 import Silde from './components/movie/Silde';
 import DetailMovie from './components/movie/DetailMovie';
+import { useDispatch, useSelector } from "react-redux";
 function App() {
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(loadData());
+  // }, []);
   const location = useLocation();
 // triggered on route change
   useEffect(() => {
     document.querySelector('html').style.scrollBehavior = 'auto'
     window.scroll({ top: 0 })
     document.querySelector('html').style.scrollBehavior = ''
-    const s = document.getElementById("top");
-    s.scrollIntoView()
+    // const s = document.getElementById("top");
+    // s?.scrollIntoView()
   }, [location.pathname]); 
   // Clear data while crash App
 useEffect(() => {
@@ -78,7 +83,7 @@ useEffect(() => {
           <Route path="dashboard/statistic" element={<Dashboard />}/>
       </Route>
       <Route path="movie-play" element={<Home />}>
-          <Route path="slide" element={<Silde />}/>
+          <Route path="" element={<Silde />}/>
           <Route path="detail" element={<DetailMovie />}/>
       </Route>
               {/* Authentication Page  */}

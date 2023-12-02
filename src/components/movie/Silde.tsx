@@ -1,84 +1,102 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCreateData, loadData } from "../../redux/actions/movie";
+import SildeItem from "./SildeItem";
+import { movie } from "../../../db.json";
 const Silde = () => {
+  // http://localhost:3000/movie?_sort=year&_order=desc&_limit=5
+  // const dispatch = useDispatch();
+  // const slides = useSelector((state: any) => state.movie.listMovie)
+
+  const slides = movie.filter((movie) => movie.comingSoon);
+
+  const renderSlide = slides.map((item, index) => {
+    return <SildeItem key={index} {...item} />;
+  });
+  //
+  const [index, setIndex] = useState(0);
+
+  const delay = 3000;
+  useEffect(() => {
+    setTimeout(
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+        ),
+      delay
+    );
+
+    return () => {};
+  }, [index]);
+
   return (
-    <>
-      <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <p className="hero-subtitle">Filmlane</p>
+    // <div className="slideshow"> Old Code
+    <div className="slideshow">
+      <div
+        className="slideshowSlider"
+        style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+      >
+        {renderSlide}
+      </div>
 
-            <h1 className="h1 hero-title">
-              Unlimited <strong>Movie</strong>, TVs Shows, & More.
-            </h1>
+      <div className="slideshowDots">
+        {slides.map((_, idx) => (
+          <div
+            key={idx}
+            className={`slideshowDot${index === idx ? " active" : ""}`}
+          ></div>
+        ))}
+      </div>
+    </div>
 
-            <div className="meta-wrapper">
-              <div className="badge-wrapper">
-                <div className="badge badge-fill">PG 18</div>
+    // <>
+    //   {" "}
+    //   <section className="hero">
+    //     <div className="container">
+    //       <div className="hero-content">
+    //         <p className="hero-subtitle">Filmlane</p>
 
-                <div className="badge badge-outline">HD</div>
-              </div>
+    //         <h1 className="h1 hero-title">
+    //           Unlimited <strong>Movie</strong>, TVs Shows, & More.
+    //         </h1>
 
-              <div className="ganre-wrapper">
-                <a href="#">Romance,</a>
+    //         <div className="meta-wrapper">
+    //           <div className="badge-wrapper">
+    //             <div className="badge badge-fill">PG 18</div>
 
-                <a href="#">Drama</a>
-              </div>
+    //             <div className="badge badge-outline">HD</div>
+    //           </div>
 
-              <div className="date-time">
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z"
-                    />
-                  </svg>
+    //           <div className="ganre-wrapper">
+    //             <a href="#">Romance,</a>
 
-                  <time dateTime="2022">2022</time>
-                </div>
+    //             <a href="#">Drama</a>
+    //           </div>
 
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z"
-                    />
-                  </svg>
+    //           <div className="date-time">
+    //             <div>
+    //               {/* <ion-icon name="calendar-outline"></ion-icon> */}
 
-                  <time dateTime="PT128M">128 min</time>
-                </div>
-              </div>
-            </div>
+    //               <time dateTime="2022">2022</time>
+    //             </div>
 
-            <button className="btn btn-primary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z"
-                />
-              </svg>
+    //             <div>
+    //               {/* <ion-icon name="time-outline"></ion-icon> */}
 
-              <span>Watch now</span>
-            </button>
-          </div>
-        </div>
-      </section>
-    </>
+    //               <time dateTime="PT128M">128 min</time>
+    //             </div>
+    //           </div>
+    //         </div>
+
+    //         <button className="btn btn-primary">
+    //           {/* <ion-icon name="play"></ion-icon> */}
+
+    //           <span>Watch now</span>
+    //         </button>
+    //       </div>
+    //     </div>
+    //   </section>
+    // </>
   );
 };
 

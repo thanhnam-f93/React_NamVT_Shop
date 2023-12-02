@@ -28,6 +28,20 @@ function* loadAllDataMovie() {
     }
 }
 
+function* loadMovieLasted() {
+    // console.log("Saga - loadAllDataMovie");
+    try {
+
+        const response = yield call(callAPIMovie.get_all);
+
+        console.log("response", response);
+        yield put(fetchDataSuccess(response.data));
+    } catch (error) {
+
+        yield put(fetchDataFailed(error));
+    }
+}
+
 function* createData({ payload }: { type: string; payload: Movie }) {
     try {
         yield put(loadData());
@@ -61,6 +75,7 @@ function* deleteData({ data, type }) {
 
 function* menuSaga() {
     yield takeEvery(taskTypesData.MOVIE_REQUEST, loadAllDataMovie);
+    yield takeEvery(taskTypesData.MOVIE_REQUEST_LASTED, loadMovieLasted);
     yield takeEvery(taskTypesData.UPDATE_DATA, updateData);
     yield takeEvery(taskTypesData.DELETE_DATA, deleteData);
     yield takeEvery(taskTypesData.CREATE_DATA, createData);

@@ -4,10 +4,11 @@ import { Link, useLocation } from "react-router-dom";
 const DetailMovie = () => {
   const location = useLocation();
   const movie = location.state;
+  // console.log(movie);
+
   // list category of movie
   const category = movie.genre.split(",");
   //
-
   return (
     <>
       <section className="movie-detail">
