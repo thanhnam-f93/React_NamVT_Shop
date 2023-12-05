@@ -6,14 +6,16 @@ import {
   CREATE_DATA,
   DELETE_DATA,
   SAVE_DATA,
-  TODO_MODAL_HANDLER,
-  TODO_DISPLAY
+  OPEN_MOVIE,
+  CLOSE_MOVIE
 } from "../constant/movie";
 
-const initialState = {};
+const initialState = { disPlay: "none" };
 function movieReducers(state = initialState, payload) {
-  // console.log("Start Reducer Movie", payload);
+  console.log("Start  payload movieReducers", payload);
+  console.log("Start state movieReducers", state);
   switch (payload.type) {
+
     case SAVE_DATA:
       return {
         ...state,
@@ -56,7 +58,16 @@ function movieReducers(state = initialState, payload) {
         success: false,
         message: payload.message,
       };
-
+    case OPEN_MOVIE:
+      return {
+        ...state,
+        disPlay: "block"
+      };
+    case CLOSE_MOVIE:
+      return {
+        ...state,
+        disPlay: "none"
+      };
     default:
       return state;
   }

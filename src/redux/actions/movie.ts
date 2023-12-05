@@ -7,8 +7,9 @@ import {
     DELETE_DATA,
     SAVE_DATA,
     TODO_MODAL_HANDLER,
-    TODO_DISPLAY,
-    DATA_REQUEST_BY
+    CLOSE_MOVIE,
+    DATA_REQUEST_BY,
+    OPEN_MOVIE
 } from '../constant/movie'
 
 export const loadData = () => ({
@@ -62,15 +63,14 @@ export const fetchDeleteData = (id: string) => {
         data: id
     }
 }
-export const todoModalHandler = () => {
+export const openVideo = () => {
     return {
-        type: TODO_MODAL_HANDLER,
+        type: OPEN_MOVIE,
+    }
+}
+export const closeVideo = () => {
+    return {
+        type: CLOSE_MOVIE,
     }
 }
 
-export const setTodoDisplay = (data) => {
-    return {
-        type: TODO_DISPLAY,
-        todoModal: data
-    }
-}

@@ -16,7 +16,7 @@ const Silde = () => {
   //
   const [index, setIndex] = useState(0);
 
-  const delay = 3000;
+  const delay = 6000;
   useEffect(() => {
     setTimeout(
       () =>
@@ -30,7 +30,6 @@ const Silde = () => {
   }, [index]);
 
   return (
-    // <div className="slideshow"> Old Code
     <div className="slideshow">
       <div
         className="slideshowSlider"

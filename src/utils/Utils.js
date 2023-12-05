@@ -27,3 +27,8 @@ export const formatValue = (value) => Intl.NumberFormat('en-US', {
   maximumSignificantDigits: 3,
   notation: 'compact',
 }).format(value);
+
+export const scrollTop = () => {
+  const top = document.getElementById("top");
+  top?.scrollIntoView();
+}

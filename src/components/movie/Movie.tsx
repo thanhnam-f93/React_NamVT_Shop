@@ -1,15 +1,20 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { closeVideo, loadData } from "../../redux/actions/movie";
+import { scrollTop } from "../../utils/Utils";
 
 const Movie = (movie) => {
-  const scrollTop = () => {
-    const top = document.getElementById("top");
-    top?.scrollIntoView();
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(closeVideo());
+    scrollTop();
   };
+
   return (
     <>
       <li>
-        <div className="movie-card">
+        <div className="movie-card" onClick={handleClick}>
           <NavLink to="detail" state={movie}>
             <figure className="card-banner">
               <img src={movie.poster} alt={movie.title} />

@@ -28,9 +28,9 @@ const Silde = (movie) => {
                   </div>
 
                   <div className="ganre-wrapper">
-                    <a href="#">Romance,</a>
+                    {/* <a href="#">Romance,</a>
 
-                    <a href="#">Drama</a>
+                    <a href="#">Drama</a> */}
                   </div>
 
                   <div className="date-time">

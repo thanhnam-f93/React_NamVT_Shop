@@ -4,7 +4,11 @@ import { NavLink } from "react-router-dom";
 const ScrollTop = () => {
   return (
     <>
-      <NavLink to="#top" className="go-top" data-go-top>
+      <NavLink
+        className="go-top"
+        onClick={() => document.getElementById("top")?.scrollIntoView()}
+        to={""}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

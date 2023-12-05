@@ -3,7 +3,7 @@ import React from "react";
 const NewMovie = () => {
   return (
     <>
-      <body id="top">
+      <body id="topm">
         {/* - #HEADER */}
 
         <header className="header" data-header>
@@ -765,7 +765,7 @@ const NewMovie = () => {
           <div className="footer-bottom">
             <div className="container">
               <p className="copyright">
-                &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+                &copy; 2022 <a href="#">Movie Center</a>. All Rights Reserved
               </p>
 
               <img

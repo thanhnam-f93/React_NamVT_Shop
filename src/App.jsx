@@ -23,7 +23,7 @@ import CountryInfo from './components/country/CountryInfo';
 import ListCountry from './components/country/ListCountry';
 import TodoApp from './pages/todo/TodoApp';
 import Profile from './pages/user/Profile'
-import TestRedux from './pages/todo/TestRedux';
+import SearchBar from './pages/todo/SearchBar';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import ListMoviePlay from './components/movie/ListMoviePlay';
@@ -34,6 +34,7 @@ import MovieManagement from './components/movie/MovieManagement';
 import Movie from './components/movie/Movie';
 import Silde from './components/movie/Silde';
 import DetailMovie from './components/movie/DetailMovie';
+import Start from './components/quiz/Start'
 import { useDispatch, useSelector } from "react-redux";
 function App() {
   // const dispatch = useDispatch();
@@ -52,7 +53,6 @@ function App() {
   // Clear data while crash App
 useEffect(() => {
   return () => {
-    console.log("Cleanup");
     localStorage.clear();
   }
 }, [])
@@ -78,7 +78,7 @@ useEffect(() => {
           <Route path="product/:id" element={<ProductDetail />}/>
               {/* Todo Page  */}
           <Route path="todo" element={<TodoApp />}/>
-          <Route exact path="/test" element={<TestRedux />} />
+          <Route exact path="/test" element={<SearchBar />} />
               {/* Statistic and Introduct Page  */}
           <Route path="dashboard/statistic" element={<Dashboard />}/>
       </Route>
@@ -96,9 +96,9 @@ useEffect(() => {
         <Route exact path="/404" element={<Error_404 />} />
         <Route exact path="/500" element={<Error_500 />} />
        
-        {/*  */}
+        {/* Quiz */}
 
- 
+        <Route exact path="/quiz" element={<Start  />} />
       </Routes>
     </Provider>
   );
