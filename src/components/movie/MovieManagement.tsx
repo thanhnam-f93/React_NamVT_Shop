@@ -12,8 +12,19 @@ import CountryItem from "../../components/country/CountryItem";
 import { AxiosError, AxiosResponse } from "axios";
 import { Country } from "../../model/Country";
 import Swal from "sweetalert2";
-
+import { callAPIMovie } from "../../service/dataMovie";
+import MovieItem from "./MovieItem";
+import SearchInput from "./component/SearchInput";
+import SortComponent from "./component/SortComponent";
+import "./../../scss/_sort.scss";
+import SearchBar from "../../pages/todo/SearchBar";
 const MovieManagement = () => {
+  // const [sortByYear, setSortByYear] = useState("");
+  // const [sortByIDMB, setSortByIDMB] = useState("");
+  // const [sortByTime, setSortByTime] = useState("");
+  const [data, setData] = useState([]); // Your data array
+  const [sort, handleSort] = useState("");
+  const [sortByName, setSortByName] = useState();
   const [searchBy, setSearchBy] = useState(CONSTANTS.ALL);
   const [searchInput, setSearchInput] = useState("");
   const [dataCountry, setDataCountry] = useState([]);
@@ -68,7 +79,7 @@ const MovieManagement = () => {
       case CONSTANTS.LANGUAGE:
         return callAPICountry.getByLanguage(searchInput);
       default:
-        return callAPICountry.get_all();
+        return callAPIMovie.get_all();
     }
   };
   // call API throught axios
@@ -95,25 +106,24 @@ const MovieManagement = () => {
         ) {
           let allDataCountry = response.data.map((object: any) => {
             return {
-              flags: object.flags.png,
-              name: object.name.official,
-              code: object.cca2,
-              region: object.region,
-              subregion: object.subregion,
-              languages: object.languages,
-              population: object.population,
+              poster: object.poster,
+              title: object.title,
+              country: object.country,
+              year: object.year,
+              rated: object.rated,
+              imdbRating: object.imdbRating,
+              runtime: object.runtime,
             };
           });
+          console.log(allDataCountry);
+          let totalRecord = response.headers["x-total-count"];
           let oldOffset =
             (Number(state.currentPage) - 1) * CONSTANTS.RECORD_ON_PAGE;
           let newOffset = state.currentPage * CONSTANTS.RECORD_ON_PAGE;
 
-          let dataDisplay = allDataCountry
-            .slice(oldOffset, newOffset)
-            .map((item: any) => {
-              return { ...item, languages: Object.values(item.languages)[0] };
-            });
-          setTotalPage(Math.ceil(allDataCountry.length / 10));
+          let dataDisplay = allDataCountry.slice(oldOffset, newOffset);
+
+          setTotalPage(Math.ceil(totalRecord / 10));
           setDataCountry(dataDisplay);
         } else if (CONSTANTS.STATUS.NOT_FOUND == response.status) {
           throw new Error("Have not data..");
@@ -123,7 +133,7 @@ const MovieManagement = () => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: `Have not data..`,
+          text: `Have not data..${err}`,
         });
       });
   };
@@ -133,18 +143,18 @@ const MovieManagement = () => {
     callAPI(searchBy, searchInput);
   };
   // List country on page - default 10 record:
-  const renderCountry = dataCountry.map((item: Country, index: number) => {
+  const renderCountry = dataCountry.map((item: any, index: any) => {
     return (
-      <CountryItem
+      <MovieItem
         key={index}
         index={index}
-        flags={item.flags}
-        name={item.name}
-        code={item.code}
-        region={item.region}
-        subregion={item.subregion}
-        languages={item.languages}
-        population={item.population}
+        image={item.poster}
+        name={item.title}
+        country={item.country}
+        year={item.year}
+        rated={item.rated}
+        idmb={item.imdbRating}
+        time={item.runtime}
       />
     );
   });
@@ -217,6 +227,7 @@ const MovieManagement = () => {
               </div>
             </div>
 
+            <SearchBar />
             <div className="overflow-hidden">
               <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                 <thead className="bg-gray-50 dark:bg-gray-700">
@@ -239,49 +250,73 @@ const MovieManagement = () => {
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-bold text-gray-500 uppercase"
                     >
-                      Flag
+                      Image
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-bold text-gray-500 uppercase"
                     >
-                      Name
+                      <div className="inline-flex">
+                        <p className="header-sort">Name</p>
+                        <SortComponent
+                          sortOrder={sortByName}
+                          setSortOder={setSortByName}
+                        />
+                      </div>
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-bold text-gray-500 uppercase"
                     >
-                      Code
+                      <p className="header-sort">Country</p>
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-bold text-gray-500 uppercase"
                     >
-                      Region
+                      <div className="inline-flex">
+                        <p className="header-sort">Year</p>
+                        {/* <SortComponent
+                          sortOrder={sortByYear}
+                          setSortOder={setSortByYear}
+                        /> */}
+                      </div>
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-bold text-gray-500 uppercase"
                     >
-                      Subregion
+                      <p className="header-sort">Rated</p>
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-bold text-gray-500 uppercase"
                     >
-                      Language
+                      <div className="inline-flex">
+                        <p className="header-sort">IDMB</p>
+                        {/* <SortComponent
+                          sortOrder={sortByIDMB}
+                          setSortOder={setSortByIDMB}
+                        /> */}
+                      </div>
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-bold text-gray-500 uppercase"
                     >
-                      Pupulation
+                      <div className="inline-flex">
+                        <p className="header-sort">Time</p>
+                        {/* <SortComponent
+                          sortOrder={sortByTime}
+                          setSortOder={setSortByTime}
+                        /> */}
+                      </div>
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-start text-xs font-bold text-gray-500 uppercase"
                     >
-                      Action
+                      <p className="header-sort">Action </p>
                     </th>
                   </tr>
                 </thead>
@@ -291,7 +326,7 @@ const MovieManagement = () => {
                     renderCountry
                   ) : (
                     <tr className="text-center">
-                      <td>No Country</td>
+                      <td>No Movie Find</td>
                     </tr>
                   )}
                 </tbody>

@@ -88,6 +88,7 @@ const ListCountry = () => {
 
     getDataConutryOptional(searchBy, searchInput)
       .then((response) => {
+        console.log("get Total", response);
         if (
           [CONSTANTS.STATUS.CREATE, CONSTANTS.STATUS.OK].includes(
             response.status

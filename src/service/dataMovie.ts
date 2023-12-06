@@ -30,7 +30,8 @@ const callAPIMovie = {
             })
     },
     async get_all() {
-        const url = endpoint;
+        // const url = endpoint;
+        const url = endpoint + "?_page=1&_limit=10"
         return axios.get(url);
     },
     async getByTitle(input: string) {

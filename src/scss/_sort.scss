@@ -1,0 +1,35 @@
+.rotate180 {
+    transform: rotate(180deg);
+  }
+
+  .bgR {
+    background-color: red;
+  }
+  
+  /* SortComponent.css */
+
+.sort-button {
+  // margin-right: 5px;
+  background-color: #fff;
+  // border: 1px solid #ddd;
+  // padding: 5px 10px;
+  padding-top: 0px;
+  cursor: pointer;
+}
+
+.sort-button.active {
+  background-color: antiquewhite;
+}
+
+/* Add more styles based on your design preferences */
+.group-sort {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  font-size: smaller
+}
+
+p.header-sort {
+font-weight: bold;
+  }
+

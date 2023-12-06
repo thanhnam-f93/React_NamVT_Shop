@@ -1,8 +1,14 @@
 import React from "react";
 
-const RadioStatus = () => {
+const RadioStatus = ({ dataSearch, setDataSearch }) => {
+  const onOptionChange = (e: { target: { value: any } }) => {
+    setDataSearch({ ...dataSearch, comingSoon: e.target.value });
+  };
   return (
     <div className="col-span-2 px-2">
+      <label htmlFor="radioInput" className="pl-5">
+        {"Status"}
+      </label>
       <div className="flex justify-center">
         <div className="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
           <input
@@ -10,7 +16,9 @@ const RadioStatus = () => {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio1"
-            value="option1"
+            value="true"
+            checked={dataSearch.comingSoon == "true"}
+            onChange={onOptionChange}
           />
           <label
             className="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
@@ -26,7 +34,9 @@ const RadioStatus = () => {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio2"
-            value="option2"
+            value="false"
+            checked={dataSearch.comingSoon == "false"}
+            onChange={onOptionChange}
           />
           <label
             className="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"

@@ -2,14 +2,16 @@ import React, { useEffect, useState } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
-const RangeYear = () => {
+const RangeYear = ({ dataSearch, setDataSearch }) => {
   const [rangeValues, setRangeValues] = useState([1900, 2024]);
 
   const handleRangeChange = (values) => {
     setRangeValues(values);
+    setDataSearch({ ...dataSearch, year: values });
   };
   return (
     <div className="row-span-full">
+      <label htmlFor="rangeInput">{"Release"}</label>
       <Slider
         className="col-span-6"
         range
@@ -22,7 +24,7 @@ const RangeYear = () => {
 
       <div className="row-span-full">
         <p>
-          <strong>Year Release:</strong> {rangeValues[0]} - {rangeValues[1]}
+          Range Year: {rangeValues[0]} - {rangeValues[1]}
         </p>
       </div>
     </div>
