@@ -517,7 +517,7 @@ body.active { overflow: hidden; }
 
 .hero-title { margin-bottom: 30px; }
 
-.hero-title > strong { color: var(--citrine); }
+.hero-title > strong { color: white }
 
 
 
@@ -1611,7 +1611,7 @@ body.active { overflow: hidden; }
 
 .slide {
   display: inline-block;
-  height: 650px;
+  /* height: 650px; */
   width: 100%;
   border-radius: 40px;
 }

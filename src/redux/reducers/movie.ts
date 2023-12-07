@@ -8,7 +8,9 @@ import {
   SAVE_DATA,
   OPEN_MOVIE,
   CLOSE_MOVIE,
-  MOVIE_REQUEST_BY
+  MOVIE_REQUEST_BY,
+  MOVIE_REQUEST_COMINGSOON,
+  DATA_COMING_SUCCESS
 } from "../constant/movie";
 
 const initialState = { disPlay: "none" };
@@ -22,6 +24,12 @@ function movieReducers(state = initialState, payload) {
         data: payload.data,
       };
     case MOVIE_REQUEST:
+      // console.log("Reducer-DATA_REQUEST");
+      return {
+        ...state,
+        requesting: true,
+      };
+    case MOVIE_REQUEST_COMINGSOON:
       // console.log("Reducer-DATA_REQUEST");
       return {
         ...state,
@@ -49,10 +57,19 @@ function movieReducers(state = initialState, payload) {
         data: payload.data,
       };
     case DATA_SUCCESS:
-
       return {
         ...state,
         listMovie: payload.data.movies,
+        totalPage: payload.data.totalPage,
+        requesting: false,
+        success: true,
+        modalDisplay: false
+      };
+    case DATA_COMING_SUCCESS:
+      console.log("Start  payload movieReducers payload", payload);
+      return {
+        ...state,
+        movieComing: payload.data.movies,
         totalPage: payload.data.totalPage,
         requesting: false,
         success: true,

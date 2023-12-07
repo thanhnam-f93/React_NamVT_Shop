@@ -8,7 +8,10 @@ import {
     SAVE_DATA,
     CLOSE_MOVIE,
     OPEN_MOVIE,
-    MOVIE_REQUEST_BY
+    MOVIE_REQUEST_BY,
+    MOVIE_REQUEST_COMINGSOON,
+    ADD_CART,
+    DATA_COMING_SUCCESS
 } from '../constant/movie'
 
 export const loadData = () => ({
@@ -20,12 +23,23 @@ export const loadDataBy = (input: any) => {
         data: input
     }
 };
-
+export const loadMovieComingSoon = () => {
+    return {
+        type: MOVIE_REQUEST_COMINGSOON,
+    }
+};
 
 export const fetchDataSuccess = (movies: any, totalPage) => {
     console.log("Action: fetchDataSuccess", movies);
     return {
         type: DATA_SUCCESS,
+        data: { movies, totalPage }
+    }
+}
+export const fetchComingSuccess = (movies: any, totalPage) => {
+    console.log("Action: fetchComingSuccess", movies);
+    return {
+        type: DATA_COMING_SUCCESS,
         data: { movies, totalPage }
     }
 }
@@ -73,4 +87,9 @@ export const closeVideo = () => {
         type: CLOSE_MOVIE,
     }
 }
-
+export const addCart = (data) => {
+    return {
+        type: ADD_CART,
+        data: data
+    }
+}

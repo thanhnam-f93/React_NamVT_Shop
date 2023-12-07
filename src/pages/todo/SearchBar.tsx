@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { createRef, useEffect, useRef, useState } from "react";
 import "rc-slider/assets/index.css";
 import { CONSTANTS } from "../../utils/constant";
 import RadioStatus from "../../components/movie/component/RadioStatus";
@@ -7,13 +7,23 @@ import Dropdown from "../../components/movie/component/Dropdown";
 import SearchInput from "../../components/movie/component/SearchInput";
 import { useDispatch } from "react-redux";
 import { loadDataBy } from "../../redux/actions/movie";
+import { optionsSearch, opstionsRated } from "../../utils/data";
+import Swal from "sweetalert2";
 const SearchBar = ({ dataSearch, setDataSearch }) => {
-  const optionsSearch = ["All", "Name", "Country", "Director", "Actors"];
-  const opstionsRated = ["All", "PG-13", "R", "TV-MA", "TV-14", "N/A"];
-  // const [dataSearch, setDataSearch] = useState({});
   const dispatch = useDispatch();
   const handleSubmit = () => {
     console.log("Data Collect: ", dataSearch);
+    if (dataSearch.typeSearch && !dataSearch.textInput) {
+      Swal.fire({
+        title: "Mission?",
+        text: `You chossed search with - ${dataSearch.typeSearch} 
+             .Please provide data input`,
+        icon: "question",
+      });
+
+      return;
+    }
+
     dispatch(loadDataBy(dataSearch));
   };
   return (

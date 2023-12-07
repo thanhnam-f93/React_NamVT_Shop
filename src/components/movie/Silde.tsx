@@ -38,14 +38,14 @@ const Silde = () => {
         {renderSlide}
       </div>
 
-      <div className="slideshowDots">
+      {/* <div className="slideshowDots">
         {slides.map((_, idx) => (
           <div
             key={idx}
             className={`slideshowDot${index === idx ? " active" : ""}`}
           ></div>
         ))}
-      </div>
+      </div> */}
     </div>
 
     // <>

@@ -26,7 +26,8 @@ export const CONSTANTS = {
         PAYMENT: 'http://localhost:3000/payment',
         COUNTRY: 'https://restcountries.com/v3.1/',
         TODO: 'http://localhost:3000/todo/',
-        MOVIE: 'http://localhost:3000/movie/'
+        MOVIE: 'http://localhost:3000/movie/',
+        MOVIE_CART: 'http://localhost:3000/movie-cart/'
     },
     STATUS: {
         ERR_SERVER: "500",

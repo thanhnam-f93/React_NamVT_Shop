@@ -1,18 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import Video from "./Video";
 import { useDispatch, useSelector } from "react-redux";
-import { openVideo } from "../../redux/actions/movie";
+import { addCart, openVideo } from "../../redux/actions/movie";
+import Swal from "sweetalert2";
 
 const DetailMovie = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const movie = location.state;
   const disPlay = useSelector((state: any) => state.movie.disPlay);
-  console.log("display movie state", disPlay);
-
+  const error = useSelector((state: any) => state.movie.error);
+  useEffect(() => {
+    if (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `Have not data..${error}`,
+      });
+    }
+  }, [error]);
   // list category of movie
   const category = movie.genre.split(",");
+  function addMovieCart() {
+    const movieCart = {
+      movieId: movie.id,
+      userId: localStorage.getItem("userId"),
+      image: movie.poster,
+      name: movie.title,
+      price: movie.price,
+      total: 1,
+    };
+    dispatch(addCart(movieCart));
+  }
+
   //
   return (
     <>
@@ -42,20 +63,6 @@ const DetailMovie = () => {
           </figure>
 
           <div className="movie-detail-content grid-flow-row-dense grid-cols-10">
-            {/* <div className="col-span-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24"
-                width="27"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  fill="#ebd700"
-                  d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-                />
-              </svg>
-            </div> */}
-
             <p className="detail-subtitle col-span-9">
               {[movie.imdbRating, movie.imdbVotes].includes("N/A")
                 ? "Comming Soon"
@@ -172,13 +179,7 @@ const DetailMovie = () => {
                   <path fill="#fafcff" d="M384 256L0 32V480L384 256z" />
                 </svg>
 
-                <span
-                  onClick={() => {
-                    dispatch(openVideo());
-                  }}
-                >
-                  Watch Now
-                </span>
+                <span onClick={addMovieCart}>Buy Now</span>
               </button>
             </div>
             <a

@@ -6,7 +6,8 @@ import {
     saveDataInfo,
     fetchCreateData,
     fetchUpdateData,
-    fetchDeleteData
+    fetchDeleteData,
+    fetchComingSuccess
 } from "../actions/movie";
 import { Movie } from "../../model/Movie"
 import * as taskTypesData from "../constant/movie"
@@ -44,7 +45,34 @@ function* loadMovieBy(input: any) {
         yield put(fetchDataFailed(error));
     }
 }
+function* loadMovieComingSoon(input: any) {
+    // console.log("Saga - loadAllDataMovie");
+    try {
 
+        const response = yield call(callAPIMovie.getMovieComingSoon);
+        // let totalRecord = response.headers["x-total-count"];
+        // let totalPage = Math.ceil(totalRecord / 10);
+        console.log("response loadMovieComingSoon", response);
+        yield put(fetchComingSuccess(response.data, 1));
+    } catch (error) {
+
+        yield put(fetchDataFailed(error));
+    }
+}
+function* addCart(input: any) {
+    // console.log("Saga - loadAllDataMovie");
+    try {
+
+        // const response = yield call(callAPIMovie.getMovieComingSoon);
+        // let totalRecord = response.headers["x-total-count"];
+        // let totalPage = Math.ceil(totalRecord / 10);
+        // console.log("response loadMovieComingSoon", response);
+        // yield put(fetchComingSuccess(response.data, 1));
+    } catch (error) {
+
+        yield put(fetchDataFailed(error));
+    }
+}
 function* createData({ payload }: { type: string; payload: Movie }) {
     try {
         yield put(loadData());
@@ -79,7 +107,8 @@ function* deleteData({ data, type }) {
 function* menuSaga() {
     yield takeEvery(taskTypesData.MOVIE_REQUEST, loadAllDataMovie);
     yield takeEvery(taskTypesData.MOVIE_REQUEST_BY, loadMovieBy)
-    // yield takeEvery(taskTypesData.MOVIE_REQUEST_LASTED, loadMovieLasted);
+    yield takeEvery(taskTypesData.MOVIE_REQUEST_COMINGSOON, loadMovieComingSoon);
+    yield takeEvery(taskTypesData.ADD_CART, addCart);
     yield takeEvery(taskTypesData.UPDATE_DATA, updateData);
     yield takeEvery(taskTypesData.DELETE_DATA, deleteData);
     yield takeEvery(taskTypesData.CREATE_DATA, createData);

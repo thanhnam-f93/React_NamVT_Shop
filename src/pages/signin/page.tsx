@@ -68,6 +68,8 @@ export default function SignIn() {
       .then((data) => {
         if (data.length > 0) {
           localStorage.setItem("username", data[0].username);
+          localStorage.setItem("userId", data[0].id);
+          localStorage.setItem("role", data[0].role);
           Swal.fire({
             position: "center",
             icon: "success",

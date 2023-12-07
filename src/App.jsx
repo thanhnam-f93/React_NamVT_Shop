@@ -42,6 +42,7 @@ function App() {
   //   dispatch(loadData());
   // }, []);
   const location = useLocation();
+  const role = localStorage.getItem("role");
 // triggered on route change
   useEffect(() => {
     document.querySelector('html').style.scrollBehavior = 'auto'
@@ -56,7 +57,14 @@ useEffect(() => {
     localStorage.clear();
   }
 }, [])
-
+  if (!username?.length) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: `You aren't Login`,
+    });
+    return <Navigate to="/signin" />;
+  }
   return (
     < Provider store={store}>
       <Routes>

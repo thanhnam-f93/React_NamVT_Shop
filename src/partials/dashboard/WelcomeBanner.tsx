@@ -71,7 +71,9 @@ function WelcomeBanner() {
         <h1 className="text-2xl md:text-3xl text-slate-800 dark:text-slate-100 font-bold mb-1">
           Wellcome to my Shop. 👋
         </h1>
-        <p className="dark:text-indigo-200">Here is where The best dog sale:</p>
+        <p className="dark:text-indigo-200">
+          Here is where of the best Product:
+        </p>
         <div className="flex items-center justify-center"></div>
       </div>
     </div>

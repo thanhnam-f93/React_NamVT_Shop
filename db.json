@@ -177,6 +177,35 @@
       "total": 0
     }
   ],
+  "cart-movie": [
+    {
+      "id": "1",
+      "movieId": "3",
+      "userId": "1",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152124145823.jpg",
+      "name": "Chó ngao Anh",
+      "price": 28,
+      "total": 0
+    },
+    {
+      "id": "2",
+      "movieId": "2",
+      "userId": "1",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152123598466.jpg",
+      "name": "Alaska Malamute",
+      "price": 87,
+      "total": 0
+    },
+    {
+      "id": "3",
+      "movieId": "5",
+      "userId": "1",
+      "image": "https://cdn.tgdd.vn/Files/2021/04/15/1343704/tong-hop-31-giong-cho-tren-the-gioi-202104152124270120.jpg",
+      "name": "Dogo Argentino",
+      "price": 97,
+      "total": 0
+    }
+  ],
   "user": [
     {
       "id": "1",
@@ -187,7 +216,7 @@
       "age": 28,
       "addres": "Ha Noi",
       "gender": "Male",
-      "role": true
+      "role": "1"
     },
     {
       "id": "2",
@@ -198,7 +227,7 @@
       "age": 17,
       "addres": "Hai Phong",
       "gender": "Female",
-      "role": true
+      "role": "2"
     }
   ],
   "payment": [
@@ -242,6 +271,8 @@
   ],
   "movie": [
     {
+      "id": "1",
+      "price": "22",
       "comingSoon": false,
       "title": "Avatar",
       "year": "2009",
@@ -273,6 +304,8 @@
       "quality": "8K"
     },
     {
+      "id": "2",
+      "price": "27",
       "comingSoon": false,
       "title": "I Am Legend",
       "year": "2007",
@@ -303,6 +336,8 @@
       "quality": "2K"
     },
     {
+      "id": "3",
+      "price": "62",
       "comingSoon": false,
       "title": "300",
       "year": "2006",
@@ -332,6 +367,8 @@
       "quality": "FULL HD"
     },
     {
+      "id": "4",
+      "price": "212",
       "comingSoon": false,
       "title": "The Avengers",
       "year": "2012",
@@ -363,6 +400,8 @@
       "quality": "8K"
     },
     {
+      "id": "5",
+      "price": "12",
       "comingSoon": false,
       "title": "The Wolf of Wall Street",
       "year": "2013",
@@ -394,6 +433,8 @@
       "quality": "HD"
     },
     {
+      "id": "6",
+      "price": "272",
       "comingSoon": false,
       "title": "Interstellar",
       "year": "2014",
@@ -425,9 +466,11 @@
       "quality": "2K"
     },
     {
+      "id": "7",
+      "price": "59",
       "comingSoon": false,
       "title": "Game of Thrones",
-      "year": "2011–",
+      "year": "2011",
       "rated": "TV-MA",
       "released": "17 Apr 2011",
       "runtime": "56 min",
@@ -457,9 +500,11 @@
       "quality": "SD"
     },
     {
+      "id": "8",
+      "price": "70",
       "comingSoon": false,
       "title": "Vikings",
-      "year": "2013–",
+      "year": "2013",
       "rated": "TV-14",
       "released": "03 Mar 2013",
       "runtime": "44 min",
@@ -489,9 +534,11 @@
       "quality": "4K"
     },
     {
+      "id": "9",
+      "price": "119",
       "comingSoon": false,
       "title": "Gotham",
-      "year": "2014–",
+      "year": "2014",
       "rated": "TV-14",
       "released": "01 Aug 2014",
       "runtime": "42 min",
@@ -521,9 +568,11 @@
       "quality": "3D"
     },
     {
+      "id": "10",
+      "price": "422",
       "comingSoon": false,
       "title": "Power",
-      "year": "2014–",
+      "year": "2014",
       "rated": "TV-MA",
       "released": "N/A",
       "runtime": "50 min",
@@ -553,9 +602,11 @@
       "quality": "HD"
     },
     {
+      "id": "11",
+      "price": "58",
       "comingSoon": false,
       "title": "Narcos",
-      "year": "2015–",
+      "year": "2015",
       "rated": "TV-MA",
       "released": "28 Aug 2015",
       "runtime": "49 min",
@@ -585,9 +636,11 @@
       "quality": "2K"
     },
     {
+      "id": "12",
+      "price": "658",
       "comingSoon": false,
       "title": "Breaking Bad",
-      "year": "2008–2013",
+      "year": "2022",
       "rated": "TV-14",
       "released": "20 Jan 2008",
       "runtime": "49 min",
@@ -617,6 +670,8 @@
       "quality": "FUll HD"
     },
     {
+      "id": "13",
+      "price": "221",
       "comingSoon": true,
       "title": "Doctor Strange",
       "year": "2016",
@@ -646,6 +701,8 @@
       "quality": "HD"
     },
     {
+      "id": "14",
+      "price": "194",
       "comingSoon": true,
       "title": "Rogue One: A Star Wars Story",
       "year": "2016",
@@ -660,7 +717,7 @@
       "language": "English",
       "country": "USA",
       "awards": "1 nomination.",
-      "poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjQyMzI2OTA3OF5BMl5BanBnXkFtZTgwNDg5NjQ0OTE@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
+      "poster": "https://upload.wikimedia.org/wikipedia/en/d/d4/Rogue_One%2C_A_Star_Wars_Story_poster.png",
       "metascore": "N/A",
       "imdbRating": "N/A",
       "imdbVotes": "N/A",
@@ -677,6 +734,8 @@
       "quality": "HD"
     },
     {
+      "id": "15",
+      "price": "220",
       "comingSoon": true,
       "title": "Assassin's Creed",
       "year": "2016",
@@ -707,9 +766,11 @@
       "quality": "I-MAX"
     },
     {
+      "id": "16",
+      "price": "336",
       "comingSoon": true,
       "title": "Luke Cage",
-      "year": "2016–",
+      "year": "2024",
       "rated": "TV-MA",
       "released": "30 Sep 2016",
       "runtime": "55 min",
