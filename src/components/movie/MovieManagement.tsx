@@ -14,235 +14,76 @@ import { Country } from "../../model/Country";
 import Swal from "sweetalert2";
 import { callAPIMovie } from "../../service/dataMovie";
 import MovieItem from "./MovieItem";
-import SearchInput from "./component/SearchInput";
 import SortComponent from "./component/SortComponent";
 import "./../../scss/_sort.scss";
 import SearchBar from "../../pages/todo/SearchBar";
+import { useDispatch, useSelector } from "react-redux";
+import { loadData, loadDataBy } from "../../redux/actions/movie";
 const MovieManagement = () => {
   // const [sortByYear, setSortByYear] = useState("");
   // const [sortByIDMB, setSortByIDMB] = useState("");
   // const [sortByTime, setSortByTime] = useState("");
-  const [data, setData] = useState([]); // Your data array
-  const [sort, handleSort] = useState("");
-  const [sortByName, setSortByName] = useState();
-  const [searchBy, setSearchBy] = useState(CONSTANTS.ALL);
-  const [searchInput, setSearchInput] = useState("");
-  const [dataCountry, setDataCountry] = useState([]);
-  const [totalPage, setTotalPage] = useState(1);
-  const inputRef: any = useRef(null);
-  const initialState = { currentPage: 1 };
-  const reducer = (
-    state: { currentPage: number },
-    action: { type: string }
-  ) => {
-    switch (action.type) {
-      case "next":
-        return { currentPage: state.currentPage + 1 };
-      case "prev":
-        return { currentPage: state.currentPage - 1 };
-      case "goto":
-        return { currentPage: state.currentPage };
-      default:
-        return initialState;
-    }
-  };
-  const [state, dispatch] = useReducer(reducer, initialState);
-  function handleChange(event: ChangeEvent<HTMLInputElement>): void {
-    // event.preventDefault();
-    let input = event.target.value;
-    setSearchInput(input);
-  }
-  // get all data when start page - No search, default page = 1
+  const [dataSearch, setDataSearch] = useState({ gotoPage: 1 });
+  const [currentPage, setCurrentPage] = useState(1);
+  const dispatch = useDispatch();
   useEffect(() => {
-    callAPI(CONSTANTS.EMPTY, CONSTANTS.ALL);
+    dispatch(loadDataBy(dataSearch));
   }, []);
-  // upate data when input data search or next page
+
+  const allMovie = useSelector((state: any) => state.movie.listMovie);
+  const totalPage = useSelector((state: any) => state.movie.totalPage);
+  const error = useSelector((state: any) => state.movie.error);
   useEffect(() => {
-    callAPI(searchBy, searchInput);
-  }, [state.currentPage]);
-  // Action call API flow condition setting on form search
-  const getDataConutryOptional = (
-    searchBy: string = CONSTANTS.EMPTY,
-    searchInput: string = CONSTANTS.EMPTY
-  ) => {
-    switch (searchBy) {
-      case CONSTANTS.NAME:
-        return callAPICountry.getByName(searchInput);
-      case CONSTANTS.CODE:
-        return callAPICountry.getByCode(searchInput);
-      case CONSTANTS.FULL_NAME:
-        return callAPICountry.getByFullname(searchInput);
-      case CONSTANTS.REGION:
-        return callAPICountry.getByRegion(searchInput);
-      case CONSTANTS.SUBREGION:
-        return callAPICountry.getBySubregion(searchInput);
-      case CONSTANTS.LANGUAGE:
-        return callAPICountry.getByLanguage(searchInput);
-      default:
-        return callAPIMovie.get_all();
-    }
-  };
-  // call API throught axios
-  const callAPI = (searchBy: string, searchInput: string) => {
-    if (searchBy != CONSTANTS.ALL && searchInput == CONSTANTS.EMPTY) {
+    if (error) {
       Swal.fire({
-        title: "Mission?",
-        text: `You choossed category \n
-         Please Input data or Search All`,
-        icon: "question",
+        icon: "error",
+        title: "Oops...",
+        text: `Have not data..${error}`,
       });
-
-      inputRef.current?.focus();
-      inputRef.current.style.backgroundColor = "pink";
-      return;
     }
+    // return () => {
+    //   second;
+    // };
+  }, [error]);
 
-    getDataConutryOptional(searchBy, searchInput)
-      .then((response) => {
-        if (
-          [CONSTANTS.STATUS.CREATE, CONSTANTS.STATUS.OK].includes(
-            response.status
-          )
-        ) {
-          let allDataCountry = response.data.map((object: any) => {
-            return {
-              poster: object.poster,
-              title: object.title,
-              country: object.country,
-              year: object.year,
-              rated: object.rated,
-              imdbRating: object.imdbRating,
-              runtime: object.runtime,
-            };
-          });
-          console.log(allDataCountry);
-          let totalRecord = response.headers["x-total-count"];
-          let oldOffset =
-            (Number(state.currentPage) - 1) * CONSTANTS.RECORD_ON_PAGE;
-          let newOffset = state.currentPage * CONSTANTS.RECORD_ON_PAGE;
-
-          let dataDisplay = allDataCountry.slice(oldOffset, newOffset);
-
-          setTotalPage(Math.ceil(totalRecord / 10));
-          setDataCountry(dataDisplay);
-        } else if (CONSTANTS.STATUS.NOT_FOUND == response.status) {
-          throw new Error("Have not data..");
-        }
-      })
-      .catch((err) => {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: `Have not data..${err}`,
-        });
-      });
-  };
-  //Action Search
-  const searchCountry = () => {
-    state.currentPage = 1;
-    callAPI(searchBy, searchInput);
-  };
+  // console.log("allMovie: ", allMovie);
   // List country on page - default 10 record:
-  const renderCountry = dataCountry.map((item: any, index: any) => {
-    return (
-      <MovieItem
-        key={index}
-        index={index}
-        image={item.poster}
-        name={item.title}
-        country={item.country}
-        year={item.year}
-        rated={item.rated}
-        idmb={item.imdbRating}
-        time={item.runtime}
-      />
-    );
+  const renderCountry = allMovie?.map((movie: any, index: any) => {
+    return <MovieItem key={index} movie={movie} index={index} />;
   });
+  const renderMovieField = (
+    <tr className="text-green-600 font-bold">
+      <td>Loading ...</td>
+    </tr>
+  );
+  const [sortByName, setSortByName] = useState();
+
+  const inputRef: any = useRef(null);
+
+  async function next() {
+    setCurrentPage(currentPage + 1);
+    setDataSearch({
+      ...dataSearch,
+      gotoPage: currentPage,
+    });
+    console.log("Get current", currentPage);
+
+    dispatch(loadDataBy(dataSearch));
+  }
+
   // Render GUI:
   return (
     <div className="flex flex-col">
       <div className="-m-1.5 overflow-x-auto">
         <div className="p-1.5 min-w-full inline-block align-middle">
           <div className="border rounded-lg divide-y divide-gray-200 dark:border-gray-700 dark:divide-gray-700">
-            <div className="py-3 px-4 inline-flex">
-              <div className="relative max-w-xs ">
-                <label className="sr-only">Search</label>
-                <input
-                  ref={inputRef}
-                  type="text"
-                  name="hs-table-with-pagination-search"
-                  id="hs-table-with-pagination-search"
-                  className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                  placeholder="Search items"
-                  onClick={() => {
-                    inputRef.current?.focus();
-                    inputRef.current.style.backgroundColor = "white";
-                  }}
-                  onChange={handleChange}
-                />
-                <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-3">
-                  <svg
-                    className="h-4 w-4 text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="11" cy="11" r="8" />
-                    <path d="m21 21-4.3-4.3" />
-                  </svg>
-                </div>
-              </div>
-              <div className="pl-2">
-                <ListBoxCountry setSearchBy={setSearchBy} />
-              </div>
-              <div className="pl-2">
-                <button
-                  onClick={searchCountry}
-                  type="button"
-                  className="inline-flex items-center py-2.5 px-3 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  <svg
-                    className="w-4 h-4 me-2"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                    />
-                  </svg>
-                  Search
-                </button>
-              </div>
-            </div>
-
-            <SearchBar />
+            <SearchBar dataSearch={dataSearch} setDataSearch={setDataSearch} />
             <div className="overflow-hidden">
               <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                 <thead className="bg-gray-50 dark:bg-gray-700">
                   <tr>
                     <th scope="col" className="py-3 px-4 pe-0">
                       <div className="flex items-center h-5">
-                        {/* <input
-                          id="hs-table-pagination-checkbox-all"
-                          type="checkbox"
-                          className="border-gray-200 rounded text-blue-600 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                        />
-                        <label
-                          htmlFor="hs-table-pagination-checkbox-all"
-                          className="sr-only"
-                        ></label> */}
                         <p>#</p>
                       </div>
                     </th>
@@ -322,27 +163,26 @@ const MovieManagement = () => {
                 </thead>
 
                 <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                  {dataCountry.length ? (
-                    renderCountry
-                  ) : (
-                    <tr className="text-center">
-                      <td>No Movie Find</td>
-                    </tr>
-                  )}
+                  {allMovie?.length ? renderCountry : renderMovieField}
                 </tbody>
               </table>
             </div>
             <div className="py-1 px-4">
-              <nav className="flex items-center space-x-1">
+              <nav className="flex items-center space-x-2">
                 <button
-                  disabled={state.currentPage == 1}
+                  disabled={currentPage == 1}
                   type="button"
                   className="p-2.5 inline-flex items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 >
                   <span
                     aria-hidden="true"
-                    onClick={() => {
-                      dispatch({ type: "prev" });
+                    onClick={async () => {
+                      setCurrentPage(currentPage - 1);
+                      setDataSearch({
+                        ...dataSearch,
+                        gotoPage: currentPage,
+                      });
+                      dispatch(loadDataBy(dataSearch));
                     }}
                   >
                     <svg
@@ -362,28 +202,23 @@ const MovieManagement = () => {
                   </span>
                   <span className="sr-only">Previous</span>
                 </button>
-                {/* <button
-                  type="button"
-                  className="min-w-[40px] flex justify-center items-center text-gray-800 hover:bg-gray-100 py-2.5 text-sm rounded-full disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10"
-                  aria-current="page">
-                  Example
-                </button>*/}
                 <input
                   type="text"
                   id="quantity-input"
-                  value={state.currentPage}
+                  value={currentPage}
                   data-input-counter
                   aria-describedby="helper-text-explanation"
                   className="relative flex items-center max-w-[3rem] bg-gray-50 border-0 h-11 text-center rounded-full"
                   placeholder="Input page"
-                  onChange={(e) => {
+                  onChange={async (e) => {
                     e.preventDefault();
                     if (
                       Number(e.target.value) > Number(totalPage) ||
+                      Number(e.target.value) < 1 ||
                       isNaN(Number(e.target.value))
                     ) {
                       Swal.fire({
-                        title: "input over total page or illegal!",
+                        title: "input Illegal!",
                         showClass: {
                           popup: `
                             animate__animated
@@ -401,22 +236,22 @@ const MovieManagement = () => {
                       });
                       return;
                     }
-                    state.currentPage = Number(e.target.value);
-                    dispatch({ type: "goto" });
+                    setCurrentPage(Number(e.target.value));
+                    setDataSearch({
+                      ...dataSearch,
+                      gotoPage: currentPage,
+                    });
+                    dispatch(loadDataBy(dataSearch));
                   }}
                 />
                 <button
-                  disabled={state.currentPage == totalPage}
+                  onClick={next}
+                  disabled={currentPage == totalPage}
                   type="button"
                   className="p-2.5 inline-flex items-center gap-x-2 text-sm rounded-full text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 >
                   <span className="sr-only">Next</span>
-                  <span
-                    onClick={() => {
-                      dispatch({ type: "next" });
-                    }}
-                    aria-hidden="true"
-                  >
+                  <span aria-hidden="true">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -433,12 +268,10 @@ const MovieManagement = () => {
                     </svg>
                   </span>
                 </button>
-                <div className="py-1 px-4 text-red-600 end-0 font-semibold ">
-                  <span>&nbsp; Record: &nbsp;</span>&nbsp;
-                  {(state.currentPage - 1) * 10 + 1} &nbsp;<span>to </span>
-                  &nbsp; {state.currentPage * 10}
-                  &nbsp;
-                  <span>&nbsp;off</span> {totalPage} Page
+                <div className="flex-row font-extrabold pl-12 text-orange-500">
+                  <p>{`Record: ${(currentPage - 1) * 10 + 1} to ${
+                    currentPage * 10
+                  } off ${totalPage} Page `}</p>
                 </div>
               </nav>
             </div>
@@ -450,3 +283,111 @@ const MovieManagement = () => {
 };
 
 export default MovieManagement;
+
+// const reducer = (
+//   state: { currentPage: number },
+//   action: { type: string }
+// ) => {
+//   switch (action.type) {
+//     case "next":
+//       return { currentPage: state.currentPage + 1 };
+//     case "prev":
+//       return { currentPage: state.currentPage - 1 };
+//     case "goto":
+//       return { currentPage: state.currentPage };
+//     default:
+//       return initialState;
+//   }
+// };
+// const [state, dispatch] = useReducer(reducer, initialState);
+// function handleChange(event: ChangeEvent<HTMLInputElement>): void {
+//   // event.preventDefault();
+//   let input = event.target.value;
+//   setSearchInput(input);
+// }
+// get all data when start page - No search, default page = 1
+// useEffect(() => {
+//   callAPI(CONSTANTS.EMPTY, CONSTANTS.ALL);
+// }, []);
+// upate data when input data search or next page
+// useEffect(() => {
+//   callAPI(searchBy, searchInput);
+// }, [state.currentPage]);
+// Action call API flow condition setting on form search
+// const getDataConutryOptional = (
+//   searchBy: string = CONSTANTS.EMPTY,
+//   searchInput: string = CONSTANTS.EMPTY
+// ) => {
+//   switch (searchBy) {
+//     case CONSTANTS.NAME:
+//       return callAPICountry.getByName(searchInput);
+//     case CONSTANTS.CODE:
+//       return callAPICountry.getByCode(searchInput);
+//     case CONSTANTS.FULL_NAME:
+//       return callAPICountry.getByFullname(searchInput);
+//     case CONSTANTS.REGION:
+//       return callAPICountry.getByRegion(searchInput);
+//     case CONSTANTS.SUBREGION:
+//       return callAPICountry.getBySubregion(searchInput);
+//     case CONSTANTS.LANGUAGE:
+//       return callAPICountry.getByLanguage(searchInput);
+//     default:
+//       return callAPIMovie.get_all();
+//   }
+// };
+// call API throught axios
+// const callAPI = (searchBy: string, searchInput: string) => {
+//   if (searchBy != CONSTANTS.ALL && searchInput == CONSTANTS.EMPTY) {
+//     Swal.fire({
+//       title: "Mission?",
+//       text: `You choossed category \n
+//        Please Input data or Search All`,
+//       icon: "question",
+//     });
+
+//     inputRef.current?.focus();
+//     inputRef.current.style.backgroundColor = "pink";
+//     return;
+//   }
+
+// getDataConutryOptional(searchBy, searchInput)
+//   .then((response) => {
+//     if (
+//       [CONSTANTS.STATUS.CREATE, CONSTANTS.STATUS.OK].includes(
+//         response.status
+//       )
+//     ) {
+//       let allDataCountry = response.data.map((object: any) => {
+//         return {
+//           poster: object.poster,
+//           title: object.title,
+//           country: object.country,
+//           year: object.year,
+//           rated: object.rated,
+//           imdbRating: object.imdbRating,
+//           runtime: object.runtime,
+//         };
+//       });
+//       console.log(allDataCountry);
+
+//       let oldOffset =
+//         (Number(state.currentPage) - 1) * CONSTANTS.RECORD_ON_PAGE;
+//       let newOffset = state.currentPage * CONSTANTS.RECORD_ON_PAGE;
+
+//       let dataDisplay = allDataCountry.slice(oldOffset, newOffset);
+//       let totalRecord = response.headers["x-total-count"];
+//       setTotalPage(Math.ceil(totalRecord / 10));
+//       setDataCountry(dataDisplay);
+//     } else if (CONSTANTS.STATUS.NOT_FOUND == response.status) {
+//       throw new Error("Have not data..");
+//     }
+//   })
+//   .catch((err) => {
+//     Swal.fire({
+//       icon: "error",
+//       title: "Oops...",
+//       text: `Have not data..${err}`,
+//     });
+//   });
+// };
+//Action Search

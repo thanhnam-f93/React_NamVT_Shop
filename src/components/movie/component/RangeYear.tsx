@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import badgeColors from "@material-tailwind/react/theme/components/badge/badgeColors";
 
 const RangeYear = ({ dataSearch, setDataSearch }) => {
   const [rangeValues, setRangeValues] = useState([1900, 2024]);
@@ -11,9 +12,9 @@ const RangeYear = ({ dataSearch, setDataSearch }) => {
   };
   return (
     <div className="row-span-full">
-      <label htmlFor="rangeInput">{"Release"}</label>
+      <label className="font-semibold pl-1">{"Release"}</label>
       <Slider
-        className="col-span-6"
+        className="col-span-5"
         range
         min={1900}
         max={2024}
@@ -28,6 +29,9 @@ const RangeYear = ({ dataSearch, setDataSearch }) => {
         </p>
       </div>
     </div>
+    // :deep(.rc-slider-track rc-slider-track-1){
+    //   badgeColors:"black";
+    //   }
   );
 };
 

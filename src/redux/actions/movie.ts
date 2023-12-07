@@ -6,26 +6,27 @@ import {
     CREATE_DATA,
     DELETE_DATA,
     SAVE_DATA,
-    TODO_MODAL_HANDLER,
     CLOSE_MOVIE,
-    DATA_REQUEST_BY,
-    OPEN_MOVIE
+    OPEN_MOVIE,
+    MOVIE_REQUEST_BY
 } from '../constant/movie'
 
 export const loadData = () => ({
     type: MOVIE_REQUEST,
 });
-export const loadDataBy = (status: string) => ({
-    type: DATA_REQUEST_BY,
-    data: status
-});
+export const loadDataBy = (input: any) => {
+    return {
+        type: MOVIE_REQUEST_BY,
+        data: input
+    }
+};
 
 
-export const fetchDataSuccess = (data: any) => {
-    console.log("Action: fetchDataSuccess", data);
+export const fetchDataSuccess = (movies: any, totalPage) => {
+    console.log("Action: fetchDataSuccess", movies);
     return {
         type: DATA_SUCCESS,
-        data: data
+        data: { movies, totalPage }
     }
 }
 export const fetchDataFailed = (error: any) => {
@@ -33,9 +34,8 @@ export const fetchDataFailed = (error: any) => {
 
     return {
         type: DATA_FAILED,
-        error: {
-            error
-        }
+        error: error
+
     }
 }
 export const saveDataInfo = (data: any) => {

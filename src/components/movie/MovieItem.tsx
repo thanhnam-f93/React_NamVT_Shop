@@ -3,17 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { CONSTANTS } from "../../utils/constant";
 import SortComponent from "./component/SortComponent";
 
-const CountryItem = ({
-  index,
-  image,
-  name,
-  country,
-  year,
-  rated,
-  idmb,
-  time,
-}) => {
-  const navigate = useNavigate();
+const CountryItem = ({ movie, index }) => {
+  // const navigate = useNavigate();
 
   return (
     <tr>
@@ -24,31 +15,31 @@ const CountryItem = ({
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-base font-medium text-gray-800 dark:text-gray-200">
         <img
-          src={image}
+          src={movie.poster}
           alt="Loading Image"
           className="object-cover h-16 w-24 rounded"
         />
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-base text-gray-800 dark:text-gray-200">
-        <p>{name}</p>
+        <p>{movie.title}</p>
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-base text-gray-800 dark:text-gray-200">
-        <p>{country}</p>
+        <p>{movie.country}</p>
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-base text-gray-800 dark:text-gray-200">
-        <p>{year}</p>
+        <p>{movie.year}</p>
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-base text-gray-800 dark:text-gray-200">
-        <p>{rated}</p>
+        <p>{movie.rated}</p>
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-base text-gray-800 dark:text-gray-200">
-        <p>{idmb}</p>
+        <p>{movie.imdbRating}</p>
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-base text-gray-800 dark:text-gray-200">
-        <p>{time}</p>
+        <p>{movie.runtime}</p>
       </td>
 
-      <td className="px-2 whitespace-nowrap text-end text-base font-medium">
+      <td className="px-2 whitespace-nowrap text-center text-base font-medium">
         <button
           type="button"
           onClick={() => {
@@ -58,7 +49,7 @@ const CountryItem = ({
         >
           Detail
         </button>
-        <span className="px-2">|</span>
+        <span className="px-0">|</span>
         <button
           type="button"
           onClick={() => {

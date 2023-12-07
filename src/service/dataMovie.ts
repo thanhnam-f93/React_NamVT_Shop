@@ -3,36 +3,38 @@ import { CONSTANTS } from "../utils/constant";
 import axios, { AxiosError } from "axios";
 const endpoint = CONSTANTS.URL.MOVIE;
 const callAPIMovie = {
-    async get_all1() {
-        const url = endpoint;
-        axios.get(url).then((response) => {
-            if (
-                [CONSTANTS.STATUS.CREATE, CONSTANTS.STATUS.OK].includes(
-                    response.status
-                )
-            ) {
-                console.log("Return Data", response.data);
-                return response.data;
-            } else {
-                console.log("Throw Erro");
-                return new AxiosError("Haven't data find")
-            }
-
-        })
-            .catch((error) => {
-                console.log("Return Errr");
-                if (CONSTANTS.STATUS.ERR_SERVER == error?.code) {
-                    alert("Server Error");
-                } else {
-                    alert(error);
-                }
-
-            })
-    },
+    // http://localhost:3000/movie/?rated=R&year_gte=1990&year_lte=2010&?_page=1&_limit=10
     async get_all() {
         // const url = endpoint;
         const url = endpoint + "?_page=1&_limit=10"
         return axios.get(url);
+    },
+    async get_movie_by(input: any) {
+        console.log("Input...........: ", input);
+        let url = (input.data.comingSoon == 'true' || input.data.rated || input.data.year || input.data.textInput) ? "?" : "";
+        if (input.data.comingSoon) {
+            url += `comingSoon=${input.data.comingSoon}`
+        }
+        if (input.data.rated) {
+            url += `&rated=${input.data.rated}`
+        }
+        // If Chosse year range else nothing
+        if (input.data.year) {
+            url += `&year_gte=${input.data.year[0]}&year_lte=${input.data.year[1]}`
+        }
+        if (input.data.typeSearch && input.data.textInput) {
+            url += `&${input.data.typeSearch}=${input.data.textInput}`
+        }
+        // If don't select type saerch => deafault searh with name (relative search )
+        if (input.data.textInput) {
+            url += `&title=${input.data.textInput}`
+        }
+        // Check data page
+
+        url += `?_page=${input.data.gotoPage}&_limit=10`
+
+        // url = endpoint + "?_page=1&_limit=10"
+        return axios.get(endpoint + url);
     },
     async getByTitle(input: string) {
         const url = endpoint + `name/${input}`

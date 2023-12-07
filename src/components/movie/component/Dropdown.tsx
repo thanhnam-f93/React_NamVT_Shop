@@ -1,12 +1,14 @@
 import React from "react";
 
-const Dropdown = ({ data, dataSearch, setDataSearch, title }) => {
+const Dropdown = ({ data, dataSearch, setDataSearch, title, id }) => {
   return (
     <>
-      <label htmlFor="dropdown">{title}</label>
+      <label className="font-semibold pl-1" htmlFor={id}>
+        {title}
+      </label>
 
       <select
-        id="dropdown"
+        id={id}
         onChange={(e) => {
           if (title == "Movie Classification") {
             setDataSearch({ ...dataSearch, rated: e.target.value });

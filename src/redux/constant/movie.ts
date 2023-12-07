@@ -1,5 +1,5 @@
 export const MOVIE_REQUEST = "MOVIE_REQUEST"
-export const DATA_REQUEST_BY = "DATA_REQUEST_BY"
+export const MOVIE_REQUEST_BY = "MOVIE_REQUEST_BY"
 export const DATA_SUCCESS = "DATA_SUCCESS"
 export const DATA_FAILED = "DATA_FAILED"
 export const SAVE_DATA = "SAVE_DATA"

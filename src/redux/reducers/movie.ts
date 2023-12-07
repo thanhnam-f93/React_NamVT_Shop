@@ -7,13 +7,13 @@ import {
   DELETE_DATA,
   SAVE_DATA,
   OPEN_MOVIE,
-  CLOSE_MOVIE
+  CLOSE_MOVIE,
+  MOVIE_REQUEST_BY
 } from "../constant/movie";
 
 const initialState = { disPlay: "none" };
 function movieReducers(state = initialState, payload) {
-  console.log("Start  payload movieReducers", payload);
-  console.log("Start state movieReducers", state);
+
   switch (payload.type) {
 
     case SAVE_DATA:
@@ -22,6 +22,12 @@ function movieReducers(state = initialState, payload) {
         data: payload.data,
       };
     case MOVIE_REQUEST:
+      // console.log("Reducer-DATA_REQUEST");
+      return {
+        ...state,
+        requesting: true,
+      };
+    case MOVIE_REQUEST_BY:
       // console.log("Reducer-DATA_REQUEST");
       return {
         ...state,
@@ -43,20 +49,23 @@ function movieReducers(state = initialState, payload) {
         data: payload.data,
       };
     case DATA_SUCCESS:
-      // console.log("Reducer-DATA_SUCCESS", payload);
+
       return {
         ...state,
-        listMovie: payload.data,
+        listMovie: payload.data.movies,
+        totalPage: payload.data.totalPage,
         requesting: false,
         success: true,
         modalDisplay: false
       };
     case DATA_FAILED:
+      console.log("Start  payload movieReducers type", payload.type);
+      console.log("Start  payload movieReducers payload", payload);
       return {
         ...state,
         requesting: false,
         success: false,
-        message: payload.message,
+        error: payload.error,
       };
     case OPEN_MOVIE:
       return {

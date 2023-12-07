@@ -242,6 +242,7 @@
   ],
   "movie": [
     {
+      "comingSoon": false,
       "title": "Avatar",
       "year": "2009",
       "rated": "PG-13",
@@ -272,6 +273,7 @@
       "quality": "8K"
     },
     {
+      "comingSoon": false,
       "title": "I Am Legend",
       "year": "2007",
       "rated": "PG-13",
@@ -301,6 +303,7 @@
       "quality": "2K"
     },
     {
+      "comingSoon": false,
       "title": "300",
       "year": "2006",
       "rated": "R",
@@ -329,6 +332,7 @@
       "quality": "FULL HD"
     },
     {
+      "comingSoon": false,
       "title": "The Avengers",
       "year": "2012",
       "rated": "PG-13",
@@ -359,6 +363,7 @@
       "quality": "8K"
     },
     {
+      "comingSoon": false,
       "title": "The Wolf of Wall Street",
       "year": "2013",
       "rated": "R",
@@ -389,6 +394,7 @@
       "quality": "HD"
     },
     {
+      "comingSoon": false,
       "title": "Interstellar",
       "year": "2014",
       "rated": "PG-13",
@@ -419,6 +425,7 @@
       "quality": "2K"
     },
     {
+      "comingSoon": false,
       "title": "Game of Thrones",
       "year": "2011–",
       "rated": "TV-MA",
@@ -450,6 +457,7 @@
       "quality": "SD"
     },
     {
+      "comingSoon": false,
       "title": "Vikings",
       "year": "2013–",
       "rated": "TV-14",
@@ -481,6 +489,7 @@
       "quality": "4K"
     },
     {
+      "comingSoon": false,
       "title": "Gotham",
       "year": "2014–",
       "rated": "TV-14",
@@ -512,6 +521,7 @@
       "quality": "3D"
     },
     {
+      "comingSoon": false,
       "title": "Power",
       "year": "2014–",
       "rated": "TV-MA",
@@ -543,6 +553,7 @@
       "quality": "HD"
     },
     {
+      "comingSoon": false,
       "title": "Narcos",
       "year": "2015–",
       "rated": "TV-MA",
@@ -574,6 +585,7 @@
       "quality": "2K"
     },
     {
+      "comingSoon": false,
       "title": "Breaking Bad",
       "year": "2008–2013",
       "rated": "TV-14",

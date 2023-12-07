@@ -6,7 +6,7 @@ const RadioStatus = ({ dataSearch, setDataSearch }) => {
   };
   return (
     <div className="col-span-2 px-2">
-      <label htmlFor="radioInput" className="pl-5">
+      <label htmlFor="inlineRadio1" className="font-semibold pl-6">
         {"Status"}
       </label>
       <div className="flex justify-center">
@@ -16,13 +16,13 @@ const RadioStatus = ({ dataSearch, setDataSearch }) => {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio1"
-            value="true"
-            checked={dataSearch.comingSoon == "true"}
+            value="false"
+            checked={dataSearch.comingSoon == "false"}
             onChange={onOptionChange}
           />
           <label
             className="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
-            htmlFor="inlineRadio1"
+            htmlFor="inlineRadio2"
           >
             Ready
           </label>
@@ -34,8 +34,8 @@ const RadioStatus = ({ dataSearch, setDataSearch }) => {
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio2"
-            value="false"
-            checked={dataSearch.comingSoon == "false"}
+            value="true"
+            checked={dataSearch.comingSoon == "true"}
             onChange={onOptionChange}
           />
           <label

@@ -5,12 +5,16 @@ import RadioStatus from "../../components/movie/component/RadioStatus";
 import RangeYear from "../../components/movie/component/RangeYear";
 import Dropdown from "../../components/movie/component/Dropdown";
 import SearchInput from "../../components/movie/component/SearchInput";
-const SearchBar = () => {
+import { useDispatch } from "react-redux";
+import { loadDataBy } from "../../redux/actions/movie";
+const SearchBar = ({ dataSearch, setDataSearch }) => {
   const optionsSearch = ["All", "Name", "Country", "Director", "Actors"];
   const opstionsRated = ["All", "PG-13", "R", "TV-MA", "TV-14", "N/A"];
-  const [dataSearch, setDataSearch] = useState({});
+  // const [dataSearch, setDataSearch] = useState({});
+  const dispatch = useDispatch();
   const handleSubmit = () => {
     console.log("Data Collect: ", dataSearch);
+    dispatch(loadDataBy(dataSearch));
   };
   return (
     <>
@@ -24,6 +28,7 @@ const SearchBar = () => {
 
         <div className="col-span-2 px-2 ">
           <Dropdown
+            id={"search-dropdown1"}
             data={opstionsRated}
             dataSearch={dataSearch}
             setDataSearch={setDataSearch}
@@ -40,6 +45,7 @@ const SearchBar = () => {
         </div>
         <div className="col-span-2 px-2">
           <Dropdown
+            id={"search-dropdown2"}
             data={optionsSearch}
             dataSearch={dataSearch}
             setDataSearch={setDataSearch}
