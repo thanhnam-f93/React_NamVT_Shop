@@ -18,18 +18,20 @@ const Header = () => {
           </a>
 
           <div className="header-actions">
+            <p className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-600 text-xs font-semibold text-white ring ring-gray-600 ring-offset-2">
+              2
+            </p>
             <button
-              className="search-btn "
+              className="search-btn pl-0"
               onClick={() => {
                 navigate("/");
               }}
             >
               <FaCartShopping />
             </button>
-            <NavLink to="/">
+            <NavLink to="/movie">
               <span className="font-bold text-white">Management</span>
             </NavLink>
-
             {/*  */}
             <NavLink to="/signin">
               <button className="btn btn-primary">Sign in</button>

@@ -153,7 +153,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="container">
             <p className="copyright">
-              &copy; 20223 <NavLink to="#">Movie Center</NavLink>. All Rights
+              &copy; 2024 <NavLink to="#">Movie Center</NavLink>. All Rights
               Reserved
             </p>
 

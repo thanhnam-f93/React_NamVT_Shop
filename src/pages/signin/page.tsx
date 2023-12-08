@@ -108,10 +108,7 @@ export default function SignIn() {
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
           {/* Page header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h1 className="h1">{`Well come..`}</h1>
-            <h2 className="text-red-500 font-serif">
-              {`Input username:namvt11 & password:namvt11 to pass Authentication`}
-            </h2>
+            <h1 className="h1 rounded bg-orange-950">{`Well come...`}</h1>
           </div>
 
           {/* Form */}

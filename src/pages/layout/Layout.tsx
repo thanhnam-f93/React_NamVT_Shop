@@ -9,7 +9,8 @@ import { CONSTANTS } from "../../utils/constant";
 import { callAPIFetch } from "../../service/api";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCreateData, loadData } from "../../redux/actions/movie";
-function Layout() {
+import Swal from "sweetalert2";
+function Layout({ roles }) {
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [totalCart, setTotalCart] = useState(0);
@@ -34,16 +35,11 @@ function Layout() {
       });
   };
 
-  // if (!username?.length) {
-  //   Swal.fire({
-  //     icon: "error",
-  //     title: "Oops...",
-  //     text: `You aren't Login`,
-  //   });
-  //   return <Navigate to="/signin" />;
-  // }
+  if (!username?.length) {
+    return <Navigate to="/movie-play" />;
+  }
 
-  return (
+  return roles.includes(role) ? (
     <CartContext.Provider
       value={{ totalCart: totalCart, setTotalCart: setTotalCart }}
     >
@@ -68,6 +64,13 @@ function Layout() {
         </div>
       </div>
     </CartContext.Provider>
+  ) : (
+    (Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: `You haven't permission ( Admin only)..`,
+    }), //
+    (<Navigate to="/movie-play" replace />))
   );
 }
 

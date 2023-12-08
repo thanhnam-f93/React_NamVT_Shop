@@ -40,23 +40,7 @@ const ListMovie = () => {
 
           <h2 className="h2 section-title">Upcoming Movies</h2>
 
-          <ul className="filter-list">
-            <li>
-              <button className="filter-btn">Movies</button>
-            </li>
-
-            <li>
-              <button className="filter-btn">TV Shows</button>
-            </li>
-
-            <li>
-              <button className="filter-btn">Anime</button>
-            </li>
-
-            <li>
-              <button className="filter-btn">Sports</button>
-            </li>
-          </ul>
+          <ul className="filter-list"></ul>
 
           <ul className="movies-list">
             {movieComingSoon?.length > 0 ? renderMovieComing : renderMovieField}
@@ -68,23 +52,57 @@ const ListMovie = () => {
         <div className="container">
           <p className="section-subtitle">Online Streaming</p>
 
-          <h2 className="h2 section-title">Top Rated Movies</h2>
+          <h2 className="h2 section-title">Top Hot Movies</h2>
 
           <ul className="filter-list">
             <li>
-              <button className="filter-btn">Movies</button>
+              <button className="filter-btn">Action</button>
             </li>
 
             <li>
-              <button className="filter-btn">TV Shows</button>
+              <button className="filter-btn">Drama</button>
             </li>
 
             <li>
-              <button className="filter-btn">Documentary</button>
+              <button className="filter-btn">Biography</button>
             </li>
 
             <li>
-              <button className="filter-btn">Sports</button>
+              <button className="filter-btn">Adventure</button>
+            </li>
+            <li>
+              <button className="filter-btn">Fantasy</button>
+            </li>
+
+            <li>
+              <button className="filter-btn">Horror</button>
+            </li>
+
+            <li>
+              <button className="filter-btn">Sci-Fi</button>
+            </li>
+
+            <li>
+              <button className="filter-btn">Thriller</button>
+            </li>
+            <li>
+              <button className="filter-btn">Crime</button>
+            </li>
+            <li>
+              <button className="filter-btn">History</button>
+            </li>
+            <li>
+              <button className="filter-btn">Sci-Fi</button>
+            </li>
+
+            <li>
+              <button className="filter-btn">Thriller</button>
+            </li>
+            <li>
+              <button className="filter-btn">Crime</button>
+            </li>
+            <li>
+              <button className="filter-btn">History</button>
             </li>
           </ul>
 
