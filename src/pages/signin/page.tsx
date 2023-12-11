@@ -83,7 +83,7 @@ export default function SignIn() {
             icon: "error",
             title: "Oops...",
             text: "Username or Password wrong, Please input again",
-            footer: '<a href="#">Check problem?</a>',
+            footer: '<NavLink to="#">Check problem?</NavLink>',
           });
         }
       })
@@ -92,7 +92,7 @@ export default function SignIn() {
           icon: "error",
           title: "Oops...",
           text: err,
-          footer: '<a href="#">Check problem?</a>',
+          footer: '<NavLink to="#">Check problem?</NavLink>',
         });
       });
   };

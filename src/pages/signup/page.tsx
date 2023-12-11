@@ -40,7 +40,7 @@ export default function SignUp() {
           icon: "error",
           title: "Oops...",
           text: error,
-          // footer: '<a href="#">Why do I have this issue?</a>',
+          // footer: '<NavLink to="#">Why do I have this issue?</NavLink>',
         });
       })
       .finally(() => {
@@ -190,13 +190,13 @@ export default function SignUp() {
               </div>
               <div className="text-sm text-gray-500 text-center mt-3">
                 By creating an account, you agree to the{" "}
-                <a className="underline" href="#0">
+                <NavLink className="underline" to="#0">
                   terms & conditions
-                </a>
+                </NavLink>
                 , and our{" "}
-                <a className="underline" href="#0">
+                <NavLink className="underline" to="#0">
                   privacy policy
-                </a>
+                </NavLink>
                 .
               </div>
             </form>

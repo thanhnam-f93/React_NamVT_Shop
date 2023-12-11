@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import Video from "./Video";
 import { useDispatch, useSelector } from "react-redux";
-import { addCart, openVideo } from "../../redux/actions/movie";
+import { addCart, increase, openVideo } from "../../redux/actions/movie";
 import Swal from "sweetalert2";
-import TestModal from "./TestModal";
+import CartList from "./CartList";
 import ReactPlayer from "react-player";
 import PayMoneyForm from "./PayMoneyForm";
 
@@ -15,9 +15,9 @@ const DetailMovie = () => {
   const movie = location.state;
   const disPlay = useSelector((state: any) => state.movie.disPlay);
   const error = useSelector((state: any) => state.movie.error);
+  const movieCart = useSelector((state: any) => state.movie.movieCart);
   // const swalWithBootstrapButtons =
   const [isModalOpen, setModalOpen] = useState(false);
-  const [isOpenForm, setOpenForm] = useState(false);
   const handleAddToCart = () => {
     // Implement your logic to add the item to the cart
     console.log("Item added to cart");
@@ -36,45 +36,35 @@ const DetailMovie = () => {
   // list category of movie
   const category = movie.genre.split(",");
   function addMovieCart() {
-    handleAddToCart();
-    const movieCart = {
+    setModalOpen(true);
+    const cart = {
       movieId: movie.id,
       userId: localStorage.getItem("userId"),
       image: movie.poster,
       name: movie.title,
       price: movie.price,
+      year: movie.year,
       total: 1,
+      time: new Date(),
     };
+    console.log("CHecking:   ", checkDuplicate(cart));
 
-    // dispatch(addCart(movieCart));
-    // Swal.mixin({
-    //   customClass: {
-    //     confirmButton: "btn-cart",
-    //     cancelButton: "btn-cart",
-    //   },
-    //   buttonsStyling: false,
-    // })
-    //   .fire({
-    //     title: "Are you Payment?",
-    //     text: "View list cart and payment!",
-    //     icon: "question",
-    //     showCancelButton: true,
-    //     confirmButtonText: "Yes, Pay now!",
-    //     cancelButtonText: "No, continue!",
-    //     reverseButtons: true,
-    //   })
-    //   .then((result) => {
-    //     if (result.isConfirmed) {
-    //       navigate("/payment");
-    //     } else if (result.dismiss === Swal.DismissReason.cancel) {
-    //     }
-    //   });
+    dispatch(checkDuplicate(cart) ? addCart(cart) : increase(cart));
   }
-
+  const checkDuplicate = (newCart) => {
+    for (let index = 0; index < movieCart.length; index++) {
+      const element = movieCart[index];
+      if (element.movieId == newCart.movieId) {
+        return false;
+      }
+    }
+    return true;
+  };
   //
+
   return (
     <>
-      <TestModal
+      <CartList
         isOpen={isModalOpen}
         onClose={() => setModalOpen(false)}
         onAddToCart={handleAddToCart}
@@ -228,7 +218,7 @@ const DetailMovie = () => {
                 </div>
               </div>
 
-              <button className="btn btn-primary">
+              <button className="btn btn-primary" onClick={addMovieCart}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="20"
@@ -238,18 +228,18 @@ const DetailMovie = () => {
                   <path fill="#fafcff" d="M384 256L0 32V480L384 256z" />
                 </svg>
 
-                <span onClick={addMovieCart}>Buy Now</span>
+                <span>Buy Now</span>
               </button>
             </div>
-            <a
-              href="./assets/images/movie-4.png"
+            <NavLink
+              to="./assets/images/movie-4.png"
               download
               className="download-btn"
             >
               <span>Download</span>
 
               {/* <ion-icon name="download-outline"></ion-icon> */}
-            </a>
+            </NavLink>
           </div>
         </div>
         {/*  */}
@@ -262,3 +252,26 @@ const DetailMovie = () => {
 };
 
 export default DetailMovie;
+
+// Swal.mixin({
+//   customClass: {
+//     confirmButton: "btn-cart",
+//     cancelButton: "btn-cart",
+//   },
+//   buttonsStyling: false,
+// })
+//   .fire({
+//     title: "Are you Payment?",
+//     text: "View list cart and payment!",
+//     icon: "question",
+//     showCancelButton: true,
+//     confirmButtonText: "Yes, Pay now!",
+//     cancelButtonText: "No, continue!",
+//     reverseButtons: true,
+//   })
+//   .then((result) => {
+//     if (result.isConfirmed) {
+//       navigate("/payment");
+//     } else if (result.dismiss === Swal.DismissReason.cancel) {
+//     }
+//   });

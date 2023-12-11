@@ -39,7 +39,7 @@ import Start from './components/quiz/Start'
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import PaymentMovie from './components/movie/PaymentMovie';
-import TestModal from './components/movie/TestModal';
+import CartList from './components/movie/CartList';
 import PayMoneyForm from './components/movie/PayMoneyForm';
 import PayMoneyForm2 from './components/movie/PayMoneyForm';
 function App() {
@@ -76,7 +76,7 @@ const RoleAccess = ({ roles = [] }) => {
       <Routes>
         {/* <Route path="/" element={(role && userName) ? <Layout roles={["admin"]} />: (<Navigate to="/movie-play" />)}> */}
         <Route path="/" element={<Layout roles={["admin"]} />}>
-        <Route exact path="/test" element={<TestModal  />} />
+        <Route exact path="/test" element={<CartList  />} />
                   {/* Movie Page  */}
           <Route path="movie" element={<MovieManagement />}/>
           <Route path="movie/new" element={<NewMovie />}/>

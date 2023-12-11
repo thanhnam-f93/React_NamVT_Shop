@@ -22,9 +22,9 @@ export default function Search() {
         <div>
             <div className="search-box">
                 <input type="text" placeholder="Search anything" className="search-input" />
-                <a href="#" className="search-btn">
+                <NavLink to="#" className="search-btn">
                     <i className="fas fa-search" />
-                </a>
+                </NavLink>
             </div>
 
 

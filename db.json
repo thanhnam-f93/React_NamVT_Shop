@@ -204,6 +204,235 @@
       "name": "Dogo Argentino",
       "price": 97,
       "total": 0
+    },
+    {
+      "type": "ADD_CART",
+      "data": {
+        "movieId": "14",
+        "userId": null,
+        "image": "https://upload.wikimedia.org/wikipedia/en/d/d4/Rogue_One%2C_A_Star_Wars_Story_poster.png",
+        "name": "Rogue One: A Star Wars Story",
+        "price": "194",
+        "total": 1,
+        "time": "2023-12-10T15:52:38.585Z"
+      },
+      "id": "V9Nrf-T"
+    },
+    {
+      "movieId": "14",
+      "userId": null,
+      "image": "https://upload.wikimedia.org/wikipedia/en/d/d4/Rogue_One%2C_A_Star_Wars_Story_poster.png",
+      "name": "Rogue One: A Star Wars Story",
+      "price": "194",
+      "total": 1,
+      "time": "2023-12-10T15:56:56.297Z",
+      "id": "9E4guDC"
+    },
+    {
+      "movieId": "14",
+      "userId": "1",
+      "image": "https://upload.wikimedia.org/wikipedia/en/d/d4/Rogue_One%2C_A_Star_Wars_Story_poster.png",
+      "name": "Rogue One: A Star Wars Story",
+      "price": "194",
+      "total": 1,
+      "time": "2023-12-10T15:58:07.395Z",
+      "id": "4tQm6eV"
+    },
+    {
+      "movieId": "14",
+      "userId": null,
+      "image": "https://upload.wikimedia.org/wikipedia/en/d/d4/Rogue_One%2C_A_Star_Wars_Story_poster.png",
+      "name": "Rogue One: A Star Wars Story",
+      "price": "194",
+      "total": 1,
+      "time": "2023-12-10T16:23:16.554Z",
+      "id": "sej38pT"
+    },
+    {
+      "movieId": "14",
+      "userId": "1",
+      "image": "https://upload.wikimedia.org/wikipedia/en/d/d4/Rogue_One%2C_A_Star_Wars_Story_poster.png",
+      "name": "Rogue One: A Star Wars Story",
+      "price": "194",
+      "total": 1,
+      "time": "2023-12-10T16:28:53.772Z",
+      "id": "POckujz"
+    },
+    {
+      "movieId": "10",
+      "userId": "1",
+      "image": "https://ia.media-imdb.com/images/M/MV5BOTA4NTkzMjUzOF5BMl5BanBnXkFtZTgwNzg5ODkxOTE@._V1_SX300.jpg",
+      "name": "Power",
+      "price": "422",
+      "total": 1,
+      "time": "2023-12-10T16:29:18.434Z",
+      "id": "n6fk7td"
+    },
+    {
+      "movieId": "1",
+      "userId": "1",
+      "image": "https://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
+      "name": "Avatar",
+      "price": "22",
+      "total": 1,
+      "time": "2023-12-10T16:29:33.102Z",
+      "id": "8C44Jj1"
+    },
+    {
+      "movieId": "1",
+      "userId": "1",
+      "image": "https://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
+      "name": "Avatar",
+      "price": "22",
+      "total": 1,
+      "time": "2023-12-10T16:29:36.904Z",
+      "id": "R-Zkkrx"
+    },
+    {
+      "movieId": "13",
+      "userId": null,
+      "image": "https://ia.media-imdb.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_SX300.jpg",
+      "name": "Doctor Strange",
+      "price": "221",
+      "total": 1,
+      "time": "2023-12-11T02:24:45.468Z",
+      "id": "yFU2o0m"
+    },
+    {
+      "movieId": "3",
+      "userId": null,
+      "image": "https://ia.media-imdb.com/images/M/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3._V1_SX300.jpg",
+      "name": "300",
+      "price": "62",
+      "total": 1,
+      "time": "2023-12-11T02:25:54.322Z",
+      "id": "Z6ErOZR"
+    },
+    {
+      "movieId": "3",
+      "userId": null,
+      "image": "https://ia.media-imdb.com/images/M/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3._V1_SX300.jpg",
+      "name": "300",
+      "price": "62",
+      "total": 1,
+      "time": "2023-12-11T02:26:12.158Z",
+      "id": "q2I2m6H"
+    },
+    {
+      "movieId": "2",
+      "userId": null,
+      "image": "https://m.media-amazon.com/images/M/MV5BYTE1ZTBlYzgtNmMyNS00ZTQ2LWE4NjEtZjUxNDJkNTg2MzlhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg",
+      "name": "I Am Legend",
+      "price": "27",
+      "total": 1,
+      "time": "2023-12-11T02:26:45.309Z",
+      "id": "qmTNGGX"
+    },
+    {
+      "movieId": "15",
+      "userId": null,
+      "image": "https://ia.media-imdb.com/images/M/MV5BMTU2MTQwMjU1OF5BMl5BanBnXkFtZTgwMDA5NjU5ODE@._V1_SX300.jpg",
+      "name": "Assassin's Creed",
+      "price": "220",
+      "total": 1,
+      "time": "2023-12-11T02:50:45.586Z",
+      "id": "iBjv0kb"
+    },
+    {
+      "movieId": "15",
+      "userId": null,
+      "image": "https://ia.media-imdb.com/images/M/MV5BMTU2MTQwMjU1OF5BMl5BanBnXkFtZTgwMDA5NjU5ODE@._V1_SX300.jpg",
+      "name": "Assassin's Creed",
+      "price": "220",
+      "total": 1,
+      "time": "2023-12-11T02:54:12.196Z",
+      "id": "ZtusNd2"
+    },
+    {
+      "movieId": "1",
+      "userId": null,
+      "image": "https://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
+      "name": "Avatar",
+      "price": "22",
+      "total": 1,
+      "time": "2023-12-11T02:54:22.899Z",
+      "id": "fU9uIcR"
+    },
+    {
+      "movieId": "1",
+      "userId": null,
+      "image": "https://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
+      "name": "Avatar",
+      "price": "22",
+      "total": 1,
+      "time": "2023-12-11T03:03:58.687Z",
+      "id": "NXay16V"
+    },
+    {
+      "movieId": "1",
+      "userId": null,
+      "image": "https://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
+      "name": "Avatar",
+      "price": "22",
+      "year": "2009",
+      "total": 1,
+      "time": "2023-12-11T03:05:58.812Z",
+      "id": "AXkgIrJ"
+    },
+    {
+      "movieId": "15",
+      "userId": "1",
+      "image": "https://ia.media-imdb.com/images/M/MV5BMTU2MTQwMjU1OF5BMl5BanBnXkFtZTgwMDA5NjU5ODE@._V1_SX300.jpg",
+      "name": "Assassin's Creed",
+      "price": "220",
+      "year": "2016",
+      "total": 1,
+      "time": "2023-12-11T03:06:31.341Z",
+      "id": "x2cOalC"
+    },
+    {
+      "movieId": "7",
+      "userId": "1",
+      "image": "https://ia.media-imdb.com/images/M/MV5BMjM5OTQ1MTY5Nl5BMl5BanBnXkFtZTgwMjM3NzMxODE@._V1_SX300.jpg",
+      "name": "Game of Thrones",
+      "price": "59",
+      "year": "2011",
+      "total": 1,
+      "time": "2023-12-11T03:10:53.828Z",
+      "id": "SBmVof9"
+    },
+    {
+      "movieId": "15",
+      "userId": "1",
+      "image": "https://ia.media-imdb.com/images/M/MV5BMTU2MTQwMjU1OF5BMl5BanBnXkFtZTgwMDA5NjU5ODE@._V1_SX300.jpg",
+      "name": "Assassin's Creed",
+      "price": "220",
+      "year": "2016",
+      "total": 1,
+      "time": "2023-12-11T03:20:56.964Z",
+      "id": "b6Dz-6Y"
+    },
+    {
+      "movieId": "15",
+      "userId": "1",
+      "image": "https://ia.media-imdb.com/images/M/MV5BMTU2MTQwMjU1OF5BMl5BanBnXkFtZTgwMDA5NjU5ODE@._V1_SX300.jpg",
+      "name": "Assassin's Creed",
+      "price": "220",
+      "year": "2016",
+      "total": 1,
+      "time": "2023-12-11T03:21:24.332Z",
+      "id": "bNHOS0J"
+    },
+    {
+      "movieId": "15",
+      "userId": "1",
+      "image": "https://ia.media-imdb.com/images/M/MV5BMTU2MTQwMjU1OF5BMl5BanBnXkFtZTgwMDA5NjU5ODE@._V1_SX300.jpg",
+      "name": "Assassin's Creed",
+      "price": "220",
+      "year": "2016",
+      "total": 1,
+      "time": "2023-12-11T03:21:52.620Z",
+      "id": "2pxtDpU"
     }
   ],
   "user": [
@@ -1206,5 +1435,6 @@
       ],
       "quality": "I-MAX"
     }
-  ]
+  ],
+  "history-pay": []
 }

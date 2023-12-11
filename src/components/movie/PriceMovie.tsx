@@ -31,7 +31,7 @@ export default PriceMovie;
 //   <>
 //     <div id="popup-cart-desktop" className="clearfix">
 //       {/* <div className="title-popup-cart">
-//     <img src="//bizweb.dktcdn.net/100/347/923/themes/742041/assets/icon-check.png?1675482347581" alt="WearVN"> <span className="your_product">Bạn đã thêm <span className="cart_name_style">[ <span className="cart-popup-name"><a href="/giay-converse-chuck-70-club-house-a05681c title=" giày="" converse="" chuck="" 70="" club="" house="" -="" a05681c="" size="" 3.0us="" 35.0vn="" 22.0cm"="">Giày Converse Chuck 70 Club House - A05681C - Size 3.0US - Size 35.0VN - 22.0CM</a> </span>]</span> vào giỏ hàng thành công ! </span>
+//     <img src="//bizweb.dktcdn.net/100/347/923/themes/742041/assets/icon-check.png?1675482347581" alt="WearVN"> <span className="your_product">Bạn đã thêm <span className="cart_name_style">[ <span className="cart-popup-name"><NavLink to="/giay-converse-chuck-70-club-house-a05681c title=" giày="" converse="" chuck="" 70="" club="" house="" -="" a05681c="" size="" 3.0us="" 35.0vn="" 22.0cm"="">Giày Converse Chuck 70 Club House - A05681C - Size 3.0US - Size 35.0VN - 22.0CM</NavLink> </span>]</span> vào giỏ hàng thành công ! </span>
 //   </div> */}
 //       <div className="wrap_popup">
 //         <div className="title-quantity-popup">
@@ -63,9 +63,9 @@ export default PriceMovie;
 //                 className="border height image_ text-left"
 //               >
 //                 <div className="item-image">
-//                   <a
+//                   <NavLink
 //                     className="product-image"
-//                     // href="/giay-converse-chuck-70-club-house-a05681c"
+//                     // to="/giay-converse-chuck-70-club-house-a05681c"
 //                     title="Giày Converse Chuck 70 Club House - A05681C - Size 3.0US - Size 35.0VN - 22.0CM"
 //                   >
 //                     <img
@@ -73,31 +73,31 @@ export default PriceMovie;
 //                       // src="https://bizweb.dktcdn.net/100/347/923/products/a05681c-13.jpg?v=1700027166807"
 //                       width="90"
 //                     />
-//                   </a>
+//                   </NavLink>
 //                 </div>
 //               </div>
 //               <div style={{ width: "39.8%" }} className="height text-left" />
 //               <div className="item-info">
 //                 <p className="item-name">
-//                   <a
+//                   <NavLink
 //                     className="text2line textlinefix"
-//                     // href="/giay-converse-chuck-70-club-house-a05681c"
+//                     // to="/giay-converse-chuck-70-club-house-a05681c"
 //                     title="Giày Converse Chuck 70 Club House - A05681C - Size 3.0US - Size 35.0VN - 22.0CM"
 //                   >
 //                     Giày Converse Chuck 70 Club House - A05681C
-//                   </a>
+//                   </NavLink>
 //                 </p>
 //                 <span className="variant-title-popup">
 //                   Size 3.0US - Size 35.0VN - 22.0CM
 //                 </span>
-//                 <a
-//                   href="javascript:;"
+//                 <NavLink
+//                   to="javascript:;"
 //                   className="remove-item-cart"
 //                   title="Xóa"
 //                   data-id="102825089"
 //                 >
 //                   <i className="fa fa-close"></i>&nbsp;&nbsp;Xoá
-//                 </a>
+//                 </NavLink>
 //                 <p
 //                   className="addpass"
 //                   style={{ color: "#fff", margin: "0px" }}
@@ -179,27 +179,27 @@ export default PriceMovie;
 //             </span>
 //           </div>
 //           <div className="tfoot-popup-2 clearfix">
-//             <a
+//             <NavLink
 //               className="button buy_ btn-proceed-checkout"
 //               title="Thực hiện thanh toán"
-//               // href="/checkout"
+//               // to="/checkout"
 //             >
 //               <span>Thực hiện thanh toán</span>
-//             </a>
-//             <a
+//             </NavLink>
+//             <NavLink
 //               className="button checkout_ btn-proceed-checkout"
 //               title="Tiếp tục mua hàng"
 //             >
 //               <span>
 //                 <span>Tiếp tục mua hàng</span>
 //               </span>
-//             </a>
+//             </NavLink>
 //           </div>
 //         </div>
 //       </div>
-//       <a title="Close" className="close-window">
+//       <NavLink title="Close" className="close-window">
 //         <i className="fa fa-close"></i>
-//       </a>
+//       </NavLink>
 //     </div>
 //     ;
 //   </>

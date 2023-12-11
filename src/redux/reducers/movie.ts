@@ -10,10 +10,14 @@ import {
   CLOSE_MOVIE,
   MOVIE_REQUEST_BY,
   MOVIE_REQUEST_COMINGSOON,
-  DATA_COMING_SUCCESS
+  DATA_COMING_SUCCESS,
+  ADD_MOVIE_CART_SUCCESS,
+  DECREASE_CART,
+  INCREASE_CART,
+  REMOVE_CART
 } from "../constant/movie";
 
-const initialState = { disPlay: "none" };
+const initialState = { disPlay: "none", movieCart: [], totalMoney: 0 };
 function movieReducers(state = initialState, payload) {
 
   switch (payload.type) {
@@ -75,6 +79,15 @@ function movieReducers(state = initialState, payload) {
         success: true,
         modalDisplay: false
       };
+    case ADD_MOVIE_CART_SUCCESS:
+      console.log("Start  payload movieReducers ADD_MOVIE_CART_SUCCESS", payload);
+      return {
+        ...state,
+        movieCart: [...state.movieCart, payload.data],
+        totalMoney: (state.totalMoney + Number(payload.data.price)),
+        requesting: false,
+        success: true
+      };
     case DATA_FAILED:
       console.log("Start  payload movieReducers type", payload.type);
       console.log("Start  payload movieReducers payload", payload);
@@ -93,6 +106,37 @@ function movieReducers(state = initialState, payload) {
       return {
         ...state,
         disPlay: "none"
+      };
+    case INCREASE_CART:
+      console.log("Start  INCREASE_CART", payload);
+      return {
+        ...state,
+        movieCart: state.movieCart.map((item: any) => {
+          if (item.movieId == payload.data.movieId) {
+            return { ...item, total: item.total + 1 };
+          }
+          return item;
+        }),
+        totalMoney: (state.totalMoney + Number(payload.data.price)),
+      };
+    case DECREASE_CART:
+      return {
+        ...state,
+        movieCart: state.movieCart.map((item: any) => {
+          if (item.movieId == payload.data.movieId) {
+            return { ...item, total: item.total - 1 };
+          }
+          return item;
+        }),
+        totalMoney: (state.totalMoney - Number(payload.data.price)),
+      };
+    case REMOVE_CART:
+      return {
+        ...state,
+        movieCart: state.movieCart.filter((item: any) => {
+          return item.movieId != payload.data.movieId
+        }),
+        totalMoney: (state.totalMoney - (Number(payload.data.price) * Number(payload.data.total))),
       };
     default:
       return state;

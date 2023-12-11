@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { closeVideo, loadData } from "../../redux/actions/movie";
 import { scrollTop } from "../../utils/Utils";
-import TestModal from "./TestModal";
+import CartList from "./CartList";
 
 const Movie = (movie) => {
   const dispatch = useDispatch();

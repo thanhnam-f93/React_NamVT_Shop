@@ -10,13 +10,13 @@ const NewMovie = () => {
           <div className="container">
             <div className="overlay" data-overlay></div>
 
-            <a href="/" className="logo">
+            <NavLink to="/" className="logo">
               <img
                 className="w-9 h-9"
                 src="https://cdn.worldvectorlogo.com/logos/redux.svg"
                 alt="Redux-Saga"
               />
-            </a>
+            </NavLink>
 
             <div className="header-actions">
               <button className="search-btn">
@@ -75,13 +75,13 @@ const NewMovie = () => {
 
             <nav className="navbar" data-navbar>
               <div className="navbar-top">
-                <a href="/" className="logo">
+                <NavLink to="/" className="logo">
                   <img
                     className="w-9 h-9"
                     src="https://cdn.worldvectorlogo.com/logos/redux.svg"
                     alt="Redux-Saga"
                   />
-                </a>
+                </NavLink>
 
                 <button className="menu-close-btn" data-menu-close-btn>
                   <svg
@@ -100,39 +100,39 @@ const NewMovie = () => {
 
               <ul className="navbar-list">
                 <li>
-                  <a href="./index.html" className="navbar-link">
+                  <NavLink to="./index.html" className="navbar-link">
                     Home
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li>
-                  <a href="#" className="navbar-link">
+                  <NavLink to="#" className="navbar-link">
                     Movie
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li>
-                  <a href="#" className="navbar-link">
+                  <NavLink to="#" className="navbar-link">
                     Tv Show
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li>
-                  <a href="#" className="navbar-link">
+                  <NavLink to="#" className="navbar-link">
                     Web Series
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li>
-                  <a href="#" className="navbar-link">
+                  <NavLink to="#" className="navbar-link">
                     Pricing
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
 
               <ul className="navbar-social-list">
                 <li>
-                  <a href="#" className="navbar-social-link">
+                  <NavLink to="#" className="navbar-social-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -144,11 +144,11 @@ const NewMovie = () => {
                         d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z"
                       />
                     </svg>
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li>
-                  <a href="#" className="navbar-social-link">
+                  <NavLink to="#" className="navbar-social-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -160,11 +160,11 @@ const NewMovie = () => {
                         d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z"
                       />
                     </svg>
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li>
-                  <a href="#" className="navbar-social-link">
+                  <NavLink to="#" className="navbar-social-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -176,11 +176,11 @@ const NewMovie = () => {
                         d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z"
                       />
                     </svg>
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li>
-                  <a href="#" className="navbar-social-link">
+                  <NavLink to="#" className="navbar-social-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -192,11 +192,11 @@ const NewMovie = () => {
                         d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z"
                       />
                     </svg>
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li>
-                  <a href="#" className="navbar-social-link">
+                  <NavLink to="#" className="navbar-social-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -208,7 +208,7 @@ const NewMovie = () => {
                         d="m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275L5.825 22Z"
                       />
                     </svg>
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
@@ -238,9 +238,9 @@ const NewMovie = () => {
                     </div>
 
                     <div className="ganre-wrapper">
-                      <a href="#">Romance,</a>
+                      <NavLink to="#">Romance,</NavLink>
 
-                      <a href="#">Drama</a>
+                      <NavLink to="#">Drama</NavLink>
                     </div>
 
                     <div className="date-time">
@@ -324,19 +324,19 @@ const NewMovie = () => {
                 <ul className="movies-list">
                   <li>
                     <div className="movie-card">
-                      <a href="./movie-details.html">
+                      <NavLink to="./movie-details.html">
                         <figure className="card-banner">
                           <img
                             src="./assets/images/movie-1.png"
                             alt="Sonic the Hedgehog 2 movie poster"
                           />
                         </figure>
-                      </a>
+                      </NavLink>
 
                       <div className="title-wrapper">
-                        <a href="./movie-details.html">
+                        <NavLink to="./movie-details.html">
                           <h3 className="card-title">Sonic the Hedgehog 2</h3>
-                        </a>
+                        </NavLink>
 
                         <time dateTime="2022">2022</time>
                       </div>
@@ -361,19 +361,19 @@ const NewMovie = () => {
 
                   <li>
                     <div className="movie-card">
-                      <a href="./movie-details.html">
+                      <NavLink to="./movie-details.html">
                         <figure className="card-banner">
                           <img
                             src="./assets/images/movie-2.png"
                             alt="Morbius movie poster"
                           />
                         </figure>
-                      </a>
+                      </NavLink>
 
                       <div className="title-wrapper">
-                        <a href="./movie-details.html">
+                        <NavLink to="./movie-details.html">
                           <h3 className="card-title">Morbius</h3>
-                        </a>
+                        </NavLink>
 
                         <time dateTime="2022">2022</time>
                       </div>
@@ -398,19 +398,19 @@ const NewMovie = () => {
 
                   <li>
                     <div className="movie-card">
-                      <a href="./movie-details.html">
+                      <NavLink to="./movie-details.html">
                         <figure className="card-banner">
                           <img
                             src="./assets/images/movie-3.png"
                             alt="The Adam Project movie poster"
                           />
                         </figure>
-                      </a>
+                      </NavLink>
 
                       <div className="title-wrapper">
-                        <a href="./movie-details.html">
+                        <NavLink to="./movie-details.html">
                           <h3 className="card-title">The Adam Project</h3>
-                        </a>
+                        </NavLink>
 
                         <time dateTime="2022">2022</time>
                       </div>
@@ -435,19 +435,19 @@ const NewMovie = () => {
 
                   <li>
                     <div className="movie-card">
-                      <a href="./movie-details.html">
+                      <NavLink to="./movie-details.html">
                         <figure className="card-banner">
                           <img
                             src="./assets/images/movie-4.png"
                             alt="Free Guy movie poster"
                           />
                         </figure>
-                      </a>
+                      </NavLink>
 
                       <div className="title-wrapper">
-                        <a href="./movie-details.html">
+                        <NavLink to="./movie-details.html">
                           <h3 className="card-title">Free Guy</h3>
-                        </a>
+                        </NavLink>
 
                         <time dateTime="2021">2021</time>
                       </div>
@@ -472,19 +472,19 @@ const NewMovie = () => {
 
                   <li>
                     <div className="movie-card">
-                      <a href="./movie-details.html">
+                      <NavLink to="./movie-details.html">
                         <figure className="card-banner">
                           <img
                             src="./assets/images/movie-5.png"
                             alt="The Batman movie poster"
                           />
                         </figure>
-                      </a>
+                      </NavLink>
 
                       <div className="title-wrapper">
-                        <a href="./movie-details.html">
+                        <NavLink to="./movie-details.html">
                           <h3 className="card-title">The Batman</h3>
-                        </a>
+                        </NavLink>
 
                         <time dateTime="2022">2022</time>
                       </div>
@@ -509,19 +509,19 @@ const NewMovie = () => {
 
                   <li>
                     <div className="movie-card">
-                      <a href="./movie-details.html">
+                      <NavLink to="./movie-details.html">
                         <figure className="card-banner">
                           <img
                             src="./assets/images/movie-6.png"
                             alt="Uncharted movie poster"
                           />
                         </figure>
-                      </a>
+                      </NavLink>
 
                       <div className="title-wrapper">
-                        <a href="./movie-details.html">
+                        <NavLink to="./movie-details.html">
                           <h3 className="card-title">Uncharted</h3>
-                        </a>
+                        </NavLink>
 
                         <time dateTime="2022">2022</time>
                       </div>
@@ -546,19 +546,19 @@ const NewMovie = () => {
 
                   <li>
                     <div className="movie-card">
-                      <a href="./movie-details.html">
+                      <NavLink to="./movie-details.html">
                         <figure className="card-banner">
                           <img
                             src="./assets/images/movie-7.png"
                             alt="Death on the Nile movie poster"
                           />
                         </figure>
-                      </a>
+                      </NavLink>
 
                       <div className="title-wrapper">
-                        <a href="./movie-details.html">
+                        <NavLink to="./movie-details.html">
                           <h3 className="card-title">Death on the Nile</h3>
-                        </a>
+                        </NavLink>
 
                         <time dateTime="2022">2022</time>
                       </div>
@@ -583,19 +583,19 @@ const NewMovie = () => {
 
                   <li>
                     <div className="movie-card">
-                      <a href="./movie-details.html">
+                      <NavLink to="./movie-details.html">
                         <figure className="card-banner">
                           <img
                             src="./assets/images/movie-8.png"
                             alt="The King's Man movie poster"
                           />
                         </figure>
-                      </a>
+                      </NavLink>
 
                       <div className="title-wrapper">
-                        <a href="./movie-details.html">
+                        <NavLink to="./movie-details.html">
                           <h3 className="card-title">The King's Man</h3>
-                        </a>
+                        </NavLink>
 
                         <time dateTime="2021">2021</time>
                       </div>
@@ -663,43 +663,43 @@ const NewMovie = () => {
           <div className="footer-top">
             <div className="container">
               <div className="footer-brand-wrapper">
-                <a href="/" className="logo">
+                <NavLink to="/" className="logo">
                   <img
                     className="w-9 h-9"
                     src="https://cdn.worldvectorlogo.com/logos/redux.svg"
                     alt="Redux-Saga"
                   />
-                </a>
+                </NavLink>
 
                 <ul className="footer-list">
                   <li>
-                    <a href="./index.html" className="footer-link">
+                    <NavLink to="./index.html" className="footer-link">
                       Home
-                    </a>
+                    </NavLink>
                   </li>
 
                   <li>
-                    <a href="#" className="footer-link">
+                    <NavLink to="#" className="footer-link">
                       Movie
-                    </a>
+                    </NavLink>
                   </li>
 
                   <li>
-                    <a href="#" className="footer-link">
+                    <NavLink to="#" className="footer-link">
                       TV Show
-                    </a>
+                    </NavLink>
                   </li>
 
                   <li>
-                    <a href="#" className="footer-link">
+                    <NavLink to="#" className="footer-link">
                       Web Series
-                    </a>
+                    </NavLink>
                   </li>
 
                   <li>
-                    <a href="#" className="footer-link">
+                    <NavLink to="#" className="footer-link">
                       Pricing
-                    </a>
+                    </NavLink>
                   </li>
                 </ul>
               </div>
@@ -709,53 +709,53 @@ const NewMovie = () => {
               <div className="quicklink-wrapper">
                 <ul className="quicklink-list">
                   <li>
-                    <a href="#" className="quicklink-link">
+                    <NavLink to="#" className="quicklink-link">
                       Faq
-                    </a>
+                    </NavLink>
                   </li>
 
                   <li>
-                    <a href="#" className="quicklink-link">
+                    <NavLink to="#" className="quicklink-link">
                       Help center
-                    </a>
+                    </NavLink>
                   </li>
 
                   <li>
-                    <a href="#" className="quicklink-link">
+                    <NavLink to="#" className="quicklink-link">
                       Terms of use
-                    </a>
+                    </NavLink>
                   </li>
 
                   <li>
-                    <a href="#" className="quicklink-link">
+                    <NavLink to="#" className="quicklink-link">
                       Privacy
-                    </a>
+                    </NavLink>
                   </li>
                 </ul>
 
                 <ul className="social-list">
                   <li>
-                    <a href="#" className="social-link">
+                    <NavLink to="#" className="social-link">
                       {/* <ion-icon name="logo-facebook"></ion-icon> */}
-                    </a>
+                    </NavLink>
                   </li>
 
                   <li>
-                    <a href="#" className="social-link">
+                    <NavLink to="#" className="social-link">
                       {/* <ion-icon name="logo-twitter"></ion-icon> */}
-                    </a>
+                    </NavLink>
                   </li>
 
                   <li>
-                    <a href="#" className="social-link">
+                    <NavLink to="#" className="social-link">
                       {/* <ion-icon name="logo-pinterest"></ion-icon> */}
-                    </a>
+                    </NavLink>
                   </li>
 
                   <li>
-                    <a href="#" className="social-link">
+                    <NavLink to="#" className="social-link">
                       {/* <ion-icon name="logo-linkedin"></ion-icon> */}
-                    </a>
+                    </NavLink>
                   </li>
                 </ul>
               </div>
@@ -765,7 +765,8 @@ const NewMovie = () => {
           <div className="footer-bottom">
             <div className="container">
               <p className="copyright">
-                &copy; 2022 <a href="#">Movie Center</a>. All Rights Reserved
+                &copy; 2022 <NavLink to="#">Movie Center</NavLink>. All Rights
+                Reserved
               </p>
 
               <img
@@ -781,9 +782,9 @@ const NewMovie = () => {
 - #GO TO TOP
 --> */}
 
-        <a href="#top" className="go-top" data-go-top>
+        <NavLink to="#top" className="go-top" data-go-top>
           {/* <ion-icon name="chevron-up"></ion-icon> */}
-        </a>
+        </NavLink>
       </body>
     </>
   );

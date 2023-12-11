@@ -154,8 +154,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
-                      <a
-                        href="#0"
+                      <NavLink
+                        to="#0"
                         className={`block text-slate-200 truncate transition duration-150 ${
                           pathname === "/" || pathname.includes("dashboard")
                             ? "hover:text-slate-200"
@@ -202,7 +202,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             </svg>
                           </div>
                         </div>
-                      </a>
+                      </NavLink>
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
                           <li className="mb-1 last:mb-0">
@@ -269,8 +269,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
-                      <a
-                        href="#0"
+                      <NavLink
+                        to="#0"
                         className={`block text-slate-200 truncate transition duration-150 ${
                           pathname === "/" || pathname.includes("dashboard")
                             ? "hover:text-slate-200"
@@ -317,7 +317,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             </svg>
                           </div>
                         </div>
-                      </a>
+                      </NavLink>
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
                           <li className="mb-1 last:mb-0">
@@ -350,8 +350,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
-                      <a
-                        href="#0"
+                      <NavLink
+                        to="#0"
                         className={`block text-slate-200 truncate transition duration-150 ${
                           pathname.includes("sale")
                             ? "hover:text-slate-200"
@@ -397,7 +397,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             </svg>
                           </div>
                         </div>
-                      </a>
+                      </NavLink>
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
                           <li className="mb-1 last:mb-0">
@@ -450,8 +450,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
-                      <a
-                        href="#0"
+                      <NavLink
+                        to="#0"
                         className={`block text-slate-200 truncate transition duration-150 ${
                           pathname.includes("product")
                             ? "hover:text-slate-200"
@@ -497,7 +497,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             </svg>
                           </div>
                         </div>
-                      </a>
+                      </NavLink>
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
                           <li className="mb-1 last:mb-0">
@@ -546,8 +546,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
-                      <a
-                        href="#0"
+                      <NavLink
+                        to="#0"
                         className={`block text-slate-200 truncate transition duration-150 ${
                           pathname.includes("product")
                             ? "hover:text-slate-200"
@@ -593,7 +593,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             </svg>
                           </div>
                         </div>
-                      </a>
+                      </NavLink>
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
                           <li className="mb-1 last:mb-0">
@@ -642,8 +642,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
-                      <a
-                        href="#0"
+                      <NavLink
+                        to="#0"
                         className={`block text-slate-200 truncate transition duration-150 ${
                           pathname.includes("tod")
                             ? "hover:text-slate-200"
@@ -689,7 +689,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             </svg>
                           </div>
                         </div>
-                      </a>
+                      </NavLink>
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
                           <li className="mb-1 last:mb-0">
@@ -754,8 +754,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
-                      <a
-                        href="#0"
+                      <NavLink
+                        to="#0"
                         className={`block text-slate-200 truncate transition duration-150 ${
                           open ? "hover:text-slate-200" : "hover:text-white"
                         }`}
@@ -799,7 +799,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             </svg>
                           </div>
                         </div>
-                      </a>
+                      </NavLink>
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
                           <li className="mb-1 last:mb-0">

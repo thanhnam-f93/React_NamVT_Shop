@@ -74,15 +74,15 @@ const CountryInfo = () => {
         <div className="mb-4">
           <p className="text-gray-600">
             Google Maps:
-            <a href={data.googleMaps} target="_blank">
+            <NavLink to={data.googleMaps} target="_blank">
               Link
-            </a>
+            </NavLink>
           </p>
           <p className="text-gray-600">
             OpenStreet Maps:
-            <a href={data.openStreetMaps} target="_blank">
+            <NavLink to={data.openStreetMaps} target="_blank">
               Link
-            </a>
+            </NavLink>
           </p>
         </div>
 

@@ -11,7 +11,11 @@ import {
     MOVIE_REQUEST_BY,
     MOVIE_REQUEST_COMINGSOON,
     ADD_CART,
-    DATA_COMING_SUCCESS
+    DATA_COMING_SUCCESS,
+    ADD_MOVIE_CART_SUCCESS,
+    INCREASE_CART,
+    DECREASE_CART,
+    REMOVE_CART
 } from '../constant/movie'
 
 export const loadData = () => ({
@@ -43,6 +47,14 @@ export const fetchComingSuccess = (movies: any, totalPage) => {
         data: { movies, totalPage }
     }
 }
+export const addMovieCardSuccess = (movies: any) => {
+    console.log("Action: addMovieCardSuccess", movies);
+    return {
+        type: ADD_MOVIE_CART_SUCCESS,
+        data: movies
+    }
+}
+
 export const fetchDataFailed = (error: any) => {
     console.log("Action: fetchDataFailed");
 
@@ -93,3 +105,22 @@ export const addCart = (data) => {
         data: data
     }
 }
+export const increase = (data) => {
+    return {
+        type: INCREASE_CART,
+        data: data
+    }
+}
+export const decrease = (data) => {
+    return {
+        type: DECREASE_CART,
+        data: data
+    }
+}
+export const remove = (data) => {
+    return {
+        type: REMOVE_CART,
+        data: data
+    }
+}
+

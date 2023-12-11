@@ -7,13 +7,15 @@ import {
     fetchCreateData,
     fetchUpdateData,
     fetchDeleteData,
-    fetchComingSuccess
+    fetchComingSuccess,
+    addMovieCardSuccess
 } from "../actions/movie";
 import { Movie } from "../../model/Movie"
 import * as taskTypesData from "../constant/movie"
 import { callAPIMovie } from "../../service/dataMovie"
 
 import { CONSTANTS } from "../../utils/constant";
+import { AxiosError } from "axios";
 
 function* loadAllDataMovie() {
     // console.log("Saga - loadAllDataMovie");
@@ -60,14 +62,17 @@ function* loadMovieComingSoon(input: any) {
     }
 }
 function* addCart(input: any) {
-    // console.log("Saga - loadAllDataMovie");
+    console.log("Saga - addCart: ", input);
     try {
 
-        // const response = yield call(callAPIMovie.getMovieComingSoon);
-        // let totalRecord = response.headers["x-total-count"];
-        // let totalPage = Math.ceil(totalRecord / 10);
-        // console.log("response loadMovieComingSoon", response);
+        // const response = yield call(callAPIMovie.addCart, input.data);
+
+        // caculator Money 
+
+        yield put(addMovieCardSuccess(input.data));
         // yield put(fetchComingSuccess(response.data, 1));
+
+
     } catch (error) {
 
         yield put(fetchDataFailed(error));

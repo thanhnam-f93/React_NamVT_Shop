@@ -44,7 +44,7 @@ function ProductItem(product) {
           icon: "error",
           title: "Oops...",
           text: err,
-          // footer: '<a href="#">Why do I have this issue?</a>',
+          // footer: '<NavLink to="#">Why do I have this issue?</NavLink>',
         });
       });
   };
@@ -66,7 +66,7 @@ function ProductItem(product) {
           icon: "error",
           title: "Oops...",
           text: err,
-          // footer: '<a href="#">Why do I have this issue?</a>',
+          // footer: '<NavLink to="#">Why do I have this issue?</NavLink>',
         });
       });
   };
