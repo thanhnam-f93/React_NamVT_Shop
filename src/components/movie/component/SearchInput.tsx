@@ -1,11 +1,4 @@
-import React, {
-  createRef,
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-  useState,
-} from "react";
+import React from "react";
 
 const SearchInput = ({ dataSearch, setDataSearch, title }) => {
   function handleChange(e) {

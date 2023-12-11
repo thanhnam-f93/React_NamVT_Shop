@@ -5,9 +5,12 @@ const endpoint = CONSTANTS.URL.MOVIE;
 const endpointCart = CONSTANTS.URL.MOVIE_CART;
 const callAPIMovie = {
     // http://localhost:3000/movie/?rated=R&year_gte=1990&year_lte=2010&?_page=1&_limit=10
-    async get_all() {
-        // const url = endpoint;
-        const url = endpoint + "?_page=1&_limit=100"
+    async get_all(page: string) {
+        const url = endpoint + `?_page=${page}&_limit=8`
+        return axios.get(url);
+    },
+    async get_all_by_category(page: string, category: string) {
+        const url = endpoint + `?genre_like=${category}&?_page=${page}&_limit=8`
         return axios.get(url);
     },
     async get_movie_by(input: any) {
@@ -25,11 +28,9 @@ const callAPIMovie = {
         }
         if (input.data.typeSearch && input.data.textInput) {
             url += `${input.data.typeSearch}_like=${input.data.textInput}&`
-        } else
-            // If don't select type saerch => deafault searh with name (relative search )
-            if (input.data.textInput && !input.data.typeSearch) {
-                url += `title_like=${input.data.textInput}&`
-            }
+        } else if (input.data.textInput && !input.data.typeSearch) {
+            url += `title_like=${input.data.textInput}&`
+        }
         // Check data page
 
         url += `?_page=${input.data.gotoPage}&_limit=10`

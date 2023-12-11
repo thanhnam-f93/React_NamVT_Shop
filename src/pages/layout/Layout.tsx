@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { CartContext } from "../../context/Context";
-// import ErrorBoundary from "react-error-boundary";
 import { Outlet, useNavigate, Navigate } from "react-router-dom";
 import Sidebar from "../../partials/Sidebar";
 import Header from "../../partials/Header";
 import WelcomeBanner from "../../partials/dashboard/WelcomeBanner";
 import { CONSTANTS } from "../../utils/constant";
 import { callAPIFetch } from "../../service/api";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCreateData, loadData } from "../../redux/actions/movie";
 import Swal from "sweetalert2";
 function Layout({ roles }) {
   const navigate = useNavigate();

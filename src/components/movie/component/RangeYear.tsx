@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import badgeColors from "@material-tailwind/react/theme/components/badge/badgeColors";
 
 const RangeYear = ({ dataSearch, setDataSearch }) => {
   const [rangeValues, setRangeValues] = useState([1900, 2024]);

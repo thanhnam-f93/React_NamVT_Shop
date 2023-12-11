@@ -4,11 +4,9 @@ import {
   Route,
   useLocation
 } from 'react-router-dom';
-
 import './css/style.css';
 import Layout from './pages/layout/Layout'
-import './charts/ChartjsConfig';
-import { Outlet, useNavigate, Navigate } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 import Signin from './pages/signin/page';
 import ResetPass from './pages/reset-password/page';
 import SignUp from "./pages/signup/page";
@@ -18,8 +16,8 @@ import ProductDetail from './components/product/ProductDetail';
 import Error_404 from './pages/erorr-page/Error_404'
 import Error_500 from './pages/erorr-page/Error_500'
 import Dashboard from './pages/dashboard/dashboard';
-import Payment from './components/payment/payment';
-import Sale from './components/sale/Sale';
+import Payment from './components/product/sale/Payment';
+import Sale from './components/product/sale/Sale';
 import CountryInfo from './components/country/CountryInfo';
 import ListCountry from './components/country/ListCountry';
 import TodoApp from './pages/todo/TodoApp';
@@ -27,26 +25,17 @@ import Profile from './pages/user/Profile'
 import SearchBar from './pages/todo/SearchBar';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import ListMoviePlay from './components/movie/ListMoviePlay';
 import Home from './components/movie/Home'; 
-import PriceMovie from './components/movie/PriceMovie'; 
-import NewMovie from './components/movie/NewMovie';
-import MovieManagement from './components/movie/MovieManagement';
+import NewMovie from './components/movie/admin/NewMovie';
+import MovieManagement from './components/movie/admin/MovieManagement';
 import Movie from './components/movie/Movie';
-import Silde from './components/movie/Silde';
+import Silde from './components/movie/slide/Silde';
 import DetailMovie from './components/movie/DetailMovie';
 import Start from './components/quiz/Start'
-import { useDispatch, useSelector } from "react-redux";
-import Swal from "sweetalert2";
-import PaymentMovie from './components/movie/PaymentMovie';
-import CartList from './components/movie/CartList';
-import PayMoneyForm from './components/movie/PayMoneyForm';
-import PayMoneyForm2 from './components/movie/PayMoneyForm';
+import PaymentMovie from './components/movie/payment/PaymentMovie';
+import CartList from './components/movie/cart/CartList';
+import PayMoneyForm from './components/movie/payment/PayMoneyForm';
 function App() {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(loadData());
-  // }, []);
   const location = useLocation();
   const role = localStorage.getItem("role");
   const userName = localStorage.getItem("username");
@@ -55,11 +44,11 @@ function App() {
     document.querySelector('html').style.scrollBehavior = 'auto'
     window.scroll({ top: 0 })
     document.querySelector('html').style.scrollBehavior = ''
-    // const s = document.getElementById("top");
-    // s?.scrollIntoView()
+
   }, [location.pathname]); 
   // Clear data while crash App
 useEffect(() => {
+  document.getElementById("top")?.scrollIntoView()
   return () => {
     localStorage.clear();
   }
@@ -80,7 +69,6 @@ const RoleAccess = ({ roles = [] }) => {
                   {/* Movie Page  */}
           <Route path="movie" element={<MovieManagement />}/>
           <Route path="movie/new" element={<NewMovie />}/>
-          <Route path="movie/price" element={<PriceMovie />}/>
           <Route path="movie/:id" element={<Movie />}/>
               {/* Country Page  */}
           <Route path="country" element={<ListCountry />}/>
@@ -114,7 +102,6 @@ const RoleAccess = ({ roles = [] }) => {
         <Route exact path="/500" element={<Error_500 />} />
        
         {/* Quiz */}
-        
         <Route exact path="/quiz" element={<Start  />} />
         <Route exact path="/pay" element={<PayMoneyForm  />} />
       </Routes>

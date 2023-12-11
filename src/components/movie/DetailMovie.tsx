@@ -1,28 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
-import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import Video from "./Video";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart, increase, openVideo } from "../../redux/actions/movie";
 import Swal from "sweetalert2";
-import CartList from "./CartList";
-import ReactPlayer from "react-player";
-import PayMoneyForm from "./PayMoneyForm";
+import CartList from "./cart/CartList";
 
 const DetailMovie = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation();
   const movie = location.state;
   const disPlay = useSelector((state: any) => state.movie.disPlay);
   const error = useSelector((state: any) => state.movie.error);
   const movieCart = useSelector((state: any) => state.movie.movieCart);
-  // const swalWithBootstrapButtons =
   const [isModalOpen, setModalOpen] = useState(false);
-  const handleAddToCart = () => {
-    // Implement your logic to add the item to the cart
-    console.log("Item added to cart");
-    setModalOpen(true);
-  };
 
   useEffect(() => {
     if (error) {
@@ -64,11 +55,7 @@ const DetailMovie = () => {
 
   return (
     <>
-      <CartList
-        isOpen={isModalOpen}
-        onClose={() => setModalOpen(false)}
-        onAddToCart={handleAddToCart}
-      />
+      <CartList isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
       <section className="movie-detail">
         <div className="container">
           <figure className="movie-detail-banner">
@@ -252,26 +239,3 @@ const DetailMovie = () => {
 };
 
 export default DetailMovie;
-
-// Swal.mixin({
-//   customClass: {
-//     confirmButton: "btn-cart",
-//     cancelButton: "btn-cart",
-//   },
-//   buttonsStyling: false,
-// })
-//   .fire({
-//     title: "Are you Payment?",
-//     text: "View list cart and payment!",
-//     icon: "question",
-//     showCancelButton: true,
-//     confirmButtonText: "Yes, Pay now!",
-//     cancelButtonText: "No, continue!",
-//     reverseButtons: true,
-//   })
-//   .then((result) => {
-//     if (result.isConfirmed) {
-//       navigate("/payment");
-//     } else if (result.dismiss === Swal.DismissReason.cancel) {
-//     }
-//   });

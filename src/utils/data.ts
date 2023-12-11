@@ -15,3 +15,7 @@ export const opstionsRated = [
     { data: "TV-14", label: "TV-14" },
     { data: "N/A", label: "N/A" },
 ];
+
+export const headerCategory = [
+    "Action", "Drama", "Biography", "Adventure", "Fantasy", "Horror", "Sci-Fi", "Thriller", "Crime", "History"
+];

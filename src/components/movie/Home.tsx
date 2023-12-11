@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../movie/component/Header";
+import Footer from "../movie/component/Footer";
 import ListMoviePlay from "./ListMoviePlay";
 
 const Home = () => {

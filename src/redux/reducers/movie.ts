@@ -28,19 +28,19 @@ function movieReducers(state = initialState, payload) {
         data: payload.data,
       };
     case MOVIE_REQUEST:
-      // console.log("Reducer-DATA_REQUEST");
+
       return {
         ...state,
         requesting: true,
       };
     case MOVIE_REQUEST_COMINGSOON:
-      // console.log("Reducer-DATA_REQUEST");
+
       return {
         ...state,
         requesting: true,
       };
     case MOVIE_REQUEST_BY:
-      // console.log("Reducer-DATA_REQUEST");
+
       return {
         ...state,
         requesting: true,
@@ -70,7 +70,6 @@ function movieReducers(state = initialState, payload) {
         modalDisplay: false
       };
     case DATA_COMING_SUCCESS:
-      console.log("Start  payload movieReducers payload", payload);
       return {
         ...state,
         movieComing: payload.data.movies,
@@ -80,7 +79,7 @@ function movieReducers(state = initialState, payload) {
         modalDisplay: false
       };
     case ADD_MOVIE_CART_SUCCESS:
-      console.log("Start  payload movieReducers ADD_MOVIE_CART_SUCCESS", payload);
+
       return {
         ...state,
         movieCart: [...state.movieCart, payload.data],
@@ -89,8 +88,6 @@ function movieReducers(state = initialState, payload) {
         success: true
       };
     case DATA_FAILED:
-      console.log("Start  payload movieReducers type", payload.type);
-      console.log("Start  payload movieReducers payload", payload);
       return {
         ...state,
         requesting: false,
@@ -108,7 +105,6 @@ function movieReducers(state = initialState, payload) {
         disPlay: "none"
       };
     case INCREASE_CART:
-      console.log("Start  INCREASE_CART", payload);
       return {
         ...state,
         movieCart: state.movieCart.map((item: any) => {

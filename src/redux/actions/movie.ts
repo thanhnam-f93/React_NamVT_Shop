@@ -15,12 +15,22 @@ import {
     ADD_MOVIE_CART_SUCCESS,
     INCREASE_CART,
     DECREASE_CART,
-    REMOVE_CART
+    REMOVE_CART,
+    MOVIE_REQUEST_CATEGORY
 } from '../constant/movie'
 
-export const loadData = () => ({
-    type: MOVIE_REQUEST,
-});
+export const loadData = (input: any) => {
+    return {
+        type: MOVIE_REQUEST,
+        data: input
+    }
+};
+export const loadDataCategory = (input: any) => {
+    return {
+        type: MOVIE_REQUEST_CATEGORY,
+        data: input
+    }
+};
 export const loadDataBy = (input: any) => {
     return {
         type: MOVIE_REQUEST_BY,
@@ -34,21 +44,18 @@ export const loadMovieComingSoon = () => {
 };
 
 export const fetchDataSuccess = (movies: any, totalPage) => {
-    console.log("Action: fetchDataSuccess", movies);
     return {
         type: DATA_SUCCESS,
         data: { movies, totalPage }
     }
 }
 export const fetchComingSuccess = (movies: any, totalPage) => {
-    console.log("Action: fetchComingSuccess", movies);
     return {
         type: DATA_COMING_SUCCESS,
         data: { movies, totalPage }
     }
 }
 export const addMovieCardSuccess = (movies: any) => {
-    console.log("Action: addMovieCardSuccess", movies);
     return {
         type: ADD_MOVIE_CART_SUCCESS,
         data: movies
@@ -56,8 +63,6 @@ export const addMovieCardSuccess = (movies: any) => {
 }
 
 export const fetchDataFailed = (error: any) => {
-    console.log("Action: fetchDataFailed");
-
     return {
         type: DATA_FAILED,
         error: error

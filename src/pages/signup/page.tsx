@@ -3,7 +3,7 @@ export const metadata = {
   description: "Page description",
 };
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { CONSTANTS } from "../../utils/constant";
 import { callAPIUser } from "../../service/dataUser";
@@ -13,6 +13,9 @@ import { User } from "../../model/User";
 import { AxiosError, AxiosResponse } from "axios";
 
 export default function SignUp() {
+  const location = useLocation();
+  console.log("location", location.state);
+
   const navigate = useNavigate();
   const {
     register,
@@ -40,7 +43,6 @@ export default function SignUp() {
           icon: "error",
           title: "Oops...",
           text: error,
-          // footer: '<NavLink to="#">Why do I have this issue?</NavLink>',
         });
       })
       .finally(() => {

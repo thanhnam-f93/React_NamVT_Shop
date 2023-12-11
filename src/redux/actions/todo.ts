@@ -21,16 +21,12 @@ export const loadDataBy = (status: string) => ({
 
 
 export const fetchDataSuccess = (data: any) => {
-    // console.log("Call Action fetchDataSuccess", data);
-
     return {
         type: DATA_SUCCESS,
         data: data
     }
 }
 export const fetchDataFailed = (error: any) => {
-    console.log("Action: fetchDataFailed");
-
     return {
         type: DATA_FAILED,
         error: {
