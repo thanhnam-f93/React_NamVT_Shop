@@ -44,7 +44,7 @@ json-server --watch db.json
 ```
 node server.js
 ```
-#### Run App
+4. **Run Web App**
 - Starting web and enjoy this moment.
 ```
 npm run dev
