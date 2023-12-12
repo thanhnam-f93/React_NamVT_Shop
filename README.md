@@ -26,23 +26,26 @@ Provide instructions on how to set up and run your project locally.
 ### Installation
 
 A step-by-step guide on how to install and set up your project.
-
-#### Compiles and install all dependencies run project
+1. **Install all dependencies run project:**
 ```
 npm i
 ```
-#### Run mock data - Json server provide data for App
 
-Open bash GUI and Move to the folder containing the file db.json: [\src\utils\db.json]
+2. **Run mock data - Json server provide data for App:**
+- Open bash GUI and Move to the folder containing the file db.json: [\src\utils\db.json]
 
+```
 json-server --watch db.json
 ```
-####  Run mock server  - Dùng để tự động gửi mail xác thực tới người dùng đăng ký mới tài khoản.
-Move to the folder containing the file server.js : [\src\utils\server.js] and run command above
 
+3. **Run mock server  - Dùng để tự động gửi mail xác thực tới người dùng đăng ký mới tài khoản:**
+- Move to the folder containing the file server.js : [\src\utils\server.js] and run command above
+
+```
 node server.js
 ```
 #### Run App
+- Starting web and enjoy this moment.
 ```
 npm run dev
 ```
