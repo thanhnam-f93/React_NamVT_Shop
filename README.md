@@ -8,7 +8,7 @@ Project tổng cuối khóa traning ReactJs - Mock project mini web xem phim ...
 
 ## Features
 ### Signup**
-- ![Signup]('../src/images/signup.png')
+- ![Signup]('../images/signin.png')
 
 -  ( having send mail notification to user): 
  
