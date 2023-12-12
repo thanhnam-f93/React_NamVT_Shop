@@ -34,7 +34,7 @@ npm i
 #### Run mock data - Json server provide data for App
 ```
 Open bash GUI and Move to the folder containing the file db.json: [\src\utils\db.json]
-```
+
 json-server --watch db.json
 ```
 ####  Run mock server  - Dùng để tự động gửi mail xác thực tới người dùng đăng ký mới tài khoản.
