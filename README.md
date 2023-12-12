@@ -8,7 +8,7 @@ Project tổng cuối khóa traning ReactJs - Mock project mini web xem phim ...
 
 ## Features
 ### Signup**
-- ![Signup]('https://drive.google.com/file/d/1FkbwHyIpfo9zDmWX-lpCoAK1gt1mFqXK/view?usp=drive_link')
+- ![Signup]('src/images/footer-bg.jpg')
 
 -  ( having send mail notification to user): 
  
