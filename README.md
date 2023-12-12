@@ -32,17 +32,16 @@ A step-by-step guide on how to install and set up your project.
 npm i
 ```
 #### Run mock data - Json server provide data for App
-```
+
 Open bash GUI and Move to the folder containing the file db.json: [\src\utils\db.json]
 
 json-server --watch db.json
 ```
 ####  Run mock server  - Dùng để tự động gửi mail xác thực tới người dùng đăng ký mới tài khoản.
-```
 Move to the folder containing the file server.js : [\src\utils\server.js] and run command above
-```
-node server.js
 
+node server.js
+```
 #### Run App
 ```
 npm run dev
