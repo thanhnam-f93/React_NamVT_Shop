@@ -8,7 +8,7 @@ Project tổng cuối khóa traning ReactJs - Mock project mini web xem phim ...
 
 ## Features
 ### Signup**
-- ![OpenAI Logo](https://www.openai.com/assets/logo-d65caa58b1f1e7b7d6ea69804d55a89e.svg)
+- ![OpenAI Logo](https://i.pinimg.com/236x/e9/fa/65/e9fa65bf29c5177f1b5040d0667f6ce8.jpg)
 
 -  ( having send mail notification to user): 
  
