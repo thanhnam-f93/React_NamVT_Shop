@@ -29,7 +29,7 @@ A step-by-step guide on how to install and set up your project.
 
 #### Compiles and install all dependencies run project
 ```
-npm run dev
+npm i
 ```
 #### Run mock data - Json server provide data for App
 ```
