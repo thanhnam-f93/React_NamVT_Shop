@@ -7,34 +7,36 @@ Description of project.
 Project tổng cuối khóa traning ReactJs - Mock project mini web xem phim ...
 
 ## Features
-1. **Signup**
+### Signup**
+- ![OpenAI Logo](https://www.openai.com/assets/logo-d65caa58b1f1e7b7d6ea69804d55a89e.svg)
+
 -  ( having send mail notification to user): 
  
-1. **Login**
+### Login**
 - Login
-1. **Logout**
+### Logout**
 - Logout
-1. **Management of movies**
+### Management of movies**
 - Management of movies
-1. **Play trailer movie**
+### Play trailer movie**
 - Play trailer movie
-1. **Display all movies**
+### Display all movies**
 - Display all movies
-1. **Search and filter movies**
+### Search and filter movies**
 - Search and filter movies
-1. **Detail movie**
+### Detail movie**
 - Detail movie
-1. **Add movie cart**
+### Add movie cart**
 - Add movie cart
-1. **Manage cart**
+### Manage cart**
 - Manage cart
-1. **Buy and Payment**
+### Buy and Payment**
 - Buy and Payment
 ## Getting Started
 
 Provide instructions on how to set up and run your project locally.
 
-### Installation
+## Installation
 
 A step-by-step guide on how to install and set up your project.
 1. **Install all dependencies run project:**
