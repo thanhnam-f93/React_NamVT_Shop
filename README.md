@@ -7,20 +7,28 @@ Description of project.
 Project tổng cuối khóa traning ReactJs - Mock project mini web xem phim ...
 
 ## Features
-- Signup ( having send mail notification to user): 
- dfsdfsdfsdffffsd
-
+1. **Signup**
+-  ( having send mail notification to user): 
+ 
+1. **Login**
 - Login
-
+1. **Logout**
 - Logout
-
+1. **Management of movies**
 - Management of movies
+1. **Play trailer movie**
 - Play trailer movie
+1. **Display all movies**
 - Display all movies
+1. **Search and filter movies**
 - Search and filter movies
+1. **Detail movie**
 - Detail movie
+1. **Add movie cart**
 - Add movie cart
+1. **Manage cart**
 - Manage cart
+1. **Buy and Payment**
 - Buy and Payment
 ## Getting Started
 
