@@ -28,7 +28,8 @@ export const CONSTANTS = {
         COUNTRY: 'https://restcountries.com/v3.1/',
         TODO: 'http://localhost:3000/todo/',
         MOVIE: 'http://localhost:3000/movie/',
-        MOVIE_CART: 'http://localhost:3000/cart-movie/'
+        MOVIE_CART: 'http://localhost:3000/cart-movie/',
+        MAIL: 'http://localhost:3001/api/send-email',
     },
     STATUS: {
         ERR_SERVER: "500",

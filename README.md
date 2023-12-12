@@ -1,23 +1,49 @@
+# NamVT-Complex-APP
 
-### Project setup
-```
-npm install
-```
+Description of project.
 
-#### Compiles and hot-reloads for development
+## Introduction
+
+Project tổng cuối khóa traning ReactJs - Mock project mini web xem phim ...
+
+## Features
+- Validation data 
+- Login
+- Logout
+- Signup ( having send mail notification to user)
+- Management of movies
+- Play trailer movie
+- Display all movies
+- Search and filter movies
+- Detail movie
+- Add movie cart
+- Manage cart
+- Buy and Payment
+## Getting Started
+
+Provide instructions on how to set up and run your project locally.
+
+### Installation
+
+A step-by-step guide on how to install and set up your project.
+
+#### Compiles and install all dependencies run project
 ```
 npm run dev
 ```
-#### Run Json serve to Mock data ( simulator call API)
+#### Run mock data - Json server provide data for App
+```
+Open bash GUI and Move to the folder containing the file db.json: [\src\utils\db.json]
 ```
 json-server --watch db.json
 ```
-
-#### Login with default username: namvt11 and password: namvt11
+####  Run mock server  - Dùng để tự động gửi mail xác thực tới người dùng đăng ký mới tài khoản.
 ```
-
-#### Compiles and minifies for production
+Move to the folder containing the file server.js : [\src\utils\server.js] and run command above
 ```
-npm run build
-```
+node server.js
 
+#### Run App
+```
+npm run dev
+```

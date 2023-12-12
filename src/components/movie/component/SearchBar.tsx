@@ -1,13 +1,13 @@
 import React, { createRef, useEffect, useRef, useState } from "react";
 import "rc-slider/assets/index.css";
-import { CONSTANTS } from "../../utils/constant";
-import RadioStatus from "../../components/movie/component/RadioStatus";
-import RangeYear from "../../components/movie/component/RangeYear";
-import Dropdown from "../../components/movie/component/Dropdown";
-import SearchInput from "../../components/movie/component/SearchInput";
+import { CONSTANTS } from "../../../utils/constant";
+import RadioStatus from "../component/RadioStatus";
+import RangeYear from "../component/RangeYear";
+import Dropdown from "../component/Dropdown";
+import SearchInput from "../component/SearchInput";
 import { useDispatch } from "react-redux";
-import { loadDataBy } from "../../redux/actions/movie";
-import { optionsSearch, opstionsRated } from "../../utils/data";
+import { loadDataBy } from "../../../redux/actions/movie";
+import { optionsSearch, opstionsRated } from "../../../utils/data";
 import Swal from "sweetalert2";
 const SearchBar = ({ dataSearch, setDataSearch }) => {
   const dispatch = useDispatch();

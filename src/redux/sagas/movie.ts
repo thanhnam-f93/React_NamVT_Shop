@@ -1,4 +1,4 @@
-import { call, delay, put, takeEvery } from "redux-saga/effects";
+import { call, delay, put, take, takeEvery } from "redux-saga/effects";
 import {
     loadData,
     fetchDataSuccess,
@@ -17,6 +17,7 @@ import { callAPIMovie } from "../../service/dataMovie"
 
 import { CONSTANTS } from "../../utils/constant";
 import { AxiosError } from "axios";
+import { MOVIE_CLEAR } from "../constant/movie";
 
 function* loadAllDataMovie(data: any) {
     try {
@@ -44,10 +45,12 @@ function* loadMovieBy(input: any) {
 }
 function* loadMovieByCategory(input: any) {
     try {
-        const response = yield call(callAPIMovie.get_all_by_category, input);
+        // yield take(MOVIE_CLEAR)
+        const response = yield call(callAPIMovie.get_all_by_category, input.data.page, input.data.category);
         let totalRecord = response.headers["x-total-count"];
         let totalPage = Math.ceil(totalRecord / 10);
         yield put(fetchDataSuccess(response.data, totalPage));
+
     } catch (error) {
 
         yield put(fetchDataFailed(error));
@@ -58,7 +61,6 @@ function* loadMovieComingSoon(input: any) {
         const response = yield call(callAPIMovie.getMovieComingSoon);
         // let totalRecord = response.headers["x-total-count"];
         // let totalPage = Math.ceil(totalRecord / 10);
-        console.log("response loadMovieComingSoon", response);
         yield put(fetchComingSuccess(response.data, 1));
     } catch (error) {
         yield put(fetchDataFailed(error));

@@ -31,7 +31,7 @@ const Header = () => {
                 navigate("/pay");
               }}
             >
-              <FaCartShopping />
+              <FaCartShopping className="text-yellow-300 font-extrabold" />
             </button>
             <NavLink to="/movie">
               <span className="font-bold text-white">Management</span>

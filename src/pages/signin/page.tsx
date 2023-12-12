@@ -77,7 +77,7 @@ export default function SignIn() {
             showConfirmButton: false,
             timer: 1500,
           });
-          navigate(CONSTANTS.PAGE.COUNTRY);
+          navigate(CONSTANTS.PAGE.MOVIE);
         } else {
           Swal.fire({
             icon: "error",

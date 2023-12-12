@@ -1,20 +1,34 @@
 import { Movie } from "../model/Movie";
 import { CONSTANTS } from "../utils/constant";
 import axios, { AxiosError } from "axios";
+import { ListCategory } from "../utils/data"
 const endpoint = CONSTANTS.URL.MOVIE;
 const endpointCart = CONSTANTS.URL.MOVIE_CART;
 const callAPIMovie = {
     // http://localhost:3000/movie/?rated=R&year_gte=1990&year_lte=2010&?_page=1&_limit=10
     async get_all(page: string) {
+
         const url = endpoint + `?_page=${page}&_limit=8`
         return axios.get(url);
     },
     async get_all_by_category(page: string, category: string) {
-        const url = endpoint + `?genre_like=${category}&?_page=${page}&_limit=8`
+        let url = "?";
+        if (ListCategory.includes(category)) {
+            url = endpoint + `?genre_like=${category}&_page=${page}&_limit=8`
+        } else if (category == 'Top Rated') {
+            url = endpoint + `?_sort=imdbRating&_order=desc&_page=${page}&_limit=8`
+        } else if (category == 'Lasted') {
+            url = endpoint + `?_sort=year&_order=desc&_page=${page}&_limit=8`
+        } else if (category == 'Top View') {
+            url = endpoint + `?_sort=imdbVotes&_order=desc&_page=${page}&_limit=8`
+        } else if (category == 'Top Price') {
+            url = endpoint + `?_sort=price&_order=desc&_page=${page}&_limit=8`
+        }
+
         return axios.get(url);
     },
     async get_movie_by(input: any) {
-        console.log("Input...........: ", input);
+
         let url = "?";
         if (input.data.comingSoon) {
             url += `comingSoon=${input.data.comingSoon}&`

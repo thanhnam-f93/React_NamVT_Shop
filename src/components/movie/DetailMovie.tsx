@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCart, increase, openVideo } from "../../redux/actions/movie";
 import Swal from "sweetalert2";
 import CartList from "./cart/CartList";
+import ActorList from "./ActorList";
 
 const DetailMovie = () => {
   const dispatch = useDispatch();
@@ -38,7 +39,6 @@ const DetailMovie = () => {
       total: 1,
       time: new Date(),
     };
-    console.log("CHecking:   ", checkDuplicate(cart));
 
     dispatch(checkDuplicate(cart) ? addCart(cart) : increase(cart));
   }
@@ -58,34 +58,40 @@ const DetailMovie = () => {
       <CartList isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
       <section className="movie-detail">
         <div className="container">
-          <figure className="movie-detail-banner">
-            <img src={movie.poster} alt="Free guy movie poster" />
+          <div className="grid grid-cols-1 gap-4">
+            {/*  */}
+            <figure className="movie-detail-banner">
+              <img src={movie.poster} alt="Free guy movie poster" />
 
-            <button
-              className="play-btn"
-              onClick={() => {
-                dispatch(openVideo());
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="90"
-                width="90"
-                viewBox="0 0 512 512"
+              <button
+                className="play-btn"
+                onClick={() => {
+                  dispatch(openVideo());
+                }}
               >
-                <path
-                  fill="#ffffff"
-                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9V168c0-8.7 4.7-16.7 12.3-20.9z"
-                />
-              </svg>
-            </button>
-          </figure>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="90"
+                  width="90"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="#ffffff"
+                    d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9V168c0-8.7 4.7-16.7 12.3-20.9z"
+                  />
+                </svg>
+              </button>
+            </figure>
+            {/*  */}
+
+            <ActorList actors={movie.imagesActor} />
+          </div>
 
           <div className="movie-detail-content grid-flow-row-dense grid-cols-10">
             <p className="detail-subtitle col-span-9">
               {[movie.imdbRating, movie.imdbVotes].includes("N/A")
                 ? "Comming Soon"
-                : `${movie.imdbRating} /${movie.imdbVotes} Votes`}
+                : `${movie.imdbRating} Star / ${movie.imdbVotes} Votes`}
             </p>
 
             <h1 className="h1 detail-title">
@@ -218,15 +224,6 @@ const DetailMovie = () => {
                 <span>Buy Now</span>
               </button>
             </div>
-            <NavLink
-              to="./assets/images/movie-4.png"
-              download
-              className="download-btn"
-            >
-              <span>Download</span>
-
-              {/* <ion-icon name="download-outline"></ion-icon> */}
-            </NavLink>
           </div>
         </div>
         {/*  */}

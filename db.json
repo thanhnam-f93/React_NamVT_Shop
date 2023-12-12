@@ -1,4 +1,11 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com"
+    }
+  ],
   "dog": [
     {
       "price": "123",
@@ -457,6 +464,60 @@
       "addres": "Hai Phong",
       "gender": "Female",
       "role": "user"
+    },
+    {
+      "name": "Vu Thanh Nam",
+      "username": "namvt11",
+      "password": "dddddddddd12#dDD",
+      "id": "Q5n2LN9"
+    },
+    {
+      "name": "Vu Thanh Nam",
+      "username": "thanhnam.mda93@gmail.com",
+      "password": "dd12#dDD",
+      "id": "kwo17XN"
+    },
+    {
+      "name": "daddsa",
+      "username": "namvt11@fpt.com",
+      "password": "ffdg#2576A",
+      "id": "F110MQL"
+    },
+    {
+      "name": "Vu Thanh Nam",
+      "username": "thanhnam.mda93@gmail.com",
+      "password": "dddddddAS2@",
+      "id": "t5vGyxT"
+    },
+    {
+      "name": "Vu Thanh Nam",
+      "username": "thanhnam.mda93@gmail.com",
+      "password": "ssssss12!A",
+      "id": "VP-t77i"
+    },
+    {
+      "name": "dsdsds",
+      "username": "thanhnam.mda93@gmail.com",
+      "password": "ssssss12!A",
+      "id": "W7ME3eT"
+    },
+    {
+      "name": "Vu Thanh Nam",
+      "username": "thanhnam.mda93@gmail.com",
+      "password": "ssssss12!A",
+      "id": "Cw9kkb2"
+    },
+    {
+      "name": "Vu Thanh Nam",
+      "username": "thanhnam.mda93@gmail.com",
+      "password": "ssssss12!A",
+      "id": "ce8XO4E"
+    },
+    {
+      "name": "Vu Thanh Nam",
+      "username": "thanhnam.mda93@gmail.com",
+      "password": "ssssss12!A",
+      "id": "NdbgWh9"
     }
   ],
   "payment": [
@@ -518,17 +579,24 @@
       "awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
       "poster": "https://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
       "metascore": "83",
-      "imdbRating": "7.9",
-      "imdbVotes": "890,617",
+      "imdbRating": 9.9,
+      "imdbVotes": 457006,
       "imdbID": "tt0499549",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNzM2MDk3MTcyMV5BMl5BanBnXkFtZTcwNjg0MTUzNA@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTY2ODQ3NjMyMl5BMl5BanBnXkFtZTcwODg0MTUzNA@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxOTEwNDcxN15BMl5BanBnXkFtZTcwOTg0MTUzNA@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMDg1Nzk1MV5BMl5BanBnXkFtZTcwMDk0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+      "imagesActor": [
+        {
+          "img": "https://cdn.galaxycine.vn/media/c/h/chris-ngang_1.jpg",
+          "name": "Chris Evans"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/r/y/ryan reynolds-ngang.jpg",
+          "name": "Ryan Reynolds"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/4/./4_15.jpg",
+          "name": "Emilia Clarke"
+        }
       ],
       "quality": "8K"
     },
@@ -550,17 +618,25 @@
       "country": "USA",
       "awards": "9 wins & 21 nominations.",
       "poster": "https://m.media-amazon.com/images/M/MV5BYTE1ZTBlYzgtNmMyNS00ZTQ2LWE4NjEtZjUxNDJkNTg2MzlhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_FMjpg_UX1000_.jpg",
-      "metascore": "65",
-      "imdbRating": "7.2",
-      "imdbVotes": "533,874",
+      "metascore": 6.8,
+      "imdbRating": 7.1,
+      "imdbVotes": 835345,
       "imdbID": "tt0480249",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI0NTI4NjE3NV5BMl5BanBnXkFtZTYwMDA0Nzc4._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTIwMDg2MDU4M15BMl5BanBnXkFtZTYwMTA0Nzc4._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc5MDM1OTU5OV5BMl5BanBnXkFtZTYwMjA0Nzc4._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTA0MTI2NjMzMzFeQTJeQWpwZ15BbWU2MDMwNDc3OA@@._V1_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/s/c/scarlett_johansson.jpg",
+          "name": "Scarlett Johansson"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/o/tom hiddleston-ngang.jpg",
+          "name": "Tom Hiddleston"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/c/d/cdf.jpg",
+          "name": "Cate Blanchett"
+        }
       ],
       "quality": "2K"
     },
@@ -583,15 +659,24 @@
       "awards": "16 wins & 42 nominations.",
       "poster": "https://ia.media-imdb.com/images/M/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3._V1_SX300.jpg",
       "metascore": "52",
-      "imdbRating": "7.7",
-      "imdbVotes": "611,046",
+      "imdbRating": 7.7,
+      "imdbVotes": 763534,
       "imdbID": "tt0416449",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTMwNTg5MzMwMV5BMl5BanBnXkFtZTcwMzA2NTIyMw@@._V1_SX1777_CR0,0,1777,937_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQwNTgyNTMzNF5BMl5BanBnXkFtZTcwNDA2NTIyMw@@._V1_SX1777_CR0,0,1777,935_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc0MjQzOTEwMV5BMl5BanBnXkFtZTcwMzE2NTIyMw@@._V1_SX1777_CR0,0,1777,947_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/h/u/hu-ngang.jpg",
+          "name": "Hugh Jackman"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/5/./5_18.jpg",
+          "name": "Robert Downey Jr."
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Johnny Depp"
+        }
       ],
       "quality": "FULL HD"
     },
@@ -614,17 +699,24 @@
       "awards": "Nominated for 1 Oscar. Another 34 wins & 75 nominations.",
       "poster": "https://ia.media-imdb.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_SX300.jpg",
       "metascore": "69",
-      "imdbRating": "8.1",
-      "imdbVotes": "1,003,301",
+      "imdbRating": 8.1,
+      "imdbVotes": 90442423,
       "imdbID": "tt0848228",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTA0NjY0NzE4OTReQTJeQWpwZ15BbWU3MDczODg2Nzc@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE1MzEzMjcyM15BMl5BanBnXkFtZTcwNDM4ODY3Nw@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMwMzM2MTg1M15BMl5BanBnXkFtZTcwNjM4ODY3Nw@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ4NzM2Mjc5MV5BMl5BanBnXkFtZTcwMTkwOTY3Nw@@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc3MzQ3NjA5N15BMl5BanBnXkFtZTcwMzY5OTY3Nw@@._V1_SX1777_CR0,0,1777,999_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/l/a/la-ngang_1.jpg",
+          "name": "Jennifer Lawrence"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/3/./3_204.jpg",
+          "name": "Dwayne Johnson"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/s/c/scarlett_johansson.jpg",
+          "name": "Scarlett Johansson"
+        }
       ],
       "quality": "8K"
     },
@@ -647,17 +739,24 @@
       "awards": "Nominated for 5 Oscars. Another 35 wins & 154 nominations.",
       "poster": "https://ia.media-imdb.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg",
       "metascore": "75",
-      "imdbRating": "8.2",
-      "imdbVotes": "786,985",
+      "imdbRating": 8.2,
+      "imdbVotes": 8975697,
       "imdbID": "tt0993846",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNDIwMDIxNzk3Ml5BMl5BanBnXkFtZTgwMTg0MzQ4MDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc0NzAxODAyMl5BMl5BanBnXkFtZTgwMDg0MzQ4MDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMDk1MDE4NzVeQTJeQWpwZ15BbWU4MDM4NDM0ODAx._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg3MTY4NDk4Nl5BMl5BanBnXkFtZTgwNjc0MzQ4MDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgzMTg4MDI0Ml5BMl5BanBnXkFtZTgwOTY0MzQ4MDE@._V1_SY1000_CR0,0,1553,1000_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/c/h/chris-ngang_1.jpg",
+          "name": "Chris Evans"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Margot Robbie"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/h/theron-charlize-bannner.jpg",
+          "name": "Charlize Theron"
+        }
       ],
       "quality": "HD"
     },
@@ -680,17 +779,24 @@
       "awards": "Won 1 Oscar. Another 39 wins & 134 nominations.",
       "poster": "https://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg",
       "metascore": "74",
-      "imdbRating": "8.6",
-      "imdbVotes": "937,412",
+      "imdbRating": 8.6,
+      "imdbVotes": 3121315,
       "imdbID": "tt0816692",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3NTEwOTMxMV5BMl5BanBnXkFtZTgwMjMyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMzQ5ODE2MzEwM15BMl5BanBnXkFtZTgwMTMyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4Njk4MzY0Nl5BMl5BanBnXkFtZTgwMzIyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMzE3MTM0MTc3Ml5BMl5BanBnXkFtZTgwMDIyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNjYzNjE2NDk3N15BMl5BanBnXkFtZTgwNzEyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/h/theron-charlize-bannner.jpg",
+          "name": "Charlize Theron"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/h/u/hu-ngang.jpg",
+          "name": "Hugh Jackman"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/5/./5_18.jpg",
+          "name": "Robert Downey Jr."
+        }
       ],
       "quality": "2K"
     },
@@ -713,18 +819,25 @@
       "awards": "Won 1 Golden Globe. Another 185 wins & 334 nominations.",
       "poster": "https://ia.media-imdb.com/images/M/MV5BMjM5OTQ1MTY5Nl5BMl5BanBnXkFtZTgwMjM3NzMxODE@._V1_SX300.jpg",
       "metascore": "N/A",
-      "imdbRating": "9.5",
-      "imdbVotes": "1,046,830",
+      "imdbRating": 9.5,
+      "imdbVotes": 6456,
       "imdbID": "tt0944947",
       "type": "series",
       "totalSeasons": "7",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNDc1MGUyNzItNWRkOC00MjM1LWJjNjMtZTZlYWIxMGRmYzVlXkEyXkFqcGdeQXVyMzU3MDEyNjk@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BZjZkN2M5ODgtMjQ2OC00ZjAxLWE1MjMtZDE0OTNmNGM0NWEwXkEyXkFqcGdeQXVyNjUxNzgwNTE@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMDk4Y2Y1MDAtNGVmMC00ZTlhLTlmMmQtYjcyN2VkNzUzZjg2XkEyXkFqcGdeQXVyNjUxNzgwNTE@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNjZjNWIzMzQtZWZjYy00ZTkwLWJiMTYtOWRkZDBhNWJhY2JmXkEyXkFqcGdeQXVyMjk3NTUyOTc@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNTMyMTRjZWEtM2UxMS00ZjU5LWIxMTYtZDA5YmJhZmRjYTc4XkEyXkFqcGdeQXVyMjk3NTUyOTc@._V1_SX1777_CR0,0,1777,999_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/5/./5_18.jpg",
+          "name": "Robert Downey Jr."
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Johnny Depp"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/l/a/la-ngang_1.jpg",
+          "name": "Jennifer Lawrence"
+        }
       ],
       "quality": "SD"
     },
@@ -747,18 +860,25 @@
       "awards": "Nominated for 7 Primetime Emmys. Another 17 wins & 49 nominations.",
       "poster": "https://ia.media-imdb.com/images/M/MV5BOTEzNzI3MDc0N15BMl5BanBnXkFtZTgwMzk1MzA5NzE@._V1_SX300.jpg",
       "metascore": "N/A",
-      "imdbRating": "8.6",
-      "imdbVotes": "198,041",
+      "imdbRating": 5.3,
+      "imdbVotes": 756456,
       "imdbID": "tt2306299",
       "type": "series",
       "totalSeasons": "5",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjM5MTM1ODUxNV5BMl5BanBnXkFtZTgwNTAzOTI2ODE@._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNzU2NDcxODMyOF5BMl5BanBnXkFtZTgwNDAzOTI2ODE@._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMzMzIzOTU2M15BMl5BanBnXkFtZTgwODMzMTkyODE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2NTQ2MDA3NF5BMl5BanBnXkFtZTgwODkxMDUxODE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTcxOTQ3NTA5N15BMl5BanBnXkFtZTgwMzExMDUxODE@._V1_SY1000_SX1500_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/l/a/la-ngang_1.jpg",
+          "name": "Jennifer Lawrence"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/3/./3_204.jpg",
+          "name": "Dwayne Johnson"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/s/c/scarlett_johansson.jpg",
+          "name": "Scarlett Johansson"
+        }
       ],
       "quality": "4K"
     },
@@ -781,18 +901,29 @@
       "awards": "Nominated for 4 Primetime Emmys. Another 3 wins & 22 nominations.",
       "poster": "https://ia.media-imdb.com/images/M/MV5BMTY2MjMwNDE4OV5BMl5BanBnXkFtZTgwNjI1NjU0OTE@._V1_SX300.jpg",
       "metascore": "N/A",
-      "imdbRating": "8.0",
-      "imdbVotes": "133,375",
+      "imdbRating": 5.6,
+      "imdbVotes": 756634745745,
       "imdbID": "tt3749900",
       "type": "series",
       "totalSeasons": "3",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNDI3ODYyODY4OV5BMl5BanBnXkFtZTgwNjE5NDMwMDI@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA5OTExMTIwNF5BMl5BanBnXkFtZTgwMjI5NDMwMDI@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTA3MDY2NjA3MzBeQTJeQWpwZ15BbWU4MDU0MDkzODgx._V1_SX1499_CR0,0,1499,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjM3MzYzNDgzOV5BMl5BanBnXkFtZTgwMjQwOTM4ODE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjQwODAyNjk0NF5BMl5BanBnXkFtZTgwODU4MzMyODE@._V1_SY1000_CR0,0,1500,1000_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/l/a/la-ngang_1.jpg",
+          "name": "Jennifer Lawrence"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/3/./3_204.jpg",
+          "name": "Dwayne Johnson"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/s/c/scarlett_johansson.jpg",
+          "name": "Scarlett Johansson"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/o/tom hiddleston-ngang.jpg",
+          "name": "Tom Hiddleston"
+        }
       ],
       "quality": "3D"
     },
@@ -815,18 +946,25 @@
       "awards": "1 win & 6 nominations.",
       "poster": "https://ia.media-imdb.com/images/M/MV5BOTA4NTkzMjUzOF5BMl5BanBnXkFtZTgwNzg5ODkxOTE@._V1_SX300.jpg",
       "metascore": "N/A",
-      "imdbRating": "8.0",
-      "imdbVotes": "14,770",
+      "imdbRating": 8.9,
+      "imdbVotes": 93046,
       "imdbID": "tt3281796",
       "type": "series",
       "totalSeasons": "3",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc2ODg0MzMzM15BMl5BanBnXkFtZTgwODYxODA5NTE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTcyMjA0MzczNV5BMl5BanBnXkFtZTgwNTIyODA5NTE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk0MTI0NzQ2NV5BMl5BanBnXkFtZTgwMDkxODA5NTE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ4Mzk1ODcxM15BMl5BanBnXkFtZTgwNDQyODA5NTE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUwNTE0NDI1M15BMl5BanBnXkFtZTgwMDQyODA5NTE@._V1_SY1000_SX1500_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/o/tom hiddleston-ngang.jpg",
+          "name": "Tom Hiddleston"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/c/d/cdf.jpg",
+          "name": "Cate Blanchett"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/3/./3_347.jpg",
+          "name": "Chris Hemsworth"
+        }
       ],
       "quality": "HD"
     },
@@ -849,18 +987,25 @@
       "awards": "Nominated for 2 Golden Globes. Another 4 nominations.",
       "poster": "https://ia.media-imdb.com/images/M/MV5BMTU0ODQ4NDg2OF5BMl5BanBnXkFtZTgwNzczNTE4OTE@._V1_SX300.jpg",
       "metascore": "N/A",
-      "imdbRating": "8.9",
-      "imdbVotes": "118,680",
+      "imdbRating": 8.9,
+      "imdbVotes": 980456,
       "imdbID": "tt2707408",
       "type": "series",
       "totalSeasons": "2",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2MDMzMTc0MF5BMl5BanBnXkFtZTgwMTAyMzA1OTE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxMDkyOTEyNV5BMl5BanBnXkFtZTgwNjY3Mjc3OTE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA2NDUwMTU2NV5BMl5BanBnXkFtZTgwNTI1Mzc3OTE@._V1_SY1000_CR0,0,1499,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BODA1NjAyMTQ3Ml5BMl5BanBnXkFtZTgwNjI1Mzc3OTE@._V1_SY1000_CR0,0,1499,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTU0NzQ0OTAwNl5BMl5BanBnXkFtZTgwMDAyMzA1OTE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/c/d/cdf.jpg",
+          "name": "Cate Blanchett"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/3/./3_347.jpg",
+          "name": "Chris Hemsworth"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/r/y/ryan reynolds-ngang.jpg",
+          "name": "Ryan Reynolds"
+        }
       ],
       "quality": "2K"
     },
@@ -883,18 +1028,25 @@
       "awards": "Won 2 Golden Globes. Another 132 wins & 218 nominations.",
       "poster": "https://ia.media-imdb.com/images/M/MV5BMTQ0ODYzODc0OV5BMl5BanBnXkFtZTgwMDk3OTcyMDE@._V1_SX300.jpg",
       "metascore": "N/A",
-      "imdbRating": "9.5",
-      "imdbVotes": "889,883",
+      "imdbRating": 9.5,
+      "imdbVotes": 87464035,
       "imdbID": "tt0903747",
       "type": "series",
       "totalSeasons": "5",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgyMzI5NDc5Nl5BMl5BanBnXkFtZTgwMjM0MTI2MDE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2NDkwNDk5NV5BMl5BanBnXkFtZTgwNDM0MTI2MDE@._V1_SY1000_CR0,0,1495,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM4NDcyNDMzMF5BMl5BanBnXkFtZTgwOTI0MTI2MDE@._V1_SY1000_CR0,0,1495,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTAzMTczMjM3NjFeQTJeQWpwZ15BbWU4MDc1MTI1MzAx._V1_SY1000_CR0,0,1495,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA5MTE3MTgwMF5BMl5BanBnXkFtZTgwOTQxMjUzMDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Margot Robbie"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/h/theron-charlize-bannner.jpg",
+          "name": "Charlize Theron"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/h/u/hu-ngang.jpg",
+          "name": "Hugh Jackman"
+        }
       ],
       "quality": "FUll HD"
     },
@@ -918,15 +1070,24 @@
       "landscape": "https://c4.wallpaperflare.com/wallpaper/1/670/510/5c1c90fd5ab16-wallpaper-preview.jpg",
       "poster": "https://ia.media-imdb.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_SX300.jpg",
       "metascore": "N/A",
-      "imdbRating": "N/A",
-      "imdbVotes": "N/A",
+      "imdbRating": 9.6,
+      "imdbVotes": 104305395,
       "imdbID": "tt1211837",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjM3ODc1ODI5Ml5BMl5BanBnXkFtZTgwODMzMDY3OTE@._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxNTAyNTU0NV5BMl5BanBnXkFtZTgwNzMzMDY3OTE@._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE5NDc5NzUwNV5BMl5BanBnXkFtZTgwMDM3MDM2NzE@._V1_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/5/./5_18.jpg",
+          "name": "Robert Downey Jr."
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Johnny Depp"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/l/a/la-ngang_1.jpg",
+          "name": "Jennifer Lawrence"
+        }
       ],
       "quality": "HD"
     },
@@ -950,17 +1111,24 @@
       "landscape": "https://wallpapercave.com/wp/wp2107477.jpg",
       "poster": "https://upload.wikimedia.org/wikipedia/en/d/d4/Rogue_One%2C_A_Star_Wars_Story_poster.png",
       "metascore": "N/A",
-      "imdbRating": "N/A",
-      "imdbVotes": "N/A",
+      "imdbRating": 7.8,
+      "imdbVotes": 89989242,
       "imdbID": "tt3748528",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE3MzA4Nzk3NV5BMl5BanBnXkFtZTgwNjAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNDMxMTQzMjQxM15BMl5BanBnXkFtZTgwNzAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUyNjkxOTk5NV5BMl5BanBnXkFtZTgwODAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNjM4MzExNDAyNl5BMl5BanBnXkFtZTgwOTAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE3NTgxMDcyNV5BMl5BanBnXkFtZTgwMDExMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/s/c/scarlett_johansson.jpg",
+          "name": "Scarlett Johansson"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/o/tom hiddleston-ngang.jpg",
+          "name": "Tom Hiddleston"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/c/d/cdf.jpg",
+          "name": "Cate Blanchett"
+        }
       ],
       "quality": "HD"
     },
@@ -984,16 +1152,24 @@
       "landscape": "https://images5.alphacoders.com/540/thumb-1920-540654.jpg",
       "poster": "https://ia.media-imdb.com/images/M/MV5BMTU2MTQwMjU1OF5BMl5BanBnXkFtZTgwMDA5NjU5ODE@._V1_SX300.jpg",
       "metascore": "N/A",
-      "imdbRating": "N/A",
-      "imdbVotes": "N/A",
+      "imdbRating": 8.9,
+      "imdbVotes": 12233123,
       "imdbID": "tt2094766",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BN2EyYzgyOWEtNTY2NS00NjRjLWJiNDYtMWViMjg5MWZjYjgzXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYwOWYzOTctOTc4My00ZmJkLTgzMTctMmUxNDI5ODQzYzNjXkEyXkFqcGdeQXVyNDAyODU1Njc@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BZTY5ZGUxMTAtYTU0OC00NGQ2LTkzNzgtZGZmNjlmNjY3MGU0XkEyXkFqcGdeQXVyNTY0MTkxMTg@._V1_SY1000_CR0,0,1500,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BZjA0MWYwZTEtYzc5Yi00NGM2LTg1YTctNjY2YzQ0NDJhZDAwXkEyXkFqcGdeQXVyNDAyODU1Njc@._V1_SY1000_CR0,0,1499,1000_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/l/a/la-ngang_1.jpg",
+          "name": "Jennifer Lawrence"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/3/./3_204.jpg",
+          "name": "Dwayne Johnson"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/s/c/scarlett_johansson.jpg",
+          "name": "Scarlett Johansson"
+        }
       ],
       "quality": "I-MAX"
     },
@@ -1017,18 +1193,25 @@
       "landscape": "https://images.alphacoders.com/107/1072865.jpg",
       "poster": "https://ia.media-imdb.com/images/M/MV5BMTcyMzc1MjI5MF5BMl5BanBnXkFtZTgwMzE4ODY2OTE@._V1_SX300.jpg",
       "metascore": "N/A",
-      "imdbRating": "N/A",
-      "imdbVotes": "N/A",
+      "imdbRating": 4.8,
+      "imdbVotes": 4323424,
       "imdbID": "tt3322314",
       "type": "series",
       "totalSeasons": "1",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNjc1NjI0NV5BMl5BanBnXkFtZTgwNzA0NzY0ODE@._V1_SY1000_CR0,0,1497,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI1MDg3NjY2OF5BMl5BanBnXkFtZTgwNDE1NDU4OTE@._V1_SY1000_CR0,0,1497,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BOTYzOTQyNDYxNl5BMl5BanBnXkFtZTgwNzA1NDU4OTE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMjA3MTQ5Ml5BMl5BanBnXkFtZTgwOTA1NDU4OTE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMyNjg5ODYwNF5BMl5BanBnXkFtZTgwMTE1NDU4OTE@._V1_SY1000_CR0,0,1477,1000_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/5/./5_18.jpg",
+          "name": "Robert Downey Jr."
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Johnny Depp"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/l/a/la-ngang_1.jpg",
+          "name": "Jennifer Lawrence"
+        }
       ],
       "quality": "2K"
     },
@@ -1051,17 +1234,24 @@
       "awards": "Won 1 Oscar. Another 39 wins & 134 nominations.",
       "poster": "https://upload.wikimedia.org/wikipedia/vi/2/21/Oppenheimer_%E2%80%93_Vietnam_poster.jpg",
       "metascore": "74",
-      "imdbRating": "8.6",
-      "imdbVotes": "937,412",
+      "imdbRating": 8.6,
+      "imdbVotes": 99898989,
       "imdbID": "tt0816692",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3NTEwOTMxMV5BMl5BanBnXkFtZTgwMjMyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMzQ5ODE2MzEwM15BMl5BanBnXkFtZTgwMTMyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4Njk4MzY0Nl5BMl5BanBnXkFtZTgwMzIyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMzE3MTM0MTc3Ml5BMl5BanBnXkFtZTgwMDIyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNjYzNjE2NDk3N15BMl5BanBnXkFtZTgwNzEyODgxMzE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Margot Robbie"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/h/theron-charlize-bannner.jpg",
+          "name": "Charlize Theron"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/h/u/hu-ngang.jpg",
+          "name": "Hugh Jackman"
+        }
       ],
       "quality": "2K"
     },
@@ -1084,18 +1274,25 @@
       "awards": "Won 1 Golden Globe. Another 185 wins & 334 nominations.",
       "poster": "https://m.media-amazon.com/images/M/MV5BYzE5MjY1ZDgtMTkyNC00MTMyLThhMjAtZGI5OTE1NzFlZGJjXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
       "metascore": "N/A",
-      "imdbRating": "9.5",
-      "imdbVotes": "1,046,830",
+      "imdbRating": 9.5,
+      "imdbVotes": 86787778,
       "imdbID": "tt0944947",
       "type": "series",
       "totalSeasons": "7",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNDc1MGUyNzItNWRkOC00MjM1LWJjNjMtZTZlYWIxMGRmYzVlXkEyXkFqcGdeQXVyMzU3MDEyNjk@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BZjZkN2M5ODgtMjQ2OC00ZjAxLWE1MjMtZDE0OTNmNGM0NWEwXkEyXkFqcGdeQXVyNjUxNzgwNTE@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMDk4Y2Y1MDAtNGVmMC00ZTlhLTlmMmQtYjcyN2VkNzUzZjg2XkEyXkFqcGdeQXVyNjUxNzgwNTE@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNjZjNWIzMzQtZWZjYy00ZTkwLWJiMTYtOWRkZDBhNWJhY2JmXkEyXkFqcGdeQXVyMjk3NTUyOTc@._V1_SX1777_CR0,0,1777,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNTMyMTRjZWEtM2UxMS00ZjU5LWIxMTYtZDA5YmJhZmRjYTc4XkEyXkFqcGdeQXVyMjk3NTUyOTc@._V1_SX1777_CR0,0,1777,999_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/5/./5_18.jpg",
+          "name": "Robert Downey Jr."
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Johnny Depp"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/l/a/la-ngang_1.jpg",
+          "name": "Jennifer Lawrence"
+        }
       ],
       "quality": "SD"
     },
@@ -1118,18 +1315,25 @@
       "awards": "Nominated for 7 Primetime Emmys. Another 17 wins & 49 nominations.",
       "poster": "https://m.media-amazon.com/images/M/MV5BMTYzODQzYjQtNTczNC00MzZhLTg1ZWYtZDUxYmQ3ZTY4NzA1XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
       "metascore": "N/A",
-      "imdbRating": "8.6",
-      "imdbVotes": "198,041",
+      "imdbRating": 9,
+      "imdbVotes": 3333333,
       "imdbID": "tt2306299",
       "type": "series",
       "totalSeasons": "5",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjM5MTM1ODUxNV5BMl5BanBnXkFtZTgwNTAzOTI2ODE@._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNzU2NDcxODMyOF5BMl5BanBnXkFtZTgwNDAzOTI2ODE@._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMzMzIzOTU2M15BMl5BanBnXkFtZTgwODMzMTkyODE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2NTQ2MDA3NF5BMl5BanBnXkFtZTgwODkxMDUxODE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTcxOTQ3NTA5N15BMl5BanBnXkFtZTgwMzExMDUxODE@._V1_SY1000_SX1500_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/c/h/chris-ngang_1.jpg",
+          "name": "Chris Evans"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Margot Robbie"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/h/theron-charlize-bannner.jpg",
+          "name": "Charlize Theron"
+        }
       ],
       "quality": "4K"
     },
@@ -1152,18 +1356,25 @@
       "awards": "Nominated for 4 Primetime Emmys. Another 3 wins & 22 nominations.",
       "poster": "https://m.media-amazon.com/images/M/MV5BMmUyOTdjMGEtN2RmNC00YzUwLTg5ZDEtMTI1NWE4ZjcwN2ViXkEyXkFqcGdeQXVyNTA3MTU2MjE@._V1_.jpg",
       "metascore": "N/A",
-      "imdbRating": "8.0",
-      "imdbVotes": "133,375",
+      "imdbRating": 8.1,
+      "imdbVotes": 7567567,
       "imdbID": "tt3749900",
       "type": "series",
       "totalSeasons": "3",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNDI3ODYyODY4OV5BMl5BanBnXkFtZTgwNjE5NDMwMDI@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA5OTExMTIwNF5BMl5BanBnXkFtZTgwMjI5NDMwMDI@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTA3MDY2NjA3MzBeQTJeQWpwZ15BbWU4MDU0MDkzODgx._V1_SX1499_CR0,0,1499,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjM3MzYzNDgzOV5BMl5BanBnXkFtZTgwMjQwOTM4ODE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjQwODAyNjk0NF5BMl5BanBnXkFtZTgwODU4MzMyODE@._V1_SY1000_CR0,0,1500,1000_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/h/u/hu-ngang.jpg",
+          "name": "Hugh Jackman"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/5/./5_18.jpg",
+          "name": "Robert Downey Jr."
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Johnny Depp"
+        }
       ],
       "quality": "3D"
     },
@@ -1186,18 +1397,25 @@
       "awards": "1 win & 6 nominations.",
       "poster": "https://m.media-amazon.com/images/M/MV5BMDBiYmRkNjUtYzc4My00NGFiLWE2NWUtMGU1ZDA1NTQ3ZjQwXkEyXkFqcGdeQXVyMTM1NjM2ODg1._V1_FMjpg_UX1000_.jpg",
       "metascore": "N/A",
-      "imdbRating": "8.0",
-      "imdbVotes": "14,770",
+      "imdbRating": 8.9,
+      "imdbVotes": 65675,
       "imdbID": "tt3281796",
       "type": "series",
       "totalSeasons": "3",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc2ODg0MzMzM15BMl5BanBnXkFtZTgwODYxODA5NTE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTcyMjA0MzczNV5BMl5BanBnXkFtZTgwNTIyODA5NTE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk0MTI0NzQ2NV5BMl5BanBnXkFtZTgwMDkxODA5NTE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ4Mzk1ODcxM15BMl5BanBnXkFtZTgwNDQyODA5NTE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUwNTE0NDI1M15BMl5BanBnXkFtZTgwMDQyODA5NTE@._V1_SY1000_SX1500_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/l/a/la-ngang_1.jpg",
+          "name": "Jennifer Lawrence"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/3/./3_204.jpg",
+          "name": "Dwayne Johnson"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/s/c/scarlett_johansson.jpg",
+          "name": "Scarlett Johansson"
+        }
       ],
       "quality": "HD"
     },
@@ -1220,18 +1438,25 @@
       "awards": "Nominated for 2 Golden Globes. Another 4 nominations.",
       "poster": "https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_FMjpg_UX1000_.jpg",
       "metascore": "N/A",
-      "imdbRating": "8.9",
-      "imdbVotes": "118,680",
+      "imdbRating": 8.9,
+      "imdbVotes": 8767867,
       "imdbID": "tt2707408",
       "type": "series",
       "totalSeasons": "2",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2MDMzMTc0MF5BMl5BanBnXkFtZTgwMTAyMzA1OTE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxMDkyOTEyNV5BMl5BanBnXkFtZTgwNjY3Mjc3OTE@._V1_SY1000_SX1500_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA2NDUwMTU2NV5BMl5BanBnXkFtZTgwNTI1Mzc3OTE@._V1_SY1000_CR0,0,1499,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BODA1NjAyMTQ3Ml5BMl5BanBnXkFtZTgwNjI1Mzc3OTE@._V1_SY1000_CR0,0,1499,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTU0NzQ0OTAwNl5BMl5BanBnXkFtZTgwMDAyMzA1OTE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/s/c/scarlett_johansson.jpg",
+          "name": "Scarlett Johansson"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/o/tom hiddleston-ngang.jpg",
+          "name": "Tom Hiddleston"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/c/d/cdf.jpg",
+          "name": "Cate Blanchett"
+        }
       ],
       "quality": "2K"
     },
@@ -1254,18 +1479,25 @@
       "awards": "Won 2 Golden Globes. Another 132 wins & 218 nominations.",
       "poster": "https://m.media-amazon.com/images/M/MV5BNDc2MzNkMjMtZDY5NC00NmQ0LWI1NjctZjRhNWIzZjc4MGRiXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_FMjpg_UX1000_.jpg",
       "metascore": "N/A",
-      "imdbRating": "9.5",
-      "imdbVotes": "889,883",
+      "imdbRating": 9.5,
+      "imdbVotes": 76457657,
       "imdbID": "tt0903747",
       "type": "series",
       "totalSeasons": "5",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgyMzI5NDc5Nl5BMl5BanBnXkFtZTgwMjM0MTI2MDE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2NDkwNDk5NV5BMl5BanBnXkFtZTgwNDM0MTI2MDE@._V1_SY1000_CR0,0,1495,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM4NDcyNDMzMF5BMl5BanBnXkFtZTgwOTI0MTI2MDE@._V1_SY1000_CR0,0,1495,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTAzMTczMjM3NjFeQTJeQWpwZ15BbWU4MDc1MTI1MzAx._V1_SY1000_CR0,0,1495,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA5MTE3MTgwMF5BMl5BanBnXkFtZTgwOTQxMjUzMDE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Margot Robbie"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/h/theron-charlize-bannner.jpg",
+          "name": "Charlize Theron"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/h/u/hu-ngang.jpg",
+          "name": "Hugh Jackman"
+        }
       ],
       "quality": "FUll HD"
     },
@@ -1289,15 +1521,24 @@
       "landscape": "https://c4.wallpaperflare.com/wallpaper/1/670/510/5c1c90fd5ab16-wallpaper-preview.jpg",
       "poster": "https://tr.web.img4.acsta.net/pictures/23/07/07/19/25/0174755.jpg",
       "metascore": "N/A",
-      "imdbRating": "9,3",
-      "imdbVotes": "234,789",
+      "imdbRating": 9.3,
+      "imdbVotes": 678676,
       "imdbID": "tt1211837",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjM3ODc1ODI5Ml5BMl5BanBnXkFtZTgwODMzMDY3OTE@._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxNTAyNTU0NV5BMl5BanBnXkFtZTgwNzMzMDY3OTE@._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE5NDc5NzUwNV5BMl5BanBnXkFtZTgwMDM3MDM2NzE@._V1_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/h/u/hu-ngang.jpg",
+          "name": "Hugh Jackman"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/5/./5_18.jpg",
+          "name": "Robert Downey Jr."
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Johnny Depp"
+        }
       ],
       "quality": "HD"
     },
@@ -1321,17 +1562,24 @@
       "landscape": "https://wallpapercave.com/wp/wp2107477.jpg",
       "poster": "https://upload.wikimedia.org/wikipedia/vi/e/e7/John_Wick_4_teaser_poster.jpg",
       "metascore": "N/A",
-      "imdbRating": "N/A",
-      "imdbVotes": "N/A",
+      "imdbRating": 9.6,
+      "imdbVotes": 75676,
       "imdbID": "tt3748528",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE3MzA4Nzk3NV5BMl5BanBnXkFtZTgwNjAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNDMxMTQzMjQxM15BMl5BanBnXkFtZTgwNzAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUyNjkxOTk5NV5BMl5BanBnXkFtZTgwODAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNjM4MzExNDAyNl5BMl5BanBnXkFtZTgwOTAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE3NTgxMDcyNV5BMl5BanBnXkFtZTgwMDExMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Johnny Depp"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/l/a/la-ngang_1.jpg",
+          "name": "Jennifer Lawrence"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/3/./3_204.jpg",
+          "name": "Dwayne Johnson"
+        }
       ],
       "quality": "HD"
     },
@@ -1355,16 +1603,28 @@
       "landscape": "https://images5.alphacoders.com/540/thumb-1920-540654.jpg",
       "poster": "https://www.cgv.vn/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/3/5/350x495_1.png",
       "metascore": "N/A",
-      "imdbRating": "5,9",
-      "imdbVotes": "N/A",
+      "imdbRating": 6.8,
+      "imdbVotes": 55555,
       "imdbID": "tt2094766",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BN2EyYzgyOWEtNTY2NS00NjRjLWJiNDYtMWViMjg5MWZjYjgzXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYwOWYzOTctOTc4My00ZmJkLTgzMTctMmUxNDI5ODQzYzNjXkEyXkFqcGdeQXVyNDAyODU1Njc@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BZTY5ZGUxMTAtYTU0OC00NGQ2LTkzNzgtZGZmNjlmNjY3MGU0XkEyXkFqcGdeQXVyNTY0MTkxMTg@._V1_SY1000_CR0,0,1500,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BZjA0MWYwZTEtYzc5Yi00NGM2LTg1YTctNjY2YzQ0NDJhZDAwXkEyXkFqcGdeQXVyNDAyODU1Njc@._V1_SY1000_CR0,0,1499,1000_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/o/tom hiddleston-ngang.jpg",
+          "name": "Tom Hiddleston"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/c/d/cdf.jpg",
+          "name": "Cate Blanchett"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/3/./3_347.jpg",
+          "name": "Chris Hemsworth"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/r/y/ryan reynolds-ngang.jpg",
+          "name": "Ryan Reynolds"
+        }
       ],
       "quality": "I-MAX"
     },
@@ -1388,17 +1648,28 @@
       "landscape": "https://wallpapercave.com/wp/wp2107477.jpg",
       "poster": "https://m.media-amazon.com/images/M/MV5BOTBjMjA4NmYtN2RjMi00YWZlLTliYTktOTIwMmNkYjYxYmE1XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg",
       "metascore": "N/A",
-      "imdbRating": "5,9",
-      "imdbVotes": "N/A",
+      "imdbRating": 5.9,
+      "imdbVotes": 99999,
       "imdbID": "tt3748528",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE3MzA4Nzk3NV5BMl5BanBnXkFtZTgwNjAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNDMxMTQzMjQxM15BMl5BanBnXkFtZTgwNzAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUyNjkxOTk5NV5BMl5BanBnXkFtZTgwODAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BNjM4MzExNDAyNl5BMl5BanBnXkFtZTgwOTAxMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE3NTgxMDcyNV5BMl5BanBnXkFtZTgwMDExMTc1ODE@._V1_SX1777_CR0,0,1777,744_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/h/theron-charlize-bannner.jpg",
+          "name": "Charlize Theron"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/h/u/hu-ngang.jpg",
+          "name": "Hugh Jackman"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/5/./5_18.jpg",
+          "name": "Robert Downey Jr."
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/g/a/gallery-1436740108-elle-aug-15-margot-robbie-02.jpg",
+          "name": "Johnny Depp"
+        }
       ],
       "quality": "HD"
     },
@@ -1422,16 +1693,24 @@
       "landscape": "https://images5.alphacoders.com/540/thumb-1920-540654.jpg",
       "poster": "https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_FMjpg_UX1000_.jpg",
       "metascore": "N/A",
-      "imdbRating": "6,9",
-      "imdbVotes": "N/A",
+      "imdbRating": 6.9,
+      "imdbVotes": 1221,
       "imdbID": "tt2094766",
       "type": "movie",
       "response": "True",
-      "images": [
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BN2EyYzgyOWEtNTY2NS00NjRjLWJiNDYtMWViMjg5MWZjYjgzXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYwOWYzOTctOTc4My00ZmJkLTgzMTctMmUxNDI5ODQzYzNjXkEyXkFqcGdeQXVyNDAyODU1Njc@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BZTY5ZGUxMTAtYTU0OC00NGQ2LTkzNzgtZGZmNjlmNjY3MGU0XkEyXkFqcGdeQXVyNTY0MTkxMTg@._V1_SY1000_CR0,0,1500,1000_AL_.jpg",
-        "https://images-na.ssl-images-amazon.com/images/M/MV5BZjA0MWYwZTEtYzc5Yi00NGM2LTg1YTctNjY2YzQ0NDJhZDAwXkEyXkFqcGdeQXVyNDAyODU1Njc@._V1_SY1000_CR0,0,1499,1000_AL_.jpg"
+      "imagesActor": [
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/t/h/theron-charlize-bannner.jpg",
+          "name": "Charlize Theron"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/h/u/hu-ngang.jpg",
+          "name": "Hugh Jackman"
+        },
+        {
+          "imageLandscape": "https://cdn.galaxycine.vn/media/s/c/scarlett_johansson.jpg",
+          "name": "Scarlett Johansson"
+        }
       ],
       "quality": "I-MAX"
     }

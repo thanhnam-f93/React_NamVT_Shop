@@ -22,7 +22,6 @@ import CountryInfo from './components/country/CountryInfo';
 import ListCountry from './components/country/ListCountry';
 import TodoApp from './pages/todo/TodoApp';
 import Profile from './pages/user/Profile'
-import SearchBar from './pages/todo/SearchBar';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Home from './components/movie/Home'; 
@@ -35,6 +34,7 @@ import Start from './components/quiz/Start'
 import PaymentMovie from './components/movie/payment/PaymentMovie';
 import CartList from './components/movie/cart/CartList';
 import PayMoneyForm from './components/movie/payment/PayMoneyForm';
+import EmailSender from './pages/user/EmailSender';
 function App() {
   const location = useLocation();
   const role = localStorage.getItem("role");
@@ -82,7 +82,7 @@ const RoleAccess = ({ roles = [] }) => {
           <Route path="product/:id" element={<ProductDetail />}/>
               {/* Todo Page  */}
           <Route path="todo" element={<TodoApp />}/>
-          <Route exact path="/test" element={<SearchBar />} />
+   
               {/* Statistic and Introduct Page  */}
           <Route path="dashboard/statistic" element={<Dashboard />}/>
       </Route>
@@ -104,6 +104,7 @@ const RoleAccess = ({ roles = [] }) => {
         {/* Quiz */}
         <Route exact path="/quiz" element={<Start  />} />
         <Route exact path="/pay" element={<PayMoneyForm  />} />
+        <Route exact path="/sendMail" element={<EmailSender  />} />
       </Routes>
     </Provider>
   );

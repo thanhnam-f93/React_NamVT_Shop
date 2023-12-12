@@ -3,59 +3,49 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   loadData,
   loadDataBy,
+  loadDataCategory,
   loadMovieComingSoon,
 } from "../../redux/actions/movie";
 import Movie from "./Movie";
+import SearchBar from "./component/SearchBar";
 import { headerCategory } from "../../utils/data";
 const ListMovie = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
+  const [option, setOption] = useState("");
+  const [dataSearch, setDataSearch] = useState({ gotoPage: 1 });
   const dispatch = useDispatch();
   const allMovie = useSelector((state: any) => state.movie.listMovie) || [];
+  const totalPage = useSelector((state: any) => state.movie.totalPage) || 0;
   const movieComingSoon = useSelector((state: any) => state.movie.movieComing);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    dispatch(loadMovieComingSoon());
-    dispatch(loadData(page));
-    setData(allMovie);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const fetchData = async () => {
-    window.addEventListener("scroll", handleScroll);
+    if (page > totalPage) return;
+    // window.addEventListener("scroll", handleScroll);
     setLoading(true);
-    dispatch(loadData(page));
+    if (!option) {
+      dispatch(loadData(page));
+    } else if (headerCategory.includes(option)) {
+      dispatch(loadDataCategory({ page: page, category: option }));
+    }
     const newData: any = [...data, ...allMovie];
     setData(newData);
-
     setLoading(false);
   };
+
   useEffect(() => {
     fetchData();
-  }, [page]);
-
-  const handleScroll = () => {
-    // Auto trigger action when scroll to bottom
-    if (
-      window.innerHeight + document.documentElement.scrollTop >=
-      document.documentElement.offsetHeight
-    ) {
-      setPage(page + 1);
-    }
-  };
+  }, [page, option]);
 
   const renderLabels = headerCategory?.map((label, index) => {
     return (
       <li key={index}>
         <button
-          onClick={() => {
+          onClick={async () => {
             setData([]);
+            setOption(label);
             setPage(1);
-            dispatch(loadDataBy(label));
           }}
           className="filter-btn"
         >
@@ -71,6 +61,25 @@ const ListMovie = () => {
     return <Movie key={index} {...movie} />;
   });
 
+  const handleScroll = () => {
+    // Auto trigger action when scroll to bottom
+    if (
+      window.innerHeight + document.documentElement.scrollTop >=
+      document.documentElement.offsetHeight * 0.9
+    ) {
+      setPage(page + 1);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    dispatch(loadMovieComingSoon());
+    dispatch(loadData(page));
+    setData(allMovie);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
       {/* Upcoming Movie */}
@@ -94,7 +103,9 @@ const ListMovie = () => {
           <h2 className="h2 section-title">Top Hot Movies</h2>
 
           <ul className="filter-list">{renderLabels}</ul>
-
+          <li>
+            <SearchBar dataSearch={dataSearch} setDataSearch={setDataSearch} />
+          </li>
           <ul className="movies-list">
             {data?.length > 0 ? renderMovie : loading && <p>Loading...</p>}
           </ul>

@@ -20,5 +20,9 @@ const callAPIUser = {
     async delete(id: string) {
         return await axios.delete(`${endpoint}/${id}`);
     },
+    async sendMail(data: any) {
+        axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+        return await axios.post(CONSTANTS.URL.MAIL, data);
+    },
 };
 export { callAPIUser }

@@ -5,7 +5,7 @@ import { callAPIMovie } from "../../../service/dataMovie";
 import MovieItem from "./MovieItem";
 import SortComponent from "../component/SortComponent";
 import "./../../../scss/_sort.scss";
-import SearchBar from "../../../pages/todo/SearchBar";
+import SearchBar from "../../movie/component/SearchBar";
 import { useDispatch, useSelector } from "react-redux";
 import { loadData, loadDataBy } from "../../../redux/actions/movie";
 const MovieManagement = () => {

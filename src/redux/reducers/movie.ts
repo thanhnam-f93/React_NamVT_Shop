@@ -14,10 +14,12 @@ import {
   ADD_MOVIE_CART_SUCCESS,
   DECREASE_CART,
   INCREASE_CART,
-  REMOVE_CART
+  REMOVE_CART,
+  MOVIE_REQUEST_CATEGORY,
+  MOVIE_CLEAR
 } from "../constant/movie";
 
-const initialState = { disPlay: "none", movieCart: [], totalMoney: 0 };
+const initialState = { disPlay: "none", movieCart: [], totalMoney: 0, listMovie: [] };
 function movieReducers(state = initialState, payload) {
 
   switch (payload.type) {
@@ -32,6 +34,18 @@ function movieReducers(state = initialState, payload) {
       return {
         ...state,
         requesting: true,
+      };
+    case MOVIE_REQUEST_CATEGORY:
+      // clear old data
+      return {
+        ...state,
+        requesting: true,
+      };
+    case MOVIE_CLEAR:
+      // clear old data
+      return {
+        ...state,
+        listMovie: [],
       };
     case MOVIE_REQUEST_COMINGSOON:
 

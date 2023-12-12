@@ -8,10 +8,9 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { CONSTANTS } from "../../utils/constant";
 import { callAPIUser } from "../../service/dataUser";
 import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 import { User } from "../../model/User";
 import { AxiosError, AxiosResponse } from "axios";
-
+import { mail_content } from "../../utils/data";
 export default function SignUp() {
   const location = useLocation();
   console.log("location", location.state);
@@ -25,6 +24,8 @@ export default function SignUp() {
   } = useForm<User>();
 
   const submitData: SubmitHandler<User> = (data) => {
+    console.log("data", data);
+
     callAPIUser
       .signup(data)
       .then((response: AxiosResponse) => {
@@ -33,23 +34,40 @@ export default function SignUp() {
             response.status
           )
         ) {
+          localStorage.setItem("username", response.data.username);
           localStorage.setItem("userId", response.data.id);
-          navigate(CONSTANTS.PAGE.SALE);
+          localStorage.setItem("role", response.data.role);
+          navigate(CONSTANTS.PAGE.MOVIE_PLAY);
         }
         throw new AxiosError("Signup Failure, Contact Admin to detail");
       })
       .catch((error) => {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: error,
-        });
+        console.log("Similar Error: ", error);
       })
       .finally(() => {
-        console.log("Finnaly");
+        handleSendEmail(data);
       });
   };
-
+  const handleSendEmail = async (data: User) => {
+    callAPIUser
+      .sendMail({
+        recipient: data.username,
+        subject: `Wellcome ${data.name}`,
+        message: `Dear ${data.name},${mail_content}`,
+      })
+      .then((response: AxiosResponse) => {
+        if (
+          [CONSTANTS.STATUS.CREATE, CONSTANTS.STATUS.OK].includes(
+            response.status
+          )
+        ) {
+          console.log("Email sent successfully!");
+        }
+      })
+      .catch((error) => {
+        console.error("Email sent error: ", error);
+      });
+  };
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -74,7 +92,7 @@ export default function SignUp() {
                     {...register("name", {
                       required: true,
                       minLength: 3,
-                      maxLength: 20,
+                      maxLength: 30,
                       pattern: /^[A-Za-z ]+$/i,
                     })}
                     id="name"
@@ -95,7 +113,7 @@ export default function SignUp() {
                   )}
                   {errors?.name?.type === "maxLength" && (
                     <span className="text-red-600">
-                      Name can't exceed 20 character{" "}
+                      Name can't exceed 30 character{" "}
                     </span>
                   )}
                   {errors?.name?.type === "pattern" && (
@@ -117,8 +135,8 @@ export default function SignUp() {
                     {...register("username", {
                       required: true,
                       minLength: 3,
-                      maxLength: 20,
-                      pattern: /^[A-Za-z0-9]+$/i,
+                      maxLength: 30,
+                      pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                     })}
                     id="username"
                     type="text"
@@ -129,21 +147,23 @@ export default function SignUp() {
                     required
                   />
                   {errors?.username?.type === "required" && (
-                    <span className="text-red-600">Username is required</span>
+                    <span className="text-red-600">
+                      Username-Email is required
+                    </span>
                   )}
                   {errors?.username?.type === "minLength" && (
                     <span className="text-red-600">
-                      Username must have at least 3 character{" "}
+                      Username-Email must have at least 3 character{" "}
                     </span>
                   )}
                   {errors?.username?.type === "maxLength" && (
                     <span className="text-red-600">
-                      Username can't exceed 20 character{" "}
+                      Username-Email can't exceed 30 character{" "}
                     </span>
                   )}
                   {errors?.username?.type === "pattern" && (
                     <span className="text-red-600">
-                      Username must have only number and character
+                      Username-Email must have only number and character
                     </span>
                   )}
                 </div>
