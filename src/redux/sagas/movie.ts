@@ -30,6 +30,7 @@ function* loadAllDataMovie(data: any) {
 
         yield put(fetchDataFailed(error));
     }
+
 }
 
 function* loadMovieBy(input: any) {

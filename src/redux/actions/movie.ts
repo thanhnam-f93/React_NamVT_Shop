@@ -16,7 +16,10 @@ import {
     INCREASE_CART,
     DECREASE_CART,
     REMOVE_CART,
-    MOVIE_REQUEST_CATEGORY
+    MOVIE_REQUEST_CATEGORY,
+    REQUEST_TRUE,
+    REQUEST_FALSE,
+    MOVIE_CLEAR
 } from '../constant/movie'
 
 export const loadData = (input: any) => {
@@ -129,3 +132,21 @@ export const remove = (data) => {
     }
 }
 
+export const start = () => {
+    return {
+        type: REQUEST_TRUE,
+
+    }
+}
+export const finish = () => {
+    return {
+        type: REQUEST_FALSE,
+
+    }
+}
+export const clear = () => {
+    return {
+        type: MOVIE_CLEAR,
+
+    }
+}

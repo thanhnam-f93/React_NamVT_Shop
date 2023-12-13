@@ -17,7 +17,8 @@ const RadioStatus = ({ dataSearch, setDataSearch }) => {
             name="inlineRadioOptions"
             id="inlineRadio1"
             value="false"
-            checked={dataSearch.comingSoon == "false"}
+            // checked={dataSearch.comingSoon == "false"}
+            defaultChecked
             onChange={onOptionChange}
           />
           <label

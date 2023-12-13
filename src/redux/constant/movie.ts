@@ -21,3 +21,5 @@ export const INCREASE_CART = "INCREASE_CART"
 export const DECREASE_CART = "DECREASE_CART"
 export const REMOVE_CART = 'REMOVE_CART'
 export const MOVIE_CLEAR = 'MOVIE_CLEAR'
+export const REQUEST_FALSE = 'REQUEST_FALSE'
+export const REQUEST_TRUE = 'REQUEST_TRUE'

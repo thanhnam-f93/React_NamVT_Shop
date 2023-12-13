@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { closeVideo, loadData } from "../../redux/actions/movie";
 import { scrollTop } from "../../utils/Utils";
-
-const Movie = (movie) => {
+// import "./scss/movie.modules.scss";
+const MovieI = (movie) => {
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(closeVideo());
@@ -70,4 +70,4 @@ const Movie = (movie) => {
   );
 };
 
-export default Movie;
+export default MovieI;

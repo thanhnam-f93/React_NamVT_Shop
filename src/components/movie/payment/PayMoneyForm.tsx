@@ -110,7 +110,7 @@ const PayMoneyForm = () => {
           <p className="text-xl font-medium">Order Summary</p>
           <p className="text-gray-400">Check your items. And select a gift.</p>
           <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
-            {listCart}
+            {listCart.length ? listCart : <p>No Movie Here..</p>}
           </div>
 
           <p className="mt-8 text-lg font-medium">Addtional Option</p>

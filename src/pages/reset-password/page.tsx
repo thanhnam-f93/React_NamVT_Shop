@@ -1,7 +1,3 @@
-export const metadata = {
-  title: "Reset Password - Simple",
-  description: "Page description",
-};
 import React from "react";
 function ResetPassword() {
   return (

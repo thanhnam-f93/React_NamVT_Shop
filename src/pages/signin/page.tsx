@@ -1,7 +1,3 @@
-export const metadata = {
-  title: "Sign In - Simple",
-  description: "Page description",
-};
 import { useCookies } from "react-cookie";
 import React, { startTransition, useEffect } from "react";
 import { useState } from "react";
@@ -11,7 +7,7 @@ import { callAPIFetch } from "../../service/api";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 // import "./styles.css";
-export default function SignIn() {
+const SignIn = () => {
   const navigate = useNavigate();
   const [cookie, setCookie] = useCookies(["data"]);
   const [formData, setFormData] = useState({
@@ -34,7 +30,6 @@ export default function SignIn() {
   };
   const validationData = () => {
     const { username, password } = formData;
-
     let message = "";
     let regularExpression =
       /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
@@ -46,8 +41,6 @@ export default function SignIn() {
       message =
         "Password must has at least one number and least one special character";
     }
-    // if (message) {
-
     return true;
   };
   const callApiLogin = () => {
@@ -104,7 +97,7 @@ export default function SignIn() {
   };
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6" data-testid="lalala">
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
           {/* Page header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
@@ -252,4 +245,5 @@ export default function SignIn() {
       </div>
     </section>
   );
-}
+};
+export default SignIn;

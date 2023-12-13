@@ -38,7 +38,7 @@ const callAPIMovie = {
         }
         // If Chosse year range else nothing
         if (input.data.year) {
-            url += `&year_gte=${input.data.year[0]}&year_lte=${input.data.year[1]}&`
+            url += `year_gte=${input.data.year[0]}&year_lte=${input.data.year[1]}&`
         }
         if (input.data.typeSearch && input.data.textInput) {
             url += `${input.data.typeSearch}_like=${input.data.textInput}&`
@@ -47,7 +47,7 @@ const callAPIMovie = {
         }
         // Check data page
 
-        url += `?_page=${input.data.gotoPage}&_limit=10`
+        url += `?_page=${input.data.gotoPage}&_limit=8`
 
         // url = endpoint + "?_page=1&_limit=10"
         return axios.get(endpoint + url);

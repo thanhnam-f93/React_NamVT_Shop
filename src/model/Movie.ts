@@ -1,4 +1,4 @@
-export interface Movie {
+export type Movie = {
     id: any,
     name: any,
     category: any,

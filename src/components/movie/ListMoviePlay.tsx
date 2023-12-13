@@ -2,19 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   loadData,
-  loadDataBy,
   loadDataCategory,
   loadMovieComingSoon,
 } from "../../redux/actions/movie";
-import Movie from "./Movie";
-import SearchBar from "./component/SearchBar";
+import MovieI from "./Movie";
 import { headerCategory } from "../../utils/data";
-const ListMovie = () => {
+import { Movie } from "../../model/Movie";
+const ListMoviePlay = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [option, setOption] = useState("");
-  const [dataSearch, setDataSearch] = useState({ gotoPage: 1 });
   const dispatch = useDispatch();
   const allMovie = useSelector((state: any) => state.movie.listMovie) || [];
   const totalPage = useSelector((state: any) => state.movie.totalPage) || 0;
@@ -22,7 +20,7 @@ const ListMovie = () => {
 
   const fetchData = async () => {
     if (page > totalPage) return;
-    // window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
     setLoading(true);
     if (!option) {
       dispatch(loadData(page));
@@ -54,18 +52,20 @@ const ListMovie = () => {
       </li>
     );
   });
-  const renderMovie = data?.map((movie, index) => {
-    return <Movie key={index} {...movie} />;
+  const renderMovie = data?.map((movie: Movie, index: number) => {
+    return <MovieI key={index} {...movie} />;
   });
-  const renderMovieComing = movieComingSoon?.map((movie, index) => {
-    return <Movie key={index} {...movie} />;
-  });
+  const renderMovieComing = movieComingSoon?.map(
+    (movie: Movie, index: number) => {
+      return <MovieI key={index} {...movie} />;
+    }
+  );
 
   const handleScroll = () => {
     // Auto trigger action when scroll to bottom
     if (
       window.innerHeight + document.documentElement.scrollTop >=
-      document.documentElement.offsetHeight * 0.9
+      document.documentElement.offsetHeight * 0.8
     ) {
       setPage(page + 1);
     }
@@ -103,9 +103,7 @@ const ListMovie = () => {
           <h2 className="h2 section-title">Top Hot Movies</h2>
 
           <ul className="filter-list">{renderLabels}</ul>
-          <li>
-            <SearchBar dataSearch={dataSearch} setDataSearch={setDataSearch} />
-          </li>
+
           <ul className="movies-list">
             {data?.length > 0 ? renderMovie : loading && <p>Loading...</p>}
           </ul>
@@ -115,4 +113,4 @@ const ListMovie = () => {
   );
 };
 
-export default ListMovie;
+export default ListMoviePlay;

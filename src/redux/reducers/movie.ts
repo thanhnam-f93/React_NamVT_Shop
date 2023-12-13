@@ -16,7 +16,9 @@ import {
   INCREASE_CART,
   REMOVE_CART,
   MOVIE_REQUEST_CATEGORY,
-  MOVIE_CLEAR
+  MOVIE_CLEAR,
+  REQUEST_FALSE,
+  REQUEST_TRUE
 } from "../constant/movie";
 
 const initialState = { disPlay: "none", movieCart: [], totalMoney: 0, listMovie: [] };
@@ -75,6 +77,8 @@ function movieReducers(state = initialState, payload) {
         data: payload.data,
       };
     case DATA_SUCCESS:
+      console.log("DATA_SUCCESS");
+
       return {
         ...state,
         listMovie: payload.data.movies,
@@ -147,6 +151,16 @@ function movieReducers(state = initialState, payload) {
           return item.movieId != payload.data.movieId
         }),
         totalMoney: (state.totalMoney - (Number(payload.data.price) * Number(payload.data.total))),
+      };
+    case REQUEST_TRUE:
+      return {
+        ...state,
+        requesting: true,
+      };
+    case REQUEST_FALSE:
+      return {
+        ...state,
+        requesting: false,
       };
     default:
       return state;

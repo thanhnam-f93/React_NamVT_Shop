@@ -9,7 +9,10 @@ import SearchBar from "../../movie/component/SearchBar";
 import { useDispatch, useSelector } from "react-redux";
 import { loadData, loadDataBy } from "../../../redux/actions/movie";
 const MovieManagement = () => {
-  const [dataSearch, setDataSearch] = useState({ gotoPage: 1 });
+  const [dataSearch, setDataSearch] = useState({
+    gotoPage: 1,
+    comingSoon: "false",
+  });
   const [currentPage, setCurrentPage] = useState(1);
   const dispatch = useDispatch();
   useEffect(() => {
