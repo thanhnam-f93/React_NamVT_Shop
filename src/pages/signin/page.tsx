@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 // import "./styles.css";
 const SignIn = () => {
   const navigate = useNavigate();
-  const [cookie, setCookie] = useCookies(["data"]);
+  // const [cookie, setCookie] = useCookies(["data"]);
   const [formData, setFormData] = useState({
     username: CONSTANTS.EMPTY,
     password: CONSTANTS.EMPTY,
@@ -97,7 +97,7 @@ const SignIn = () => {
   };
   return (
     <section className="bg-gradient-to-b from-gray-100 to-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6" data-testid="lalala">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
           {/* Page header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">

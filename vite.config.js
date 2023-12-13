@@ -10,7 +10,7 @@ export default defineConfig({
   css: {
     postcss,
   },
-  plugins: [react(),
+  plugins: [react(),"@babel/plugin-syntax-jsx"
 ],
   resolve: {
     alias: [

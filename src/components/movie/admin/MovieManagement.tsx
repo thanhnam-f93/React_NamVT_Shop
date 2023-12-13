@@ -18,6 +18,9 @@ const MovieManagement = () => {
   useEffect(() => {
     dispatch(loadDataBy(dataSearch));
   }, []);
+  // useEffect(() => {
+  //   dispatch(loadDataBy(dataSearch));
+  // }, [currentPage]);
 
   const allMovie = useSelector((state: any) => state.movie.listMovie);
   const totalPage = useSelector((state: any) => state.movie.totalPage);

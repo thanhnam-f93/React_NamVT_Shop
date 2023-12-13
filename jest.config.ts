@@ -1,6 +1,4 @@
-import type { Config } from 'jest';
-
-const config: Config = {
+module.exports = {
   clearMocks: true,
   preset: 'ts-jest',
   transform: {
@@ -14,7 +12,8 @@ const config: Config = {
     '\\.css$': 'identity-obj-proxy',
   },
   coverageDirectory: "coverage",
-  testEnvironment: "jsdom"
+  testEnvironment: "jsdom",
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
 };
 
-export default config;
+
