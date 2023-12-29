@@ -126,7 +126,7 @@ const DetailMovie = () => {
                       <div key={index}>
                         <NavLink
                           to="/movie-play/"
-                          state={`http://localhost:3000/movie/?genre_like=${item}`}
+                          state={`https://react-namvt-default-rtdb.firebaseio.com/movie.json/?genre_like=${item}`}
                         >
                           {item}
                         </NavLink>

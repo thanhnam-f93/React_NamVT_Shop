@@ -21,15 +21,15 @@ export const CONSTANTS = {
         MOVIE_PLAY: "/movie-play"
     },
     URL: {
-        CART: 'http://localhost:3000/cart/',
-        DOG: 'http://localhost:3000/dog/',
-        USER: 'http://localhost:3000/user/',
-        PAYMENT: 'http://localhost:3000/payment',
+        CART: 'https://react-namvt-default-rtdb.firebaseio.com/cart.json/',
+        DOG: 'https://react-namvt-default-rtdb.firebaseio.com/dog.json/',
+        USER: 'https://react-namvt-default-rtdb.firebaseio.com/user.json/',
+        PAYMENT: 'https://react-namvt-default-rtdb.firebaseio.com/payment.json',
         COUNTRY: 'https://restcountries.com/v3.1/',
-        TODO: 'http://localhost:3000/todo/',
-        MOVIE: 'http://localhost:3000/movie/',
-        MOVIE_CART: 'http://localhost:3000/cart-movie/',
-        MAIL: 'http://localhost:3001/api/send-email',
+        TODO: 'https://react-namvt-default-rtdb.firebaseio.com/todo.json/',
+        MOVIE: 'https://react-namvt-default-rtdb.firebaseio.com/movie.json/',
+        MOVIE_CART: 'https://react-namvt-default-rtdb.firebaseio.com/cart-movie.json/',
+        MAIL: 'http://localhost:3001/api/send-email.json',
     },
     STATUS: {
         ERR_SERVER: "500",
